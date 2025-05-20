@@ -1,7 +1,7 @@
 # The Big Cane
 
 Premium Caribbean Spirits Website showcasing The Big Cane's handcrafted spirits collection.
-This website is hosted on GitHub Pages: [View Demo]([https://marora1549.github.io/The-BigCane/](https://marora1549.github.io/The-BigCane-Rum/index.html))
+This website is hosted on GitHub Pages: [View Demo](https://marora1549.github.io/The-BigCane-Rum/index.html)
 
 
 ## Product Showcase
