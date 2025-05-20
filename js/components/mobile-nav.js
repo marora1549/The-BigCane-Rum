@@ -131,7 +131,7 @@
         navOverlay.setAttribute('aria-hidden', 'false');
         
         // Prevent background scrolling
-        document.body.classList.add('nav-open');
+        document.body.classList.add('menu-open');
         document.body.style.overflow = 'hidden';
         
         // Focus on the first menu item for keyboard accessibility
@@ -157,7 +157,7 @@
         navOverlay.setAttribute('aria-hidden', 'true');
         
         // Restore background scrolling
-        document.body.classList.remove('nav-open');
+        document.body.classList.remove('menu-open');
         document.body.style.overflow = '';
         
         // Return focus to the toggle button for accessibility

@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Guide | The BigCane</title>
+    <meta name="description" content="The official style guide for The BigCane brand, including typography, colors, components, and design guidelines.">
+    
+    <!-- Security Meta Tags -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
+    <!-- Performance Optimization: Critical CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preload" href="css/animations.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/animations.css"></noscript>
+    <link rel="preload" href="css/responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/responsive.css"></noscript>
+    <link rel="preload" href="css/components/responsive-fixes.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/components/responsive-fixes.css"></noscript>
+    
+    <!-- Accessibility Styles -->
+    <link rel="preload" href="css/components/accessibility/accessibility.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/components/accessibility/accessibility.css"></noscript>
+    
+    <!-- Font Awesome with preload -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+    
+    <!-- Google Fonts with preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Lato:wght@300;400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Lato:wght@300;400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"></noscript>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    
+    <!-- Style Guide Specific Styles -->
+    <style>
+        /* Style Guide Specific Styles */
+        .style-guide-section {
+            padding: 60px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .style-guide-section:last-child {
+            border-bottom: none;
+        }
+        
+        .style-guide-section h2 {
+            font-size: 3.2rem;
+            margin-bottom: 30px;
+            color: #05D9E8;
+        }
+        
+        .style-guide-section h3 {
+            font-size: 2.4rem;
+            margin: 30px 0 20px;
+            color: #FF2A6D;
+        }
+        
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .color-swatch {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .color-preview {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 700;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .color-info {
+            padding: 15px;
+            background: rgba(20, 18, 37, 0.7);
+        }
+        
+        .color-name {
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+        
+        .color-value {
+            font-family: monospace;
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .typography-showcase {
+            margin-bottom: 40px;
+        }
+        
+        .typography-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+        
+        .typography-info {
+            font-family: monospace;
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 10px;
+        }
+        
+        .component-showcase {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(20, 18, 37, 0.7);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .component-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #FF2A6D;
+        }
+        
+        .component-description {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .component-example {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: rgba(10, 10, 10, 0.3);
+            border-radius: 8px;
+        }
+        
+        .component-code {
+            font-family: monospace;
+            background: rgba(10, 10, 10, 0.5);
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.4rem;
+            white-space: pre;
+        }
+        
+        .image-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .image-item {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .image-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .image-caption {
+            padding: 15px;
+            background: rgba(20, 18, 37, 0.7);
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .sidebar {
+            position: sticky;
+            top: 120px;
+            padding: 20px;
+            background: rgba(20, 18, 37, 0.7);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+        
+        .sidebar a {
+            display: block;
+            padding: 8px 15px;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar a:hover,
+        .sidebar a.active {
+            background: rgba(255, 42, 109, 0.2);
+            color: #FF2A6D;
+        }
+        
+        .two-column-layout {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 30px;
+        }
+        
+        @media (max-width: 991px) {
+            .two-column-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader__content">
+            <div class="preloader__logo">
+                <img src="assets/images/big-cane-logo.png" alt="The Big Cane" width="200">
+            </div>
+            <div class="preloader__progress">
+                <div class="preloader__bar"></div>
+            </div>
+            <div class="preloader__text">
+                <span>Loading style guide...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/images/big-cane-logo.png" alt="The Big Cane Logo" class="logo__image">
+                </a>
+            </div>
+            <button class="nav-toggle">
+                <span class="nav-toggle__icon"></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html#products" class="nav-link">Products</a></li>
+                    <li><a href="index.html#founder" class="nav-link">Our Story</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="other-businesses.html" class="nav-link">Ventures</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Style Guide Header -->
+    <section class="page-header">
+        <div class="page-header__overlay"></div>
+        <div class="container">
+            <div class="page-header__content reveal-from-bottom">
+                <h1 class="page-header__title">The BigCane Style Guide</h1>
+                <p class="page-header__subtitle">The official brand and design documentation</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Style Guide Content -->
+    <section class="style-guide">
+        <div class="container">
+            <div class="two-column-layout">
+                <!-- Sidebar Navigation -->
+                <div class="sidebar">
+                    <ul>
+                        <li><a href="#brand" class="active">Brand Overview</a></li>
+                        <li><a href="#colors">Color Palette</a></li>
+                        <li><a href="#typography">Typography</a></li>
+                        <li><a href="#buttons">Buttons</a></li>
+                        <li><a href="#cards">Cards</a></li>
+                        <li><a href="#forms">Form Elements</a></li>
+                        <li><a href="#icons">Icons</a></li>
+                        <li><a href="#images">Image Guidelines</a></li>
+                        <li><a href="#spacing">Spacing</a></li>
+                        <li><a href="#animations">Animations</a></li>
+                        <li><a href="#accessibility">Accessibility</a></li>
+                    </ul>
+                </div>
+
+                <!-- Style Guide Main Content -->
+                <div class="style-guide__content">
+                    <!-- Brand Overview -->
+                    <div id="brand" class="style-guide-section">
+                        <h2>Brand Overview</h2>
+                        <p>The BigCane brand embodies premium Caribbean spirits with a vibrant nightclub aesthetic. The brand values luxury, celebration, rhythm, and craftsmanship. It captures the essence of island luxury with a modern twist.</p>
+                        
+                        <h3>Brand Voice</h3>
+                        <ul>
+                            <li><strong>Confident:</strong> The brand speaks with authority and expertise.</li>
+                            <li><strong>Vibrant:</strong> Language is lively, energetic, and conveys the party vibe.</li>
+                            <li><strong>Premium:</strong> A touch of sophistication without being pretentious.</li>
+                            <li><strong>Authentic:</strong> True to Caribbean roots while embracing global nightlife.</li>
+                        </ul>
+                        
+                        <h3>Logo Usage</h3>
+                        <div class="component-showcase">
+                            <div class="component-example" style="background-color: #0A0A0A; padding: 40px; text-align: center;">
+                                <img src="assets/images/big-cane-logo.png" alt="The BigCane Logo" style="max-width: 250px;">
+                            </div>
+                            <div class="component-description">
+                                <p>The logo should always have adequate spacing around it (minimum clearance equal to the height of the letter 'B' in the logo). Never distort, recolor, or alter the logo without approval.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Color Palette -->
+                    <div id="colors" class="style-guide-section">
+                        <h2>Color Palette</h2>
+                        <p>Our color palette is designed to evoke the electrifying night life of Caribbean luxury. The palette consists of vibrant neons against dark backgrounds, creating a high-contrast, premium aesthetic.</p>
+                        
+                        <h3>Primary Colors</h3>
+                        <div class="color-palette">
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #0A0A0A;">
+                                    Midnight Black
+                                </div>
+                                <div class="color-info">
+                                    <div class="color-name">Midnight Black</div>
+                                    <div class="color-value">#0A0A0A</div>
+                                </div>
+                            </div>
+                            
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #1A0B2E;">
+                                    Deep Nightclub
+                                </div>
+                                <div class="color-info">
+                                    <div class="color-name">Deep Nightclub</div>
+                                    <div class="color-value">#1A0B2E</div>
+                                </div>
+                            </div>
+                            
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #FF2A6D;">
+                                    Neon Pink
+                                </div>
+                                <div class="color-info">
+                                    <div class="color-name">Neon Pink</div>
+                                    <div class="color-value">#FF2A6D</div>
+                                </div>
+                            </div>
+                            
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #05D9E8;">
+                                    Electric Blue
+                                </div>
+                                <div class="color-info">
+                                    <div class="color-name">Electric Blue</div>
+                                    <div class="color-value">#05D9E8</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3>Secondary Colors</h3>
+                        <div class="color-palette">
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #D264B6;">
+                                    Fuchsia Glow
+                                </div>
+                                <div class="color-info">
+                                    <div class="color-name">Fuchsia Glow</div>
+                                    <div class="color-value">#D264B6</div>
+                                </div>
+                            </div>
+                            
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #F9C80E;">
+                                    Golden Pulse
+                                </div>
+                                <div class="color-info">
+                                    <div class="color-name">Golden Pulse</div>
+                                    <div class="color-value">#F9C80E</div>
+                                </div>
+                            </div>
+                            
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #7B61FF;">
+                                    Neon Purple
+                                </div>
+                                <div class="color-info">
+                                    <div class="color-name">Neon Purple</div>
+                                    <div class="color-value">#7B61FF</div>
+                                </div>
+                            </div>
+                            
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #14F195;">
+                                    Lime Spark
+                                </div>
+                                <div class="color-info">
+                                    <div class="color-name">Lime Spark</div>
+                                    <div class="color-value">#14F195</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3>Text and UI Colors</h3>
+                        <div class="color-palette">
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #FFFFFF;">
+                                    <span style="color: #0A0A0A;">Starlight Pearl</span>
+                                </div>
+                                <div class="color-info">
+                                    <div class="color-name">Starlight Pearl</div>
+                                    <div class="color-value">#FFFFFF</div>
+                                </div>
+                            </div>
+                            
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: rgba(255, 255, 255, 0.7);">
+                                    <span style="color: #0A0A0A;">Pearl Fade</span>
+                                </div>
+                                <div class="color-info">
+                                    <div class="color-name">Pearl Fade</div>
+                                    <div class="color-value">rgba(255, 255, 255, 0.7)</div>
+                                </div>
+                            </div>
+                            
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #2A2A42;">
+                                    Dark Pulse
+                                </div>
+                                <div class="color-info">
+                                    <div class="color-name">Dark Pulse</div>
+                                    <div class="color-value">#2A2A42</div>
+                                </div>
+                            </div>
+                            
+                            <div class="color-swatch">
+                                <div class="color-preview" style="background-color: #FF4438;">
+                                    Alert Red
+                                </div>
+                                <div class="color-info">
+                                    <div class="color-name">Alert Red</div>
+                                    <div class="color-value">#FF4438</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Typography -->
+                    <div id="typography" class="style-guide-section">
+                        <h2>Typography</h2>
+                        <p>The BigCane typography system combines bold, impactful headers with clean, readable body text. The contrast creates a premium yet approachable brand experience.</p>
+                        
+                        <div class="typography-showcase">
+                            <div class="typography-item">
+                                <div class="typography-info">
+                                    <strong>h1</strong> | Montserrat (900) | 4.8rem / 48px
+                                </div>
+                                <h1>Premium Caribbean Spirits</h1>
+                            </div>
+                            
+                            <div class="typography-item">
+                                <div class="typography-info">
+                                    <strong>h2</strong> | Montserrat (800) | 3.6rem / 36px
+                                </div>
+                                <h2>Premium Caribbean Spirits</h2>
+                            </div>
+                            
+                            <div class="typography-item">
+                                <div class="typography-info">
+                                    <strong>h3</strong> | Montserrat (700) | 2.4rem / 24px
+                                </div>
+                                <h3>Premium Caribbean Spirits</h3>
+                            </div>
+                            
+                            <div class="typography-item">
+                                <div class="typography-info">
+                                    <strong>h4</strong> | Montserrat (600) | 2.0rem / 20px
+                                </div>
+                                <h4>Premium Caribbean Spirits</h4>
+                            </div>
+                            
+                            <div class="typography-item">
+                                <div class="typography-info">
+                                    <strong>Body text</strong> | Lato (400) | 1.6rem / 16px
+                                </div>
+                                <p>Experience the untamed elegance of The BigCane - exquisite Caribbean spirits for the ultimate celebration, crafted with artisanal purity and vibrant luxury.</p>
+                            </div>
+                            
+                            <div class="typography-item">
+                                <div class="typography-info">
+                                    <strong>Small text</strong> | Lato (300) | 1.4rem / 14px
+                                </div>
+                                <small>Experience the untamed elegance of The BigCane - exquisite Caribbean spirits for the ultimate celebration, crafted with artisanal purity and vibrant luxury.</small>
+                            </div>
+                            
+                            <div class="typography-item">
+                                <div class="typography-info">
+                                    <strong>Accent text</strong> | Playfair Display (700, italic) | 2.4rem / 24px
+                                </div>
+                                <p style="font-family: 'Playfair Display', serif; font-weight: 700; font-style: italic; font-size: 2.4rem;">Premium Caribbean Spirits</p>
+                            </div>
+                        </div>
+                        
+                        <h3>Usage Guidelines</h3>
+                        <ul>
+                            <li>Maintain proper hierarchy with headers (h1 through h4).</li>
+                            <li>Use body text for main content and small text for supplementary information.</li>
+                            <li>Keep lines of text to a maximum width of 70 characters for optimal readability.</li>
+                            <li>Use accent text sparingly for emphasis and highlighting important quotes.</li>
+                            <li>Ensure sufficient contrast between text and background colors.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div id="buttons" class="style-guide-section">
+                        <h2>Buttons</h2>
+                        <p>Buttons are a key interactive element that guide users through the site. They feature vibrant colors, subtle animations, and clear text to drive action.</p>
+                        
+                        <h3>Primary Button</h3>
+                        <div class="component-showcase">
+                            <div class="component-example">
+                                <button class="button glow-pulse">Discover More</button>
+                            </div>
+                            <div class="component-description">
+                                <p>Primary buttons use a gradient background with our neon pink color. They include a subtle glow animation on hover to enhance interactivity.</p>
+                            </div>
+                            <div class="component-code">&lt;button class="button glow-pulse"&gt;Discover More&lt;/button&gt;</div>
+                        </div>
+                        
+                        <h3>Secondary Button</h3>
+                        <div class="component-showcase">
+                            <div class="component-example">
+                                <button class="button button--secondary">Learn More</button>
+                            </div>
+                            <div class="component-description">
+                                <p>Secondary buttons use a transparent background with a border. They're used for less prominent actions.</p>
+                            </div>
+                            <div class="component-code">&lt;button class="button button--secondary"&gt;Learn More&lt;/button&gt;</div>
+                        </div>
+                        
+                        <h3>Text Button</h3>
+                        <div class="component-showcase">
+                            <div class="component-example">
+                                <button class="button button--text">Read More <i class="fas fa-arrow-right"></i></button>
+                            </div>
+                            <div class="component-description">
+                                <p>Text buttons are used for navigation links and minor actions. They often include an icon for visual emphasis.</p>
+                            </div>
+                            <div class="component-code">&lt;button class="button button--text"&gt;Read More &lt;i class="fas fa-arrow-right"&gt;&lt;/i&gt;&lt;/button&gt;</div>
+                        </div>
+                        
+                        <h3>Button Sizes</h3>
+                        <div class="component-showcase">
+                            <div class="component-example" style="display: flex; gap: 15px; align-items: center;">
+                                <button class="button button--small">Small</button>
+                                <button class="button">Default</button>
+                                <button class="button button--large">Large</button>
+                            </div>
+                            <div class="component-description">
+                                <p>Buttons come in three sizes to accommodate different use cases and screen sizes.</p>
+                            </div>
+                            <div class="component-code">&lt;button class="button button--small"&gt;Small&lt;/button&gt;
+&lt;button class="button"&gt;Default&lt;/button&gt;
+&lt;button class="button button--large"&gt;Large&lt;/button&gt;</div>
+                        </div>
+                    </div>
+
+                    <!-- Cards -->
+                    <div id="cards" class="style-guide-section">
+                        <h2>Cards</h2>
+                        <p>Cards are container elements used to present products, blog posts, and other content in a visually appealing and organized way.</p>
+                        
+                        <h3>Product Card</h3>
+                        <div class="component-showcase">
+                            <div class="component-example">
+                                <article class="product-card" style="max-width: 300px; margin: 0 auto;">
+                                    <div class="product-card__labels">
+                                        <span class="product-label product-label--bestseller">Bestseller</span>
+                                    </div>
+                                    <img src="assets/images/silver-rum-placeholder.png" alt="Silver Rum" class="product-card__image" style="max-height: 200px; margin: 0 auto; display: block;">
+                                    <div class="product-card__content">
+                                        <h3 class="product-card__title">Silver Rum</h3>
+                                        <div class="product-card__rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <span class="product-card__rating-count">4.5/5</span>
+                                        </div>
+                                        <p class="product-card__description">Crisp, clear, with notes of tropical fruit and a hint of vanilla.</p>
+                                        <div class="product-card__footer">
+                                            <button class="button button--secondary">Learn More</button>
+                                            <span class="product-card__price">$39.99</span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="component-description">
+                                <p>Product cards display key product information in a compact, visually appealing format. They include an image, title, rating, description, and price.</p>
+                            </div>
+                        </div>
+                        
+                        <h3>Blog Card</h3>
+                        <div class="component-showcase">
+                            <div class="component-example">
+                                <article class="blog-card color-overlay" style="max-width: 300px; margin: 0 auto;">
+                                    <img src="assets/images/blog1-placeholder.jpg" alt="Blog Post" class="blog-card__image">
+                                    <div class="blog-card__content color-overlay-content">
+                                        <div class="blog-card__category">Category</div>
+                                        <h3 class="blog-card__title">Blog Post Title</h3>
+                                        <p class="blog-card__meta">May 20, 2025 | By Author Name</p>
+                                        <p class="blog-card__excerpt">A brief excerpt from the blog post to give readers a taste of the content...</p>
+                                        <a href="#" class="button button--text">Read More <i class="fas fa-arrow-right"></i></a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="component-description">
+                                <p>Blog cards feature an image with overlay text for a stylish, magazine-like appearance. They include the post category, title, date, author, and excerpt.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Elements -->
+                    <div id="forms" class="style-guide-section">
+                        <h2>Form Elements</h2>
+                        <p>Form elements are designed to be user-friendly, accessible, and visually consistent with the brand aesthetic.</p>
+                        
+                        <h3>Text Input</h3>
+                        <div class="component-showcase">
+                            <div class="component-example">
+                                <div class="form-group">
+                                    <label for="demo-text-input">Text Input</label>
+                                    <input type="text" id="demo-text-input" class="form-input" placeholder="Enter your text here">
+                                </div>
+                            </div>
+                            <div class="component-description">
+                                <p>Text inputs feature a clean design with subtle animation on focus.</p>
+                            </div>
+                            <div class="component-code">&lt;div class="form-group"&gt;
+  &lt;label for="demo-text-input"&gt;Text Input&lt;/label&gt;
+  &lt;input type="text" id="demo-text-input" class="form-input" placeholder="Enter your text here"&gt;
+&lt;/div&gt;</div>
+                        </div>
+                        
+                        <h3>Textarea</h3>
+                        <div class="component-showcase">
+                            <div class="component-example">
+                                <div class="form-group">
+                                    <label for="demo-textarea">Message</label>
+                                    <textarea id="demo-textarea" class="form-textarea" placeholder="Enter your message" rows="4"></textarea>
+                                </div>
+                            </div>
+                            <div class="component-description">
+                                <p>Textareas for multi-line text input maintain the same styling as regular text inputs.</p>
+                            </div>
+                        </div>
+                        
+                        <h3>Select Dropdown</h3>
+                        <div class="component-showcase">
+                            <div class="component-example">
+                                <div class="form-group">
+                                    <label for="demo-select">Select Option</label>
+                                    <select id="demo-select" class="form-select">
+                                        <option value="" disabled selected>Choose an option</option>
+                                        <option value="option1">Option 1</option>
+                                        <option value="option2">Option 2</option>
+                                        <option value="option3">Option 3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="component-description">
+                                <p>Select dropdowns feature a custom design consistent with other form elements.</p>
+                            </div>
+                        </div>
+                        
+                        <h3>Checkbox</h3>
+                        <div class="component-showcase">
+                            <div class="component-example">
+                                <div class="form-group">
+                                    <div class="checkbox-group">
+                                        <input type="checkbox" id="demo-checkbox" class="form-checkbox">
+                                        <label for="demo-checkbox">I agree to the terms and conditions</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="component-description">
+                                <p>Checkboxes feature a custom design that fits with the brand aesthetic.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Icons -->
+                    <div id="icons" class="style-guide-section">
+                        <h2>Icons</h2>
+                        <p>We use Font Awesome icons throughout the website for consistent visual language and enhanced user experience.</p>
+                        
+                        <h3>Common Icons</h3>
+                        <div class="component-showcase">
+                            <div class="component-example" style="display: flex; flex-wrap: wrap; gap: 20px;">
+                                <div style="text-align: center; width: 80px;">
+                                    <i class="fas fa-glass-cheers" style="font-size: 2.4rem; margin-bottom: 10px; color: #FF2A6D;"></i>
+                                    <div style="font-size: 1.2rem;">glass-cheers</div>
+                                </div>
+                                <div style="text-align: center; width: 80px;">
+                                    <i class="fas fa-cocktail" style="font-size: 2.4rem; margin-bottom: 10px; color: #FF2A6D;"></i>
+                                    <div style="font-size: 1.2rem;">cocktail</div>
+                                </div>
+                                <div style="text-align: center; width: 80px;">
+                                    <i class="fas fa-music" style="font-size: 2.4rem; margin-bottom: 10px; color: #FF2A6D;"></i>
+                                    <div style="font-size: 1.2rem;">music</div>
+                                </div>
+                                <div style="text-align: center; width: 80px;">
+                                    <i class="fas fa-star" style="font-size: 2.4rem; margin-bottom: 10px; color: #FF2A6D;"></i>
+                                    <div style="font-size: 1.2rem;">star</div>
+                                </div>
+                                <div style="text-align: center; width: 80px;">
+                                    <i class="fas fa-trophy" style="font-size: 2.4rem; margin-bottom: 10px; color: #FF2A6D;"></i>
+                                    <div style="font-size: 1.2rem;">trophy</div>
+                                </div>
+                                <div style="text-align: center; width: 80px;">
+                                    <i class="fas fa-globe-americas" style="font-size: 2.4rem; margin-bottom: 10px; color: #FF2A6D;"></i>
+                                    <div style="font-size: 1.2rem;">globe-americas</div>
+                                </div>
+                                <div style="text-align: center; width: 80px;">
+                                    <i class="fas fa-envelope" style="font-size: 2.4rem; margin-bottom: 10px; color: #FF2A6D;"></i>
+                                    <div style="font-size: 1.2rem;">envelope</div>
+                                </div>
+                                <div style="text-align: center; width: 80px;">
+                                    <i class="fas fa-phone" style="font-size: 2.4rem; margin-bottom: 10px; color: #FF2A6D;"></i>
+                                    <div style="font-size: 1.2rem;">phone</div>
+                                </div>
+                            </div>
+                            <div class="component-description">
+                                <p>These icons are commonly used throughout the website. Always use the appropriate icon that clearly communicates its purpose.</p>
+                            </div>
+                        </div>
+                        
+                        <h3>Social Media Icons</h3>
+                        <div class="component-showcase">
+                            <div class="component-example" style="display: flex; flex-wrap: wrap; gap: 20px;">
+                                <div style="text-align: center; width: 80px;">
+                                    <i class="fab fa-facebook-f" style="font-size: 2.4rem; margin-bottom: 10px; color: #05D9E8;"></i>
+                                    <div style="font-size: 1.2rem;">facebook-f</div>
+                                </div>
+                                <div style="text-align: center; width: 80px;">
+                                    <i class="fab fa-instagram" style="font-size: 2.4rem; margin-bottom: 10px; color: #05D9E8;"></i>
+                                    <div style="font-size: 1.2rem;">instagram</div>
+                                </div>
+                                <div style="text-align: center; width: 80px;">
+                                    <i class="fab fa-twitter" style="font-size: 2.4rem; margin-bottom: 10px; color: #05D9E8;"></i>
+                                    <div style="font-size: 1.2rem;">twitter</div>
+                                </div>
+                                <div style="text-align: center; width: 80px;">
+                                    <i class="fab fa-pinterest" style="font-size: 2.4rem; margin-bottom: 10px; color: #05D9E8;"></i>
+                                    <div style="font-size: 1.2rem;">pinterest</div>
+                                </div>
+                                <div style="text-align: center; width: 80px;">
+                                    <i class="fab fa-youtube" style="font-size: 2.4rem; margin-bottom: 10px; color: #05D9E8;"></i>
+                                    <div style="font-size: 1.2rem;">youtube</div>
+                                </div>
+                                <div style="text-align: center; width: 80px;">
+                                    <i class="fab fa-tiktok" style="font-size: 2.4rem; margin-bottom: 10px; color: #05D9E8;"></i>
+                                    <div style="font-size: 1.2rem;">tiktok</div>
+                                </div>
+                            </div>
+                            <div class="component-description">
+                                <p>Social media icons are used consistently across the site to link to our social media profiles.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Other sections would go here (Images, Spacing, Animations, Accessibility) -->
+                    <div id="images" class="style-guide-section">
+                        <h2>Image Guidelines</h2>
+                        <p>Images play a crucial role in conveying the premium and vibrant nature of The BigCane brand. Follow these guidelines to ensure consistent image usage.</p>
+                        
+                        <h3>Product Photography</h3>
+                        <div class="component-showcase">
+                            <div class="component-example">
+                                <div class="image-showcase">
+                                    <div class="image-item">
+                                        <img src="assets/images/silver-rum-placeholder.png" alt="Silver Rum Product Shot">
+                                        <div class="image-caption">Product on transparent background</div>
+                                    </div>
+                                    <div class="image-item">
+                                        <img src="assets/images/product-photo1.png" alt="Product Lifestyle Shot">
+                                        <div class="image-caption">Lifestyle product shot</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="component-description">
+                                <p>Product photography should showcase products clearly on transparent backgrounds or in lifestyle settings that emphasize the premium nightclub aesthetic.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="spacing" class="style-guide-section">
+                        <h2>Spacing</h2>
+                        <p>Consistent spacing creates visual rhythm and improves readability. We use a consistent spacing system throughout the site.</p>
+                        
+                        <h3>Spacing Scale</h3>
+                        <div class="component-showcase">
+                            <div class="component-example">
+                                <div style="display: flex; flex-direction: column; gap: 20px;">
+                                    <div style="display: flex; align-items: center;">
+                                        <div style="width: 100px; flex-shrink: 0;">XS (0.5rem)</div>
+                                        <div style="height: 20px; width: 8px; background: #FF2A6D;"></div>
+                                    </div>
+                                    <div style="display: flex; align-items: center;">
+                                        <div style="width: 100px; flex-shrink: 0;">SM (1rem)</div>
+                                        <div style="height: 20px; width: 16px; background: #FF2A6D;"></div>
+                                    </div>
+                                    <div style="display: flex; align-items: center;">
+                                        <div style="width: 100px; flex-shrink: 0;">MD (2rem)</div>
+                                        <div style="height: 20px; width: 32px; background: #FF2A6D;"></div>
+                                    </div>
+                                    <div style="display: flex; align-items: center;">
+                                        <div style="width: 100px; flex-shrink: 0;">LG (3rem)</div>
+                                        <div style="height: 20px; width: 48px; background: #FF2A6D;"></div>
+                                    </div>
+                                    <div style="display: flex; align-items: center;">
+                                        <div style="width: 100px; flex-shrink: 0;">XL (4rem)</div>
+                                        <div style="height: 20px; width: 64px; background: #FF2A6D;"></div>
+                                    </div>
+                                    <div style="display: flex; align-items: center;">
+                                        <div style="width: 100px; flex-shrink: 0;">XXL (6rem)</div>
+                                        <div style="height: 20px; width: 96px; background: #FF2A6D;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="component-description">
+                                <p>Our spacing system uses a consistent scale to create visual harmony throughout the website. Use these values for margins, padding, and gaps.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="animations" class="style-guide-section">
+                        <h2>Animations</h2>
+                        <p>Animations add life and energy to the website, reinforcing the vibrant nightclub aesthetic of the brand. Use animations purposefully to enhance the user experience.</p>
+                        
+                        <h3>Hover Effects</h3>
+                        <div class="component-showcase">
+                            <div class="component-example" style="display: flex; flex-wrap: wrap; gap: 20px;">
+                                <button class="button glow-pulse">Glow Pulse</button>
+                                <button class="button button--secondary glow-on-hover">Glow on Hover</button>
+                            </div>
+                            <div class="component-description">
+                                <p>Hover effects provide immediate feedback to users and enhance interactivity. Use them consistently on buttons and interactive elements.</p>
+                            </div>
+                        </div>
+                        
+                        <h3>Scroll Animations</h3>
+                        <div class="component-showcase">
+                            <div class="component-description">
+                                <p>Elements can animate into view as users scroll down the page. Common animations include:</p>
+                                <ul>
+                                    <li><code>reveal-from-bottom</code> - Element fades in while moving up</li>
+                                    <li><code>reveal-from-left</code> - Element fades in while moving right</li>
+                                    <li><code>reveal-from-right</code> - Element fades in while moving left</li>
+                                    <li><code>fade-in</code> - Element simply fades in without movement</li>
+                                </ul>
+                                <p>Scroll animations should be subtle and enhance the content rather than distract from it.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="accessibility" class="style-guide-section">
+                        <h2>Accessibility</h2>
+                        <p>Making our website accessible to all users is a priority. Follow these guidelines to ensure the site is usable by people with various disabilities.</p>
+                        
+                        <h3>Text and Color</h3>
+                        <ul>
+                            <li>Maintain a minimum contrast ratio of 4.5:1 for normal text and 3:1 for large text.</li>
+                            <li>Don't rely solely on color to convey information.</li>
+                            <li>Use proper heading hierarchy (h1, h2, h3, etc.).</li>
+                        </ul>
+                        
+                        <h3>Images and Media</h3>
+                        <ul>
+                            <li>Provide alternative text for all images using the alt attribute.</li>
+                            <li>Use descriptive text that conveys the image's purpose and content.</li>
+                            <li>For decorative images, use empty alt attributes (alt="").</li>
+                        </ul>
+                        
+                        <h3>Forms and Controls</h3>
+                        <ul>
+                            <li>Label all form fields with descriptive text.</li>
+                            <li>Ensure all interactive elements are keyboard accessible.</li>
+                            <li>Provide clear error messages for form validation.</li>
+                        </ul>
+                        
+                        <h3>ARIA Attributes</h3>
+                        <ul>
+                            <li>Use ARIA landmarks to identify regions of the page.</li>
+                            <li>Add aria-label or aria-labelledby to elements without visible text.</li>
+                            <li>Use aria-expanded, aria-hidden, and other ARIA attributes appropriately.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer__glow"></div>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer__info">
+                    <div class="footer__logo">
+                        <img src="assets/images/big-cane-logo.png" alt="The Big Cane Logo" class="footer__logo-image">
+                    </div>
+                    <p class="footer__about">Crafting premium Caribbean spirits that capture the essence of island luxury and celebration. Every bottle tells a story of passion, rhythm, and craftsmanship.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__nav">
+                    <h3 class="footer__title">Navigation</h3>
+                    <ul>
+                        <li><a href="index.html#products">Products</a></li>
+                        <li><a href="index.html#founder">Our Story</a></li>
+                        <li><a href="index.html#cocktails">Cocktails</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="other-businesses.html">Ventures</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__products">
+                    <h3 class="footer__title">Our Products</h3>
+                    <ul>
+                        <li><a href="products/silver-rum.html">Silver Rum</a></li>
+                        <li><a href="products/london-gin.html">London Dry Gin</a></li>
+                        <li><a href="products/guava-rum.html">Guava Rum</a></li>
+                        <li><a href="products/spiced-rum.html">Spiced Rum</a></li>
+                        <li><a href="products/limited-editions.html">Limited Editions</a></li>
+                        <li><a href="products/gift-sets.html">Gift Sets</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contact">
+                    <h3 class="footer__title">Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Caribbean House, Port of Spain, Trinidad</li>
+                        <li><i class="fas fa-phone"></i> +1 (868) 555-1234</li>
+                        <li><i class="fas fa-envelope"></i> info@thebigcane.com</li>
+                    </ul>
+                    <div class="footer__hours">
+                        <h4 class="footer__subtitle">Distillery Tours</h4>
+                        <p>Monday - Friday: 10am - 6pm</p>
+                        <p>Saturday: 12pm - 5pm</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 The BigCane. All Rights Reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="cookie-policy.html">Cookie Policy</a> | <a href="terms-of-service.html">Terms of Service</a></p>
+                <p class="footer__disclaimer">Please drink responsibly. Must be 21 or older to purchase.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/components/security/security.js" defer></script>
+    <script src="js/components/cookie-consent.js" defer></script>
+    <script src="js/components/scroll-to-top.js" defer></script>
+    <script src="js/components/performance-optimizer.js" defer></script>
+    <script src="js/components/accessibility.js" defer></script>
+    <script src="js/components/page-transitions.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script>
+        // Simple script to handle the sidebar navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all sidebar links
+            const sidebarLinks = document.querySelectorAll('.sidebar a');
+            
+            // Add click event listener to each link
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Remove active class from all links
+                    sidebarLinks.forEach(l => l.classList.remove('active'));
+                    
+                    // Add active class to the clicked link
+                    this.classList.add('active');
+                });
+            });
+            
+            // Highlight the active section on scroll
+            const sections = document.querySelectorAll('.style-guide-section');
+            
+            window.addEventListener('scroll', function() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                sidebarLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

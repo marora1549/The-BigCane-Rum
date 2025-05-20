@@ -29,6 +29,12 @@
     <noscript><link rel="stylesheet" href="css/components/hero-island-vibe.css"></noscript>
     <link rel="preload" href="css/responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="css/responsive.css"></noscript>
+    <link rel="preload" href="css/components/responsive-fixes.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/components/responsive-fixes.css"></noscript>
+    
+    <!-- Accessibility Styles -->
+    <link rel="preload" href="css/components/accessibility/accessibility.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/components/accessibility/accessibility.css"></noscript>
     
     <!-- Font Awesome with preload -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
@@ -52,6 +58,142 @@
     <meta property="og:url" content="https://thebigcane.com">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Schema.org Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "The BigCane",
+        "alternateName": "The Big Cane Rum",
+        "url": "https://thebigcane.com",
+        "logo": "https://thebigcane.com/assets/images/big-cane-logo.png",
+        "sameAs": [
+            "https://www.facebook.com/thebigcane",
+            "https://www.instagram.com/thebigcanerum",
+            "https://twitter.com/thebigcane",
+            "https://pinterest.com/thebigcanerum"
+        ],
+        "description": "Premium Caribbean spirits with a vibrant nightclub aesthetic, crafted for luxury celebrations and unforgettable experiences.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Caribbean House",
+            "addressLocality": "Port of Spain",
+            "addressRegion": "Trinidad",
+            "addressCountry": "TT"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-868-555-1234",
+            "contactType": "customer service",
+            "email": "info@thebigcane.com",
+            "availableLanguage": ["English", "Spanish"]
+        },
+        "foundingDate": "2015",
+        "founder": {
+            "@type": "Person",
+            "name": "Sunil Gehani"
+        }
+    }
+    </script>
+    
+    <!-- Product Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "Product",
+                    "name": "Silver Rum",
+                    "description": "Crisp, clear, with notes of tropical fruit and a hint of vanilla. The perfect foundation for your cocktail creations.",
+                    "image": "https://thebigcane.com/assets/images/silver-rum-placeholder.png",
+                    "sku": "TBC-SILVER-750",
+                    "brand": {
+                        "@type": "Brand",
+                        "name": "The BigCane"
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "url": "https://thebigcane.com/products/silver-rum.html",
+                        "price": "39.99",
+                        "priceCurrency": "USD",
+                        "availability": "https://schema.org/InStock"
+                    }
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@type": "Product",
+                    "name": "London Dry Gin",
+                    "description": "Bold botanical notes with Caribbean botanicals creating an unexpected twist on a classic London Dry.",
+                    "image": "https://thebigcane.com/assets/images/london-gin-placeholder.png",
+                    "sku": "TBC-LONGIN-750",
+                    "brand": {
+                        "@type": "Brand",
+                        "name": "The BigCane"
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "url": "https://thebigcane.com/products/london-gin.html",
+                        "price": "42.99",
+                        "priceCurrency": "USD",
+                        "availability": "https://schema.org/InStock"
+                    }
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@type": "Product",
+                    "name": "Guava Rum",
+                    "description": "Luscious tropical guava infused with our premium rum, creating a balanced sweet and tangy flavor explosion.",
+                    "image": "https://thebigcane.com/assets/images/guava-rum-placeholder.png",
+                    "sku": "TBC-GUAVA-750",
+                    "brand": {
+                        "@type": "Brand",
+                        "name": "The BigCane"
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "url": "https://thebigcane.com/products/guava-rum.html",
+                        "price": "44.99",
+                        "priceCurrency": "USD",
+                        "availability": "https://schema.org/InStock"
+                    }
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "item": {
+                    "@type": "Product",
+                    "name": "Spiced Rum",
+                    "description": "Warm cinnamon, nutmeg, and island spices blend with rich caramel notes for a complex, sophisticated sipping experience.",
+                    "image": "https://thebigcane.com/assets/images/spiced-rum-placeholder.png",
+                    "sku": "TBC-SPICED-750",
+                    "brand": {
+                        "@type": "Brand",
+                        "name": "The BigCane"
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "url": "https://thebigcane.com/products/spiced-rum.html",
+                        "price": "46.99",
+                        "priceCurrency": "USD",
+                        "availability": "https://schema.org/InStock"
+                    }
+                }
+            }
+        ]
+    }
+    </script>
 
 </head>
 <body>
@@ -220,6 +362,9 @@
                 <p class="section-subtitle reveal-from-bottom">Discover our range of premium spirits crafted for unforgettable celebrations</p>
             </div>
             
+            <!-- Product Filter -->
+            <div class="product-filter reveal-from-bottom"></div>
+            
             <div class="products__container">
                 <div class="products__controls">
                     <button class="products__arrow products__arrow--prev">
@@ -232,7 +377,7 @@
                 
                 <div class="products__list">
                     <!-- Silver Rum -->
-                    <article class="product-card tilt-card">
+                    <article class="product-card tilt-card" data-type="rum" data-category="silver">
                         <div class="tilt-card__content">
                             <div class="product-card__labels">
                                 <span class="product-label product-label--bestseller">Bestseller</span>
@@ -261,7 +406,7 @@
                     </article>
 
                     <!-- London Dry Gin -->
-                    <article class="product-card tilt-card">
+                    <article class="product-card tilt-card" data-type="gin" data-category="london">
                         <div class="tilt-card__content">
                             <div class="product-card__labels">
                                 <span class="product-label product-label--new">New</span>
@@ -290,7 +435,7 @@
                     </article>
 
                     <!-- Guava Rum -->
-                    <article class="product-card tilt-card">
+                    <article class="product-card tilt-card" data-type="rum" data-category="flavored">
                         <div class="tilt-card__content">
                             <div class="product-card__labels">
                                 <span class="product-label product-label--limited">Limited</span>
@@ -1075,6 +1220,7 @@
     <script src="js/components/cookie-consent.js" defer></script>
     <script src="js/components/scroll-to-top.js" defer></script>
     <script src="js/components/performance-optimizer.js" defer></script>
+    <script src="js/components/accessibility.js" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/animations.js" defer></script>
     <script src="js/components/mobile-nav.js" defer></script>

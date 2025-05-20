@@ -1,0 +1,228 @@
+/* 
+ * The Big Cane - Accessibility CSS
+ * This file contains styles to improve website accessibility
+ */
+
+/* Skip to Content Link - Hidden but becomes visible on focus */
+.skip-to-content {
+    position: absolute;
+    top: -50px;
+    left: 10px;
+    z-index: 9999;
+    background: #FF2A6D;
+    color: white;
+    padding: 12px 20px;
+    font-weight: 700;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: top 0.3s ease;
+    text-decoration: none;
+}
+
+.skip-to-content:focus {
+    top: 0;
+    outline: none;
+}
+
+/* High Contrast Text Mode */
+.high-contrast {
+    --primary-color: #FFFFFF;
+    --accent-color: #FFFF00;
+    --background-dark: #000000;
+    --text-color: #FFFFFF;
+}
+
+.high-contrast .site-header,
+.high-contrast .site-footer,
+.high-contrast .hero,
+.high-contrast section {
+    background: var(--background-dark) !important;
+}
+
+.high-contrast h1, 
+.high-contrast h2, 
+.high-contrast h3, 
+.high-contrast h4,
+.high-contrast p,
+.high-contrast a,
+.high-contrast li,
+.high-contrast span,
+.high-contrast button {
+    color: var(--text-color) !important;
+}
+
+.high-contrast a:hover,
+.high-contrast button:hover,
+.high-contrast .active {
+    color: var(--accent-color) !important;
+}
+
+.high-contrast .button {
+    background: transparent !important;
+    border: 2px solid var(--primary-color) !important;
+}
+
+.high-contrast .button:hover {
+    background: var(--primary-color) !important;
+    color: var(--background-dark) !important;
+}
+
+/* Focus Styles */
+a:focus, 
+button:focus, 
+input:focus, 
+select:focus, 
+textarea:focus {
+    outline: 3px solid #FF2A6D !important;
+    outline-offset: 3px !important;
+}
+
+/* Text Size Controls */
+.text-size-controls {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    z-index: 900;
+    background: rgba(10, 10, 30, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.text-size-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.text-size-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.text-size-btn:focus {
+    outline: 2px solid #FF2A6D;
+}
+
+/* Text Size Classes */
+body.text-size-larger {
+    --base-font-size: 18px;
+}
+
+body.text-size-largest {
+    --base-font-size: 20px;
+}
+
+body.text-size-larger p,
+body.text-size-largest p,
+body.text-size-larger li,
+body.text-size-largest li {
+    line-height: 1.6;
+}
+
+/* Enhanced Keyboard Navigation */
+.keyboard-nav-indicator {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(5, 217, 232, 0.8);
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-size: 14px;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.keyboard-nav-indicator i {
+    margin-right: 8px;
+}
+
+body.keyboard-navigation .keyboard-nav-indicator {
+    display: flex;
+}
+
+/* ARIA Live Region for Screen Readers */
+.sr-announcements {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Visible Focus for Interactive Elements */
+.interactive-visible-focus:focus {
+    outline: 3px solid #FF2A6D !important;
+    outline-offset: 3px !important;
+    text-decoration: underline;
+}
+
+/* Focus within for form elements */
+.form-group:focus-within label {
+    color: #FF2A6D;
+}
+
+/* Improved form field accessibility */
+input, textarea, select {
+    padding: 15px !important;
+    font-size: 16px !important; /* Prevents iOS zoom on focus */
+}
+
+/* Screen reader only text */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Adjusts contrast and readability for all text */
+.enhanced-contrast p, 
+.enhanced-contrast li,
+.enhanced-contrast label {
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.02em;
+}
+
+/* Reduce motion for users with vestibular disorders */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.001s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001s !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .parallax-effect,
+    .floating-light,
+    .particles,
+    .scroll-indicator {
+        display: none !important;
+    }
+}

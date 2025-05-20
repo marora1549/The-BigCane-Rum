@@ -1,0 +1,311 @@
+/* Mobile-specific fixes for navigation */
+@media screen and (max-width: 767px) {
+  /* Fix mobile hamburger menu behavior */
+  .nav-toggle {
+    display: block;
+    z-index: 1000;
+  }
+  
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 85%;
+    max-width: 320px;
+    height: 100vh;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 99;
+    padding: 8rem 2.5rem 2.5rem;
+    transition: right 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    overflow-y: auto;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  .main-nav.active {
+    right: 0;
+  }
+  
+  /* Ensure the body doesn't scroll when menu is open */
+  body.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Better styling for mobile menu items */
+  .main-nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .main-nav ul li {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .main-nav ul li a {
+    display: block;
+    width: 100%;
+    padding: 1.5rem 0;
+    font-size: 1.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .main-nav ul li a:hover {
+    color: var(--neon-pink);
+    transform: translateX(5px);
+  }
+  
+  /* Hamburger menu animation */
+  .nav-toggle.active .nav-toggle__icon {
+    background-color: transparent;
+  }
+  
+  .nav-toggle.active .nav-toggle__icon::before {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .nav-toggle.active .nav-toggle__icon::after {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+  /* Mobile hero section adjustments */
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 12rem 0 6rem;
+  }
+  
+  .hero__content-container {
+    flex-direction: column;
+  }
+  
+  .hero__text-content {
+    width: 100%;
+    text-align: center;
+    padding: 0 2rem;
+    margin-bottom: 4rem;
+  }
+  
+  .hero__image-content {
+    position: relative !important;
+    width: 100% !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    padding: 0 2rem;
+  }
+  
+  .hero__products-image {
+    width: 100% !important;
+    max-width: 350px !important;
+    margin: 0 auto !important;
+    display: block !important;
+    transform: none !important;
+  }
+  
+  .hero__social-icons {
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  /* Featured product section on mobile */
+  .featured-product__content {
+    flex-direction: column;
+  }
+  
+  .featured-product__imagery, 
+  .featured-product__info {
+    width: 100%;
+  }
+  
+  .featured-product__image {
+    max-width: 250px;
+    margin: 0 auto 3rem;
+    display: block;
+  }
+  
+  /* Fix product cards display on mobile */
+  .products__list {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 2rem 0;
+    margin: 0 -2rem;
+    padding: 2rem;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .product-card {
+    flex: 0 0 85%;
+    margin-right: 2rem;
+    scroll-snap-align: start;
+  }
+  
+  /* Social showcase section mobile fixes */
+  .social-showcase__content {
+    flex-direction: column;
+  }
+  
+  .social-showcase__text,
+  .social-showcase__carousel {
+    width: 100%;
+  }
+  
+  .social-showcase__text {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .social-icons {
+    justify-content: center;
+  }
+  
+  /* Experience section mobile fixes */
+  .experience__showcase {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  /* Founder section mobile fixes */
+  .founder__container {
+    flex-direction: column;
+  }
+  
+  .founder__image-container,
+  .founder__content {
+    width: 100%;
+  }
+  
+  .founder__image-container {
+    margin-bottom: 4rem;
+  }
+  
+  .founder__image {
+    max-width: 250px;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  /* CTA section mobile fixes */
+  .cta__cards {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 2rem 0;
+    margin: 0 -2rem;
+    padding: 2rem;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .cocktail-card {
+    flex: 0 0 85%;
+    margin-right: 2rem;
+    scroll-snap-align: start;
+  }
+  
+  /* Blog section mobile fixes */
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  /* Instagram grid mobile fixes */
+  .instagram__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  /* Newsletter section mobile fixes */
+  .newsletter__form-group {
+    flex-direction: column;
+  }
+  
+  .newsletter__input,
+  .newsletter__button {
+    width: 100%;
+  }
+  
+  .newsletter__input {
+    margin-bottom: 1rem;
+  }
+  
+  /* Footer mobile fixes */
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  /* Modal mobile fixes */
+  .age-modal__content {
+    width: 90%;
+    max-width: 400px;
+    padding: 3rem 2rem;
+  }
+  
+  .age-modal__buttons {
+    flex-direction: column;
+  }
+  
+  .age-modal__button--yes,
+  .age-modal__button--no {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+  
+  /* Recipe modal mobile fixes */
+  .recipe-modal__content {
+    width: 95%;
+    padding: 15px;
+    max-height: 95vh;
+  }
+  
+  .recipe-modal__body {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Small mobile phones (479px and below) */
+@media screen and (max-width: 479px) {
+  /* Further reduce spacing */
+  .section {
+    padding: 4rem 0;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  /* Typography adjustments */
+  .hero__title {
+    font-size: 3.2rem;
+  }
+  
+  .hero__subtitle {
+    font-size: 1.6rem;
+  }
+  
+  .section-title {
+    font-size: 2.8rem;
+  }
+  
+  /* Adjust cards for smallest screens */
+  .product-card, 
+  .cocktail-card {
+    flex: 0 0 90%;
+  }
+  
+  /* Instagram grid goes to single column on smallest screens */
+  .instagram__grid {
+    grid-template-columns: 1fr;
+  }
+}
