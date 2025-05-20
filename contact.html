@@ -19,7 +19,27 @@
     <noscript><link rel="stylesheet" href="css/animations.css"></noscript>
     <link rel="preload" href="css/pages/contact.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="css/pages/contact.css"></noscript>
+    <!-- FAQ fixes -->
+    <link rel="stylesheet" href="css/components/faq-fixes.css">
     
+    <!-- Inline styles for FAQ answers visibility -->
+    <style>
+        .faq-answer {
+            background-color: rgba(26, 11, 46, 0.8) !important;
+        }
+        .faq-answer p {
+            color: #ffffff !important;
+            font-size: 16px !important;
+            visibility: visible !important;
+            display: block !important;
+        }
+        .faq-item.active .faq-answer {
+            display: block !important;
+            height: auto !important;
+            padding: 20px !important;
+            opacity: 1 !important;
+        }
+    </style>
     <!-- Font Awesome with preload -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -42,6 +62,8 @@
     <meta property="og:url" content="https://thebigcane.com/contact.html">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
+    <!-- Global animation fixes -->
+    <link rel="stylesheet" href="/css/components/animation-fixes.css">
 </head>
 <body>
     <!-- Preloader -->
@@ -213,23 +235,6 @@
         </div>
     </section>
 
-    <!-- Map Section -->
-    <section class="map-section section">
-        <div class="map-container">
-            <div class="map-overlay">
-                <div class="map-info reveal-from-bottom">
-                    <h3 class="map-info__title">Our Location</h3>
-                    <p class="map-info__address">Caribbean House<br>Frederick Street<br>Port of Spain, Trinidad</p>
-                    <a href="#" class="button button--small">Get Directions</a>
-                </div>
-            </div>
-            <div class="map">
-                <!-- Map placeholder - Replace with actual interactive map in production -->
-                <img src="assets/images/map-placeholder.jpg" alt="The BigCane Location Map" class="map-image">
-            </div>
-        </div>
-    </section>
-
     <!-- Newsletter Section -->
     <section class="newsletter section">
         <div class="newsletter__background">
@@ -352,83 +357,63 @@
     <script src="js/components/performance-optimizer.js" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/animations.js" defer></script>
-    <script src="js/pages/contact.js" defer></script>
-
+    <script src="js/pages/contact-simple.js" defer></script>
+    
+    <!-- Immediate fix for FAQ visibility -->
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Fix FAQ accordion
-        const faqItems = document.querySelectorAll('.faq-item');
-        
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            const answer = item.querySelector('.faq-answer');
-            const icon = item.querySelector('.faq-icon i');
+        // This script runs immediately to fix FAQ visibility
+        document.addEventListener('DOMContentLoaded', function() {
+            // Force FAQ styling
+            var style = document.createElement('style');
+            style.textContent = `
+                .faq-answer { 
+                    background-color: rgba(26, 11, 46, 0.8) !important; 
+                    padding: 20px !important;
+                }
+                .faq-answer p { 
+                    color: white !important; 
+                    display: block !important;
+                    visibility: visible !important;
+                }
+                .faq-item.active .faq-answer {
+                    display: block !important;
+                }
+            `;
+            document.head.appendChild(style);
             
-            // Set initial state for answers to be display: none with proper styling
-            answer.style.display = 'none';
-            answer.style.maxHeight = '0';
-            answer.style.opacity = '0';
-            answer.style.padding = '0 20px';
-            
-            question.addEventListener('click', function() {
-                // Toggle active class
-                const isActive = item.classList.contains('active');
+            // Direct DOM manipulation for FAQ items
+            var faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(function(item) {
+                var question = item.querySelector('.faq-question');
+                var answer = item.querySelector('.faq-answer');
                 
-                // Close all FAQ items first
-                faqItems.forEach(faqItem => {
-                    faqItem.classList.remove('active');
-                    const faqAnswer = faqItem.querySelector('.faq-answer');
-                    const faqIcon = faqItem.querySelector('.faq-icon i');
+                if (question && answer) {
+                    // Ensure answer is initially hidden
+                    answer.style.display = 'none';
                     
-                    faqAnswer.style.display = 'none';
-                    faqAnswer.style.maxHeight = '0';
-                    faqAnswer.style.opacity = '0';
-                    faqAnswer.style.padding = '0 20px';
-                    faqIcon.className = 'fas fa-plus';
-                });
-                
-                // If this item wasn't active, make it active
-                if (!isActive) {
-                    item.classList.add('active');
-                    answer.style.display = 'block';
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
-                    answer.style.opacity = '1';
-                    answer.style.padding = '20px';
-                    icon.className = 'fas fa-minus';
+                    // Add click handler directly
+                    question.onclick = function() {
+                        // Close all other items
+                        faqItems.forEach(function(otherItem) {
+                            if (otherItem !== item) {
+                                otherItem.classList.remove('active');
+                                var otherAnswer = otherItem.querySelector('.faq-answer');
+                                if (otherAnswer) otherAnswer.style.display = 'none';
+                            }
+                        });
+                        
+                        // Toggle this item
+                        if (item.classList.contains('active')) {
+                            item.classList.remove('active');
+                            answer.style.display = 'none';
+                        } else {
+                            item.classList.add('active');
+                            answer.style.display = 'block';
+                        }
+                    };
                 }
             });
         });
-        
-        // Newsletter form security
-        const newsletterForm = document.getElementById('newsletterForm');
-        if (newsletterForm) {
-            // Set form submission handling
-            newsletterForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const emailInput = document.getElementById('newsletterEmail');
-                const response = document.getElementById('newsletterResponse');
-                
-                // Validate email
-                if (!BigCaneSecurity.validateEmail(emailInput.value)) {
-                    response.textContent = 'Please enter a valid email address.';
-                    response.className = 'form-response error';
-                    return;
-                }
-                
-                // Sanitize input
-                emailInput.value = BigCaneSecurity.sanitizeInput(emailInput.value);
-                
-                // In a real implementation, you would send the form data to a server
-                // For now, we'll just simulate a successful submission
-                response.textContent = 'Thank you for subscribing! You will receive a confirmation email shortly.';
-                response.className = 'form-response success';
-                
-                // Clear the form
-                emailInput.value = '';
-            });
-        }
-    });
     </script>
 </body>
 </html>

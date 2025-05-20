@@ -1,0 +1,19 @@
+/* Global fix to remove all glow-pulse animations from buttons */
+.button.glow-pulse,
+a.button.glow-pulse,
+.glow-pulse {
+    /* Disable the animation */
+    animation: none !important;
+    
+    /* Add a static glow effect instead */
+    box-shadow: 0 0 10px rgba(255, 42, 109, 0.3) !important;
+    transition: transform 0.3s ease, background-color 0.3s ease !important;
+}
+
+/* Add a nice hover effect instead */
+.button.glow-pulse:hover,
+a.button.glow-pulse:hover,
+.glow-pulse:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 14px rgba(255, 42, 109, 0.4) !important;
+}

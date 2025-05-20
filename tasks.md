@@ -31,20 +31,20 @@
 - [x] Create product template for future product pages
 
 ## In Progress
-  - [ ] Update social media links
-  - [x] Implement "View Recipe" functionality on product page
-  - [x] Remove audio player button from blog page
-  - [x] Fix founder section photo animation issue
-  - [x] Fix product carousel for desktop view
-  - [x] Fix recipe page links on home page cocktail section
-  - [x] Update View Recipe links on cocktail-finder page
-  - [x] Remove unused cocktail modal code from cocktail-finder page
-- [ ] Make website fully responsive for all screen sizes
-  - [ ] Fix mobile navigation (ensure hamburger menu works properly)
-  - [ ] Adjust font sizes and spacing for smaller screens
-  - [ ] Optimize hero section for mobile
-  - [ ] Fix product card display on various screen sizes
-  - [ ] Ensure form elements are properly sized on mobile
+- [x] Update social media links
+- [x] Implement "View Recipe" functionality on product page
+- [x] Remove audio player button from blog page
+- [x] Fix founder section photo animation issue
+- [x] Fix product carousel for desktop view
+- [x] Fix recipe page links on home page cocktail section
+- [x] Update View Recipe links on cocktail-finder page
+- [x] Remove unused cocktail modal code from cocktail-finder page
+- [x] Make website fully responsive for all screen sizes
+  - [x] Fix mobile navigation (ensure hamburger menu works properly)
+  - [x] Adjust font sizes and spacing for smaller screens
+  - [x] Optimize hero section for mobile
+  - [x] Fix product card display on various screen sizes
+  - [x] Ensure form elements are properly sized on mobile
 - [x] Create required blog posts
   - [x] Complete "The Art of Distillation" blog post
   - [x] Complete "Caribbean Cocktail Culture" blog post

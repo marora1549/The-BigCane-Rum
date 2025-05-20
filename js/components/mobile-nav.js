@@ -51,6 +51,19 @@
             const navOverlay = document.createElement('div');
             navOverlay.className = 'nav-overlay';
             navOverlay.setAttribute('aria-hidden', 'true');
+            
+            // Add styles to the overlay
+            navOverlay.style.position = 'fixed';
+            navOverlay.style.top = '0';
+            navOverlay.style.left = '0';
+            navOverlay.style.width = '100%';
+            navOverlay.style.height = '100%';
+            navOverlay.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            navOverlay.style.zIndex = '90';
+            navOverlay.style.opacity = '0';
+            navOverlay.style.visibility = 'hidden';
+            navOverlay.style.transition = 'opacity 0.4s ease, visibility 0.4s ease';
+            
             document.body.appendChild(navOverlay);
         }
     }
@@ -124,6 +137,10 @@
     function openNavigation(navToggle, mainNav, navOverlay) {
         navToggle.classList.add('active');
         mainNav.classList.add('active');
+        
+        // Make overlay visible
+        navOverlay.style.opacity = '1';
+        navOverlay.style.visibility = 'visible';
         navOverlay.classList.add('active');
         
         navToggle.setAttribute('aria-expanded', 'true');
@@ -150,6 +167,10 @@
     function closeNavigation(navToggle, mainNav, navOverlay) {
         navToggle.classList.remove('active');
         mainNav.classList.remove('active');
+        
+        // Hide overlay
+        navOverlay.style.opacity = '0';
+        navOverlay.style.visibility = 'hidden';
         navOverlay.classList.remove('active');
         
         navToggle.setAttribute('aria-expanded', 'false');

@@ -1,0 +1,5 @@
+/* Custom override for the Discover More button to remove pulsating animation */
+.featured-product__actions .button.glow-pulse {
+    animation: none;
+    box-shadow: 0 0 10px rgba(255, 42, 109, 0.3); /* Keep a static glow effect instead */
+}
