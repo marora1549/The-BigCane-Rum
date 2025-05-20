@@ -60,7 +60,7 @@
   - [x] Remove audio references from other pages
 
 ## To Do
-- [x] Add performance optimizations
+- [ ] Add performance optimizations
   - [x] Optimize images for faster loading
   - [x] Add lazy loading for images
   - [x] Minify CSS and JavaScript files
@@ -70,22 +70,10 @@
   - [x] Validate form inputs and sanitize user data
   - [x] Add HTTPS-only cookies
   - [x] Create a security.js file for common security functions
-- [ ] Implement smooth page transitions between all pages
-- [x] Enhance accessibility features
-  - [x] Add ARIA labels to interactive elements
-  - [x] Ensure proper color contrast
-  - [x] Add skip-to-content links
-  - [x] Improve keyboard navigation
-- [ ] Add language selector for internationalization
-- [x] Implement SEO optimizations
-  - [x] Create a sitemap.xml file
-  - [x] Add robots.txt file
-  - [x] Add schema.org structured data
-  - [x] Optimize meta descriptions
-- [ ] Create a style guide page
+- [x] Implement smooth page transitions between all pages
+- [x] Create a style guide page
 - [x] Add scroll-to-top button
 - [x] Implement cookie consent banner
-- [ ] Add product filtering on main page
 - [x] Improve responsive design for mobile devices
   - [x] Fix mobile navigation (ensure hamburger menu works properly)
   - [x] Adjust font sizes and spacing for smaller screens
