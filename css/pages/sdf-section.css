@@ -1,0 +1,275 @@
+/* Square Duty Free section */
+.square-duty-free-section {
+  background: linear-gradient(135deg, var(--night-blue), var(--deep-purple), var(--night-blue)) !important;
+  padding: 80px 0 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  margin-top: 50px !important;
+}
+
+.square-duty-free-section::before,
+.square-duty-free-section::after {
+  content: '' !important;
+  position: absolute !important;
+  width: 300px !important;
+  height: 300px !important;
+  border-radius: 50% !important;
+  filter: blur(40px) !important;
+  z-index: 0 !important;
+}
+
+.square-duty-free-section::before {
+  background: radial-gradient(circle, rgba(255,42,109,0.3) 0%, rgba(5,217,232,0) 70%) !important;
+  top: -100px !important;
+  right: 10% !important;
+}
+
+.square-duty-free-section::after {
+  background: radial-gradient(circle, rgba(5,217,232,0.3) 0%, rgba(5,217,232,0) 70%) !important;
+  bottom: -100px !important;
+  left: 15% !important;
+}
+
+.section-header {
+  text-align: center !important;
+  margin-bottom: 50px !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.sdf-logo {
+  width: 180px !important;
+  margin: 0 auto 20px !important;
+  display: block !important;
+}
+
+.section-title {
+  text-transform: uppercase !important;
+  font-size: 2.6rem !important;
+  margin-top: 10px !important;
+  background: linear-gradient(45deg, #4ca1af, #c4e0e5) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+.section-subtitle {
+  max-width: 800px !important;
+  margin: 0 auto !important;
+  color: #f0f0f0 !important;
+  font-size: 1.3rem !important;
+}
+
+.sdf-showcase {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 30px !important;
+  justify-content: center !important;
+  margin-bottom: 50px !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.sdf-badge {
+  position: absolute !important;
+  top: -30px !important;
+  right: -30px !important;
+  width: 120px !important;
+  height: 120px !important;
+  background-color: #ff2a6d !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  color: white !important;
+  font-weight: bold !important;
+  transform: rotate(12deg) !important;
+  box-shadow: 0 5px 15px rgba(255,42,109,0.4) !important;
+  z-index: 10 !important;
+}
+
+.sdf-badge span {
+  font-size: 0.8rem !important;
+  text-transform: uppercase !important;
+}
+
+.sdf-badge span:nth-child(3) {
+  font-size: 1.2rem !important;
+}
+
+.sdf-image {
+  flex: 1 !important;
+  min-width: 300px !important;
+  max-width: 500px !important;
+  background-image: url('../assets/images/landing-page.png') !important;
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  min-height: 400px !important;
+}
+
+.sdf-content {
+  flex: 1 !important;
+  min-width: 300px !important;
+}
+
+.sdf-section-title {
+  color: var(--electric-blue) !important;
+  font-size: 1.6rem !important;
+  margin-bottom: 20px !important;
+  border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+  padding-bottom: 10px !important;
+}
+
+.sdf-products-section {
+  margin-bottom: 30px !important;
+}
+
+.sdf-products {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
+  gap: 15px !important;
+}
+
+.sdf-product {
+  background: rgba(255,255,255,0.05) !important;
+  padding: 15px !important;
+  border-radius: 8px !important;
+  text-align: center !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+  border: 1px solid rgba(255,255,255,0.05) !important;
+}
+
+.sdf-product:hover {
+  transform: translateY(-5px) !important;
+  background: rgba(255,255,255,0.1) !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+}
+
+.sdf-product i, 
+.sdf-product svg {
+  font-size: 2rem !important;
+  color: var(--neon-pink) !important;
+  margin-bottom: 10px !important;
+  display: block !important;
+  margin: 0 auto 10px !important;
+}
+
+.sdf-product h4 {
+  font-size: 1rem !important;
+  text-transform: uppercase !important;
+  margin: 0 !important;
+}
+
+.sdf-locations {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
+  gap: 15px !important;
+}
+
+.sdf-location {
+  background: rgba(255,255,255,0.05) !important;
+  padding: 15px !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+  border: 1px solid rgba(255,255,255,0.05) !important;
+}
+
+.sdf-location:hover {
+  transform: translateY(-5px) !important;
+  background: rgba(255,255,255,0.1) !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+}
+
+.location-icon {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  background: var(--neon-pink) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-right: 15px !important;
+  flex-shrink: 0 !important;
+}
+
+.location-icon i {
+  color: white !important;
+}
+
+.sdf-location div:nth-child(2) h4 {
+  font-size: 1rem !important;
+  margin: 0 0 5px 0 !important;
+}
+
+.sdf-location div:nth-child(2) p {
+  margin: 0 !important;
+  opacity: 0.7 !important;
+  font-size: 0.9rem !important;
+}
+
+.sdf-cta {
+  margin-top: 30px !important;
+  text-align: center !important;
+}
+
+.sdf-cta p {
+  font-weight: bold !important;
+  font-size: 1.4rem !important;
+  color: var(--neon-pink) !important;
+  text-transform: uppercase !important;
+  margin-bottom: 15px !important;
+}
+
+.sdf-contact {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 20px !important;
+  margin-top: 20px !important;
+  flex-wrap: wrap !important;
+}
+
+.sdf-contact-item {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.sdf-contact-item i {
+  margin-right: 8px !important;
+  color: var(--electric-blue) !important;
+}
+
+/* Mission Section Enhancements */
+.mission-section {
+  padding: 100px 0 !important;
+  position: relative !important;
+  z-index: 1 !important;
+  background: linear-gradient(to bottom, var(--deep-purple), var(--night-blue)) !important;
+}
+
+/* Fix responsive issues */
+@media (max-width: 768px) {
+  .sdf-showcase {
+    flex-direction: column !important;
+  }
+  
+  .sdf-badge {
+    position: relative !important;
+    top: 0 !important;
+    right: 0 !important;
+    margin: 0 auto 20px !important;
+  }
+  
+  .sdf-image {
+    min-height: 300px !important;
+  }
+  
+  .sdf-products {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)) !important;
+  }
+}

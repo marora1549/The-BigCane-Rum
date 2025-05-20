@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The BigCane Cocktail Finder | Discover Your Perfect Mix</title>
+    <meta name="description" content="Find your perfect cocktail match with The BigCane's interactive cocktail finder. Explore signature recipes, customize ingredients, and elevate your mixology game.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/pages/cocktail-header.css">
+    <link rel="stylesheet" href="css/pages/cocktail-finder-enhanced.css">
+    <link rel="stylesheet" href="css/pages/cocktail-finder-results.css">
+    <link rel="stylesheet" href="css/pages/innovative-tool.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Lato:wght@300;400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader__content">
+            <div class="preloader__logo">
+                <img src="assets/images/big-cane-logo.png" alt="The Big Cane" width="200">
+            </div>
+            <div class="preloader__progress">
+                <div class="preloader__bar"></div>
+            </div>
+            <div class="preloader__text">
+                <span>Mixing your perfect cocktail...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/images/big-cane-logo.png" alt="The Big Cane Logo" class="logo__image">
+                </a>
+            </div>
+            <button class="nav-toggle">
+                <span class="nav-toggle__icon"></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html#products" class="nav-link">Products</a></li>
+                    <li><a href="index.html#founder" class="nav-link">Our Story</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="other-businesses.html" class="nav-link">Ventures</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Cocktail Finder Header -->
+    <section class="cocktail-header">
+        <div class="cocktail-header__overlay"></div>
+        <div class="cocktail-header__grid"></div>
+        <div class="particles" data-particles="100"></div>
+        <div class="cocktail-header__content">
+            <h1 class="cocktail-header__title reveal-from-bottom">Cocktail Finder</h1>
+            <p class="cocktail-header__subtitle reveal-from-bottom">Discover your perfect mix with The BigCane Rum</p>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-indicator__text">Scroll Down</div>
+            <div class="scroll-indicator__icon">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Innovative Tool Introduction -->
+    <section class="innovative-tool section">
+        <div class="container">
+            <div class="innovative-tool__content text-center reveal-from-bottom">
+                <div class="innovative-tool__icon">
+                    <i class="fas fa-cocktail"></i>
+                </div>
+                <h2 class="section-title">Your Dream Cocktail Awaits</h2>
+                <p class="innovative-tool__description">Introducing our innovative Cocktail Finder — the ultimate tool to discover your perfect drink. No more guesswork or disappointing mixes. Just answer a few questions about your preferences, and our advanced algorithm will match you with cocktails tailored to your taste. From refreshing summer coolers to bold winter warmers, find exactly what you're craving in seconds.</p>
+                <div class="innovative-tool__highlights">
+                    <div class="innovative-highlight">
+                        <div class="innovative-highlight__icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <div class="innovative-highlight__text">Personalized Recommendations</div>
+                    </div>
+                    <div class="innovative-highlight">
+                        <div class="innovative-highlight__icon">
+                            <i class="fas fa-filter"></i>
+                        </div>
+                        <div class="innovative-highlight__text">Multiple Filtering Options</div>
+                    </div>
+                    <div class="innovative-highlight">
+                        <div class="innovative-highlight__icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="innovative-highlight__text">Detailed Recipes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cocktail Finder Tool -->
+    <section class="cocktail-finder section">
+        <div class="liquid-blob"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title reveal-from-bottom">Find Your Perfect Mix</h2>
+                <p class="section-subtitle reveal-from-bottom">Use our interactive tool to discover cocktails tailored to your preferences</p>
+            </div>
+            
+            <div class="finder-tool reveal-from-bottom">
+                <div class="cocktail-finder">
+                    <div class="cocktail-finder__header">
+                        <h2 class="cocktail-finder__title">Find Your Perfect Mix</h2>
+                        <p class="cocktail-finder__subtitle">Use our interactive tool to discover cocktails tailored to your preferences</p>
+                    </div>
+                    
+                    <form class="finder-form">
+                        <!-- Mood Section -->
+                        <div class="finder-section">
+                            <div class="section-header">
+                                <div class="section-icon">
+                                    <i class="fas fa-glass-martini-alt"></i>
+                                </div>
+                                <h3 class="section-title">I'm in the mood for something...</h3>
+                            </div>
+                            <div class="mood-toggles">
+                                <button type="button" class="mood-toggle active" data-mood="refreshing">
+                                    <i class="fas fa-snowflake"></i>
+                                    <span>Refreshing</span>
+                                </button>
+                                <button type="button" class="mood-toggle" data-mood="sweet">
+                                    <i class="fas fa-candy-cane"></i>
+                                    <span>Sweet</span>
+                                </button>
+                                <button type="button" class="mood-toggle" data-mood="strong">
+                                    <i class="fas fa-bolt"></i>
+                                    <span>Strong</span>
+                                </button>
+                                <button type="button" class="mood-toggle" data-mood="fruity">
+                                    <i class="fas fa-apple-alt"></i>
+                                    <span>Fruity</span>
+                                </button>
+                                <button type="button" class="mood-toggle" data-mood="creamy">
+                                    <i class="fas fa-cloud"></i>
+                                    <span>Creamy</span>
+                                </button>
+                                <button type="button" class="mood-toggle" data-mood="spicy">
+                                    <i class="fas fa-pepper-hot"></i>
+                                    <span>Spicy</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Base Spirit Section -->
+                        <div class="finder-section">
+                            <div class="section-header">
+                                <div class="section-icon">
+                                    <i class="fas fa-wine-bottle"></i>
+                                </div>
+                                <h3 class="section-title">Base Spirit</h3>
+                            </div>
+                            <div class="spirit-options">
+                                <label class="spirit-option">
+                                    <input type="radio" name="spirit" value="silver" checked>
+                                    <div class="spirit-button">
+                                        <div class="spirit-icon">
+                                            <i class="fas fa-cocktail"></i>
+                                        </div>
+                                        <div class="spirit-glow"></div>
+                                        <span class="spirit-name">Silver Rum</span>
+                                    </div>
+                                </label>
+                                <label class="spirit-option">
+                                    <input type="radio" name="spirit" value="spiced">
+                                    <div class="spirit-button">
+                                        <div class="spirit-icon">
+                                            <i class="fas fa-fire-alt"></i>
+                                        </div>
+                                        <div class="spirit-glow"></div>
+                                        <span class="spirit-name">Spiced Rum</span>
+                                    </div>
+                                </label>
+                                <label class="spirit-option">
+                                    <input type="radio" name="spirit" value="guava">
+                                    <div class="spirit-button">
+                                        <div class="spirit-icon">
+                                            <i class="fas fa-apple-alt"></i>
+                                        </div>
+                                        <div class="spirit-glow"></div>
+                                        <span class="spirit-name">Guava Rum</span>
+                                    </div>
+                                </label>
+                                <label class="spirit-option">
+                                    <input type="radio" name="spirit" value="gin">
+                                    <div class="spirit-button">
+                                        <div class="spirit-icon">
+                                            <i class="fas fa-leaf"></i>
+                                        </div>
+                                        <div class="spirit-glow"></div>
+                                        <span class="spirit-name">London Dry Gin</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Combined Row for Skill Level and Ingredients -->
+                        <div class="finder-middle-row">
+                            <!-- Skill Level Section -->
+                            <div class="finder-section">
+                                <div class="section-header">
+                                    <div class="section-icon">
+                                        <i class="fas fa-layer-group"></i>
+                                    </div>
+                                    <h3 class="section-title">Skill Level</h3>
+                                </div>
+                                <div class="skill-slider">
+                                    <input type="range" min="1" max="3" value="2" class="slider" id="skillSlider">
+                                    <div class="skill-labels">
+                                        <span class="skill-label" data-value="1">Beginner</span>
+                                        <span class="skill-label active" data-value="2">Intermediate</span>
+                                        <span class="skill-label" data-value="3">Expert</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Key Ingredients Section -->
+                            <div class="finder-section">
+                                <div class="section-header">
+                                    <div class="section-icon">
+                                        <i class="fas fa-mortar-pestle"></i>
+                                    </div>
+                                    <h3 class="section-title">Key Ingredients</h3>
+                                </div>
+                                <div class="ingredients-grid">
+                                    <label class="ingredient-checkbox">
+                                        <input type="checkbox" name="ingredients" value="lime">
+                                        <div class="checkbox-custom">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        <span class="ingredient-name"><i class="fas fa-lemon ingredient-icon"></i>Lime</span>
+                                    </label>
+                                    <label class="ingredient-checkbox">
+                                        <input type="checkbox" name="ingredients" value="mint">
+                                        <div class="checkbox-custom">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        <span class="ingredient-name"><i class="fas fa-leaf ingredient-icon"></i>Mint</span>
+                                    </label>
+                                    <label class="ingredient-checkbox">
+                                        <input type="checkbox" name="ingredients" value="sugar">
+                                        <div class="checkbox-custom">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        <span class="ingredient-name"><i class="fas fa-cubes ingredient-icon"></i>Sugar</span>
+                                    </label>
+                                    <label class="ingredient-checkbox">
+                                        <input type="checkbox" name="ingredients" value="pineapple">
+                                        <div class="checkbox-custom">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        <span class="ingredient-name"><i class="fas fa-apple-alt ingredient-icon"></i>Pineapple</span>
+                                    </label>
+                                    <label class="ingredient-checkbox">
+                                        <input type="checkbox" name="ingredients" value="coconut">
+                                        <div class="checkbox-custom">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        <span class="ingredient-name"><i class="fas fa-circle ingredient-icon"></i>Coconut</span>
+                                    </label>
+                                    <label class="ingredient-checkbox">
+                                        <input type="checkbox" name="ingredients" value="soda">
+                                        <div class="checkbox-custom">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        <span class="ingredient-name"><i class="fas fa-tint ingredient-icon"></i>Soda</span>
+                                    </label>
+                                    <label class="ingredient-checkbox">
+                                        <input type="checkbox" name="ingredients" value="ginger">
+                                        <div class="checkbox-custom">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        <span class="ingredient-name"><i class="fas fa-seedling ingredient-icon"></i>Ginger</span>
+                                    </label>
+                                    <label class="ingredient-checkbox">
+                                        <input type="checkbox" name="ingredients" value="coffee">
+                                        <div class="checkbox-custom">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        <span class="ingredient-name"><i class="fas fa-mug-hot ingredient-icon"></i>Coffee</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Find Button -->
+                        <div class="find-button-container">
+                            <button type="button" class="find-button glow-pulse">
+                                <i class="fas fa-glass-cheers"></i> Find My Cocktail
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section section">
+        <div class="container">
+            <div class="results-header">
+                <h2 class="results-title">Your Cocktail Matches</h2>
+                <div class="results-actions">
+                    <button class="results-filter active" data-view="grid">
+                        <i class="fas fa-th"></i>
+                    </button>
+                    <button class="results-filter" data-view="list">
+                        <i class="fas fa-list"></i>
+                    </button>
+                    <select class="results-sort">
+                        <option value="relevance">Sort by: Relevance</option>
+                        <option value="popularity">Sort by: Popularity</option>
+                        <option value="easy">Sort by: Easiest First</option>
+                        <option value="hard">Sort by: Challenging First</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="results-grid view-grid">
+                <!-- Cocktail Card 1 -->
+                <div class="cocktail-card" data-spirit="silver" data-mood="refreshing" data-skill="1">
+                    <div class="cocktail-card__image-container">
+                        <img src="assets/images/cocktail-placeholder-1.jpg" alt="The Classic Mojito" class="cocktail-card__image">
+                        <div class="cocktail-card__badges">
+                            <span class="cocktail-badge cocktail-badge--beginner">Beginner</span>
+                            <span class="cocktail-badge cocktail-badge--refreshing">Refreshing</span>
+                        </div>
+                    </div>
+                    <div class="cocktail-card__content">
+                        <h3 class="cocktail-card__title">The Classic Mojito</h3>
+                        <p class="cocktail-card__description">The timeless Cuban classic combines BigCane Silver Rum with fresh lime, mint, sugar, and a splash of soda for the ultimate refreshment.</p>
+                        <div class="cocktail-card__meta">
+                            <div class="cocktail-card__info">
+                                <i class="fas fa-clock"></i>
+                                <span>5 min</span>
+                            </div>
+                            <div class="cocktail-card__info">
+                                <i class="fas fa-fire-alt"></i>
+                                <span>Easy</span>
+                            </div>
+                            <div class="cocktail-card__info">
+                                <i class="fas fa-star"></i>
+                                <span>4.9/5</span>
+                            </div>
+                        </div>
+                        <a href="recipes/midnight-mojito.html" class="button button--outlined cocktail-card__button">View Recipe</a>
+                    </div>
+                </div>
+                
+                <!-- Cocktail Card 2 -->
+                <div class="cocktail-card" data-spirit="spiced" data-mood="sweet" data-skill="2">
+                    <div class="cocktail-card__image-container">
+                        <img src="assets/images/cocktail-placeholder-2.jpg" alt="Caribbean Sunset" class="cocktail-card__image">
+                        <div class="cocktail-card__badges">
+                            <span class="cocktail-badge cocktail-badge--intermediate">Intermediate</span>
+                            <span class="cocktail-badge cocktail-badge--sweet">Sweet</span>
+                        </div>
+                    </div>
+                    <div class="cocktail-card__content">
+                        <h3 class="cocktail-card__title">Caribbean Sunset</h3>
+                        <p class="cocktail-card__description">BigCane Spiced Rum meets mango, lime, and a splash of grenadine in this tropical delight that tastes like a Caribbean sunset in a glass.</p>
+                        <div class="cocktail-card__meta">
+                            <div class="cocktail-card__info">
+                                <i class="fas fa-clock"></i>
+                                <span>8 min</span>
+                            </div>
+                            <div class="cocktail-card__info">
+                                <i class="fas fa-fire-alt"></i>
+                                <span>Medium</span>
+                            </div>
+                            <div class="cocktail-card__info">
+                                <i class="fas fa-star"></i>
+                                <span>4.7/5</span>
+                            </div>
+                        </div>
+                        <a href="recipes/caribbean-sunset.html" class="button button--outlined cocktail-card__button">View Recipe</a>
+                    </div>
+                </div>
+                
+                <!-- Cocktail Card 3 -->
+                <div class="cocktail-card" data-spirit="guava" data-mood="fruity" data-skill="1">
+                    <div class="cocktail-card__image-container">
+                        <img src="assets/images/cocktail-placeholder-3.jpg" alt="Guava Paradise" class="cocktail-card__image">
+                        <div class="cocktail-card__badges">
+                            <span class="cocktail-badge cocktail-badge--beginner">Beginner</span>
+                            <span class="cocktail-badge cocktail-badge--fruity">Fruity</span>
+                        </div>
+                    </div>
+                    <div class="cocktail-card__content">
+                        <h3 class="cocktail-card__title">Guava Paradise</h3>
+                        <p class="cocktail-card__description">BigCane Guava Rum with coconut cream, pineapple juice, and a touch of nutmeg creates a creamy, fruity island escape in every sip.</p>
+                        <div class="cocktail-card__meta">
+                            <div class="cocktail-card__info">
+                                <i class="fas fa-clock"></i>
+                                <span>5 min</span>
+                            </div>
+                            <div class="cocktail-card__info">
+                                <i class="fas fa-fire-alt"></i>
+                                <span>Easy</span>
+                            </div>
+                            <div class="cocktail-card__info">
+                                <i class="fas fa-star"></i>
+                                <span>4.8/5</span>
+                            </div>
+                        </div>
+                        <a href="recipes/guava-paradise.html" class="button button--outlined cocktail-card__button">View Recipe</a>
+                    </div>
+                </div>
+                
+                <!-- Cocktail Card 4 -->
+                <div class="cocktail-card" data-spirit="gin" data-mood="strong" data-skill="3">
+                    <div class="cocktail-card__image-container">
+                        <img src="assets/images/cocktail-placeholder-6.png" alt="Midnight Negroni" class="cocktail-card__image">
+                        <div class="cocktail-card__badges">
+                            <span class="cocktail-badge cocktail-badge--expert">Expert</span>
+                            <span class="cocktail-badge cocktail-badge--strong">Strong</span>
+                        </div>
+                    </div>
+                    <div class="cocktail-card__content">
+                        <h3 class="cocktail-card__title">Midnight Negroni</h3>
+                        <p class="cocktail-card__description">Our London Dry Gin meets Campari and sweet vermouth in this Caribbean twist on the classic Negroni, featuring a hint of blackberry.</p>
+                        <div class="cocktail-card__meta">
+                            <div class="cocktail-card__info">
+                                <i class="fas fa-clock"></i>
+                                <span>10 min</span>
+                            </div>
+                            <div class="cocktail-card__info">
+                                <i class="fas fa-fire-alt"></i>
+                                <span>Complex</span>
+                            </div>
+                            <div class="cocktail-card__info">
+                                <i class="fas fa-star"></i>
+                                <span>4.6/5</span>
+                            </div>
+                        </div>
+                        <a href="#" class="button button--outlined cocktail-card__button" onclick="alert('Midnight Negroni recipe coming soon!')">View Recipe</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="text-center mt-4">
+                <button class="button load-more-button">Load More Cocktails</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter section">
+        <div class="newsletter__background">
+            <div class="newsletter__particles"></div>
+            <div class="newsletter__overlay"></div>
+        </div>
+        <div class="container">
+            <div class="newsletter__content">
+                <div class="newsletter__icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h2 class="newsletter__title reveal-from-bottom">Get VIP Access</h2>
+                <p class="newsletter__text reveal-from-bottom">Subscribe to our newsletter for exclusive cocktail recipes, event invitations, and special offers.</p>
+                <form class="newsletter__form reveal-from-bottom">
+                    <div class="newsletter__form-group">
+                        <input type="email" class="newsletter__input" placeholder="Enter your email address" required>
+                        <button type="submit" class="button newsletter__button">Subscribe</button>
+                    </div>
+                    <p class="newsletter__disclaimer">By subscribing, you agree to our <a href="#">Privacy Policy</a>. We promise not to spam you - only good vibes delivered to your inbox.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Recipe section ends here -->
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer__glow"></div>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer__info">
+                    <div class="footer__logo">
+                        <img src="assets/images/big-cane-logo.png" alt="The Big Cane Logo" class="footer__logo-image">
+                    </div>
+                    <p class="footer__about">Crafting premium Caribbean spirits that capture the essence of island luxury and celebration. Every bottle tells a story of passion, rhythm, and craftsmanship.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__nav">
+                    <h3 class="footer__title">Navigation</h3>
+                    <ul>
+                        <li><a href="index.html#products">Products</a></li>
+                        <li><a href="index.html#founder">Our Story</a></li>
+                        <li><a href="index.html#cocktails">Cocktails</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="other-businesses.html">Ventures</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__products">
+                    <h3 class="footer__title">Our Products</h3>
+                    <ul>
+                        <li><a href="products/silver-rum.html">Silver Rum</a></li>
+                        <li><a href="products/london-gin.html">London Dry Gin</a></li>
+                        <li><a href="products/guava-rum.html">Guava Rum</a></li>
+                        <li><a href="products/spiced-rum.html">Spiced Rum</a></li>
+                        <li><a href="products/limited-editions.html">Limited Editions</a></li>
+                        <li><a href="products/gift-sets.html">Gift Sets</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contact">
+                    <h3 class="footer__title">Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Caribbean House, Port of Spain, Trinidad</li>
+                        <li><i class="fas fa-phone"></i> +1 (868) 555-1234</li>
+                        <li><i class="fas fa-envelope"></i> info@thebigcane.com</li>
+                    </ul>
+                    <div class="footer__hours">
+                        <h4 class="footer__subtitle">Distillery Tours</h4>
+                        <p>Monday - Friday: 10am - 6pm</p>
+                        <p>Saturday: 12pm - 5pm</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 The BigCane. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p class="footer__disclaimer">Please drink responsibly. Must be 21 or older to purchase.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Age Verification Modal -->
+    <div class="age-modal">
+        <div class="age-modal__content">
+            <div class="age-modal__logo">
+                <img src="assets/images/big-cane-logo.png" alt="The Big Cane Logo" width="180">
+            </div>
+            <h2 class="age-modal__title">Welcome to The Big Cane</h2>
+            <p class="age-modal__text">Please verify that you are of legal drinking age in your country to enter this site.</p>
+            <div class="age-modal__buttons">
+                <button class="button age-modal__button--yes">Yes, I am of legal age</button>
+                <button class="button button--secondary age-modal__button--no">No, I am not</button>
+            </div>
+            <p class="age-modal__disclaimer">By entering, you accept our <a href="#">Terms</a> and confirm that you are of legal drinking age.</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    
+    <!-- Cocktail Finder Specific Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize finder interactions
+            initCocktailFinder();
+            
+            function initCocktailFinder() {
+                // Mood toggles
+                const moodToggles = document.querySelectorAll('.mood-toggle');
+                moodToggles.forEach(toggle => {
+                    toggle.addEventListener('click', () => {
+                        // Remove active class from all toggles
+                        moodToggles.forEach(btn => btn.classList.remove('active'));
+                        // Add active class to clicked toggle
+                        toggle.classList.add('active');
+                    });
+                });
+                
+                // Spirit options
+                const spiritOptions = document.querySelectorAll('.spirit-option input');
+                spiritOptions.forEach(option => {
+                    option.addEventListener('change', () => {
+                        // Update selected spirit
+                        // This is just visual feedback, actual filtering happens on form submit
+                        const spiritButtons = document.querySelectorAll('.spirit-button');
+                        spiritButtons.forEach(btn => {
+                            btn.classList.remove('selected');
+                        });
+                        option.nextElementSibling.classList.add('selected');
+                    });
+                });
+                
+                // Skill slider
+                const skillSlider = document.getElementById('skillSlider');
+                skillSlider.addEventListener('input', () => {
+                    // Update skill level visual indicator
+                    const skillLabels = document.querySelectorAll('.skill-labels span');
+                    skillLabels.forEach((label, index) => {
+                        if (index + 1 == skillSlider.value) {
+                            label.classList.add('active');
+                        } else {
+                            label.classList.remove('active');
+                        }
+                    });
+                });
+                
+                // Find button
+                const findButton = document.querySelector('.find-button');
+                findButton.addEventListener('click', () => {
+                    // In a real application, this would filter cocktails based on selections
+                    // For demo purposes, we'll just scroll to results
+                    const resultsSection = document.querySelector('.results-section');
+                    resultsSection.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Add a loading animation
+                    findButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Finding...';
+                    setTimeout(() => {
+                        findButton.innerHTML = '<i class="fas fa-glass-cheers"></i> Find My Cocktail';
+                    }, 1500);
+                });
+                
+                // View type toggle (grid/list)
+                const viewButtons = document.querySelectorAll('.results-filter');
+                const resultsGrid = document.querySelector('.results-grid');
+                
+                viewButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        // Remove active class from all buttons
+                        viewButtons.forEach(btn => btn.classList.remove('active'));
+                        // Add active class to clicked button
+                        button.classList.add('active');
+                        
+                        // Update view class
+                        resultsGrid.classList.remove('view-grid', 'view-list');
+                        resultsGrid.classList.add('view-' + button.getAttribute('data-view'));
+                    });
+                });
+                
+                // Sort dropdown
+                const sortSelect = document.querySelector('.results-sort');
+                sortSelect.addEventListener('change', () => {
+                    // In a real application, this would sort the results
+                    // For demo purposes, we'll just add a loading effect
+                    resultsGrid.style.opacity = '0.5';
+                    setTimeout(() => {
+                        resultsGrid.style.opacity = '1';
+                    }, 500);
+                });
+                
+                // Removed modal code as we now link directly to recipe pages
+                
+                // Load more button
+                const loadMoreButton = document.querySelector('.load-more-button');
+                loadMoreButton.addEventListener('click', () => {
+                    // In a real application, this would load more cocktails
+                    // For demo purposes, we'll just show a message
+                    loadMoreButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+                    setTimeout(() => {
+                        loadMoreButton.innerHTML = 'No More Cocktails To Load';
+                        loadMoreButton.disabled = true;
+                    }, 1500);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

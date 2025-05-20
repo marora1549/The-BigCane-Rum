@@ -1,0 +1,404 @@
+/* Other Businesses/Ventures Page Styles */
+
+/* Header for Other Businesses */
+.ventures-header {
+    position: relative;
+    height: 60vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.ventures-header__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(26, 11, 46, 0.7), rgba(10, 10, 10, 0.95));
+    z-index: -1;
+}
+
+.ventures-header__grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(to right, rgba(5, 217, 232, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(5, 217, 232, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+.ventures-header__content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    padding: var(--space-lg) var(--space-md);
+    z-index: 1;
+}
+
+.ventures-header__title {
+    font-size: var(--h1-size);
+    margin-bottom: var(--space-sm);
+    color: var(--electric-blue);
+    text-shadow: 0 0 20px rgba(5, 217, 232, 0.5);
+    text-transform: uppercase;
+}
+
+/* Add liquid-text animation class from blog.css */
+.liquid-text {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    background: linear-gradient(45deg, 
+        var(--neon-pink), 
+        var(--electric-blue), 
+        var(--neon-purple), 
+        var(--neon-pink));
+    background-size: 200% 200%;
+    animation: flow 4s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 20px rgba(255, 42, 109, 0.3);
+}
+
+@keyframes flow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.ventures-header__subtitle {
+    font-size: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Ventures Grid */
+.ventures-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+}
+
+.venture-card {
+    background-color: rgba(10, 10, 10, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all var(--transition-medium);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+}
+
+.venture-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(5, 217, 232, 0.3);
+    border: 1px solid rgba(5, 217, 232, 0.3);
+}
+
+.venture-card__image-container {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.venture-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-medium);
+}
+
+.venture-card:hover .venture-card__image {
+    transform: scale(1.1);
+}
+
+.venture-card__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 50%, rgba(10, 10, 10, 0.8) 100%);
+}
+
+.venture-card__content {
+    padding: var(--space-md);
+}
+
+.venture-card__type {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
+    color: var(--starlight-pearl);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    margin-bottom: var(--space-sm);
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(255, 42, 109, 0.5);
+}
+
+.venture-card__title {
+    font-size: 2.4rem;
+    margin-bottom: var(--space-xs);
+    color: var(--electric-blue);
+}
+
+.venture-card__description {
+    font-size: 1.6rem;
+    margin-bottom: var(--space-md);
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+.venture-card__features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xs) var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+
+.venture-card__feature {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.4rem;
+    opacity: 0.9;
+}
+
+.venture-card__feature i {
+    color: var(--neon-pink);
+    font-size: 1.4rem;
+}
+
+.venture-card__cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.venture-card__website {
+    color: var(--neon-pink);
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+}
+
+/* Mission Section */
+.mission-section {
+    position: relative;
+    padding: var(--space-xl) 0;
+    background-color: var(--deep-purple);
+    overflow: hidden;
+}
+
+.mission-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    align-items: center;
+}
+
+.mission-image {
+    position: relative;
+    z-index: 1;
+}
+
+.mission-image img {
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 42, 109, 0.3);
+    width: 100%;
+    height: auto;
+}
+
+.mission-image__decoration {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(50px);
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.mission-image__decoration--1 {
+    width: 200px;
+    height: 200px;
+    background-color: var(--neon-pink);
+    top: -50px;
+    right: -30px;
+}
+
+.mission-image__decoration--2 {
+    width: 250px;
+    height: 250px;
+    background-color: var(--electric-blue);
+    bottom: -70px;
+    left: -50px;
+}
+
+.mission-text h2 {
+    font-size: 3.6rem;
+    margin-bottom: var(--space-md);
+    color: var(--neon-pink);
+    text-shadow: 0 0 10px rgba(255, 42, 109, 0.5);
+}
+
+.mission-text p {
+    font-size: 1.8rem;
+    margin-bottom: var(--space-md);
+    opacity: 0.9;
+    line-height: 1.7;
+}
+
+.mission-values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+
+.mission-value {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding: var(--space-md);
+    background-color: rgba(10, 10, 10, 0.3);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all var(--transition-medium);
+}
+
+.mission-value:hover {
+    transform: translateY(-5px);
+    border-color: rgba(5, 217, 232, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(5, 217, 232, 0.3);
+}
+
+.mission-value__icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--electric-blue), var(--neon-purple));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.4rem;
+    margin: 0 auto var(--space-sm);
+    box-shadow: var(--blue-glow);
+    color: var(--starlight-pearl);
+}
+
+.mission-value__title {
+    font-size: 1.8rem;
+    margin-bottom: var(--space-xs);
+    color: var(--electric-blue);
+}
+
+.mission-value__text {
+    font-size: 1.4rem;
+    opacity: 0.8;
+}
+
+/* CTA Section */
+.partnership-cta {
+    position: relative;
+    padding: var(--space-lg) 0;
+    background-color: var(--midnight-black);
+    overflow: hidden;
+}
+
+.partnership-cta__particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.partnership-cta__content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.partnership-cta__title {
+    font-size: 3.6rem;
+    margin-bottom: var(--space-sm);
+    color: var(--golden-glow);
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.partnership-cta__text {
+    font-size: 1.8rem;
+    margin-bottom: var(--space-lg);
+    opacity: 0.9;
+}
+
+.partnership-cta__buttons {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 991px) {
+    .ventures-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ventures-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .venture-card__features {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .ventures-header {
+        height: 50vh;
+    }
+    
+    .ventures-header__title {
+        font-size: 3.2rem;
+    }
+    
+    .ventures-header__subtitle {
+        font-size: 1.6rem;
+    }
+    
+    .mission-text h2 {
+        font-size: 3rem;
+    }
+    
+    .partnership-cta__buttons {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+}

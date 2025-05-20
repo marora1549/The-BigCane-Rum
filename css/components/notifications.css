@@ -1,0 +1,109 @@
+/* Notification Component Styles */
+.notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 300px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none;
+}
+
+.notification {
+    background-color: rgba(26, 11, 46, 0.9);
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    border-left: 4px solid var(--electric-blue);
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    pointer-events: auto;
+}
+
+.notification.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.notification i {
+    font-size: 20px;
+    color: var(--electric-blue);
+}
+
+.notification span {
+    font-size: 1.4rem;
+    color: var(--starlight-pearl);
+    line-height: 1.4;
+}
+
+/* Notification Types */
+.notification--success {
+    border-left-color: #4CAF50;
+}
+
+.notification--success i {
+    color: #4CAF50;
+}
+
+.notification--error {
+    border-left-color: #F44336;
+}
+
+.notification--error i {
+    color: #F44336;
+}
+
+.notification--warning {
+    border-left-color: #FFC107;
+}
+
+.notification--warning i {
+    color: #FFC107;
+}
+
+.notification--info {
+    border-left-color: var(--electric-blue);
+}
+
+/* Close Button */
+.notification__close {
+    margin-left: auto;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    font-size: 1.4rem;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+}
+
+.notification__close:hover {
+    color: var(--starlight-pearl);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 480px) {
+    .notification-container {
+        top: 10px;
+        right: 10px;
+        width: calc(100% - 20px);
+    }
+    
+    .notification i {
+        font-size: 18px;
+    }
+    
+    .notification span {
+        font-size: 1.3rem;
+    }
+}

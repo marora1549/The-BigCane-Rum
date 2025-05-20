@@ -1,0 +1,67 @@
+/* Taste Notes Component Styles */
+.taste-notes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-md);
+}
+
+.taste-note {
+    background-color: rgba(26, 11, 46, 0.5);
+    border-radius: 10px;
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all var(--transition-medium);
+}
+
+.taste-note:hover {
+    transform: translateY(-5px);
+    border-color: var(--electric-blue);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 15px rgba(5, 217, 232, 0.3);
+}
+
+.taste-note__icon {
+    font-size: 3rem;
+    color: var(--electric-blue);
+    margin-bottom: var(--space-sm);
+}
+
+.taste-note__label {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: var(--space-xs);
+    color: var(--neon-pink);
+}
+
+.taste-note__description {
+    font-size: 1.4rem;
+    opacity: 0.8;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 991px) {
+    .taste-notes {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .taste-note {
+        padding: var(--space-sm);
+    }
+    
+    .taste-note__icon {
+        font-size: 2.5rem;
+    }
+    
+    .taste-note__label {
+        font-size: 1.6rem;
+    }
+    
+    .taste-note__description {
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,230 @@
+/* Cocktail Finder Results Section Styles */
+.results-section {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.results-title {
+    font-size: 3rem;
+    color: var(--neon-pink);
+    margin: 0;
+}
+
+.results-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.results-filter {
+    background-color: transparent;
+    border: 1px solid rgba(5, 217, 232, 0.3);
+    color: var(--electric-blue);
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.results-filter:hover {
+    background-color: rgba(5, 217, 232, 0.1);
+}
+
+.results-filter.active {
+    background-color: var(--electric-blue);
+    color: var(--midnight-black);
+    border-color: var(--electric-blue);
+}
+
+.results-sort {
+    background-color: rgba(10, 10, 10, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--starlight-pearl);
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="6"><path d="M0 0l6 6 6-6z" fill="%23FFFFFF"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 3rem;
+}
+
+.results-sort:focus {
+    outline: none;
+    border-color: var(--electric-blue);
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.view-list .results-grid {
+    grid-template-columns: 1fr;
+}
+
+.cocktail-card {
+    background-color: rgba(26, 11, 46, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.cocktail-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(5, 217, 232, 0.3);
+    border-color: rgba(5, 217, 232, 0.3);
+}
+
+.cocktail-card__image-container {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.cocktail-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.cocktail-card:hover .cocktail-card__image {
+    transform: scale(1.05);
+}
+
+.cocktail-card__badges {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1;
+}
+
+.cocktail-badge {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 3px;
+    background-color: rgba(10, 10, 10, 0.8);
+}
+
+.cocktail-badge--beginner {
+    border-left: 3px solid #39FF14; /* Neon green */
+}
+
+.cocktail-badge--intermediate {
+    border-left: 3px solid var(--electric-blue);
+}
+
+.cocktail-badge--expert {
+    border-left: 3px solid var(--neon-pink);
+}
+
+.cocktail-badge--refreshing {
+    border-left: 3px solid #00FFFF; /* Cyan */
+}
+
+.cocktail-badge--sweet {
+    border-left: 3px solid #FF00FF; /* Magenta */
+}
+
+.cocktail-badge--strong {
+    border-left: 3px solid #FF3800; /* Orange-red */
+}
+
+.cocktail-badge--fruity {
+    border-left: 3px solid #FFFF00; /* Yellow */
+}
+
+.cocktail-card__content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.cocktail-card__title {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+    color: var(--electric-blue);
+}
+
+.cocktail-card__description {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: var(--starlight-pearl);
+    opacity: 0.9;
+    flex-grow: 1;
+}
+
+.cocktail-card__meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.cocktail-card__info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.4rem;
+}
+
+.cocktail-card__info i {
+    color: var(--neon-pink);
+}
+
+.cocktail-card__button {
+    width: 100%;
+}
+
+.load-more-button {
+    display: block;
+    margin: 40px auto 0;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 991px) {
+    .results-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .results-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .results-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+}

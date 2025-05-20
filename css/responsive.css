@@ -1,0 +1,667 @@
+/* 
+ * The BigCane - Responsive Stylesheet
+ * 
+ * This file contains all responsive styling required to ensure
+ * the website looks great on all device sizes from mobile phones
+ * to large desktop displays.
+ *
+ * Table of Contents:
+ * 1. Core Variables and Base Settings
+ * 2. Breakpoint Definitions
+ * 3. Global Responsive Utilities
+ * 4. Header & Navigation
+ * 5. Hero Section
+ * 6. Product Sections
+ * 7. Content Sections
+ * 8. Forms & Interactive Elements
+ * 9. Footer
+ * 10. Accessibility Enhancements
+ * 11. Print Styles
+ */
+
+/* ====== 1. Core Variables and Base Settings ====== */
+:root {
+  /* Responsive spacing units that scale with viewport */
+  --responsive-space-xs: clamp(0.5rem, 1vw, 1rem);
+  --responsive-space-sm: clamp(1rem, 2vw, 2rem);
+  --responsive-space-md: clamp(2rem, 3vw, 3rem);
+  --responsive-space-lg: clamp(3rem, 5vw, 5rem);
+  --responsive-space-xl: clamp(4rem, 8vw, 8rem);
+  
+  /* Typography scaling for responsive text */
+  --responsive-heading-xl: clamp(3.6rem, 6vw, 5.5rem);
+  --responsive-heading-lg: clamp(3rem, 5vw, 4.5rem);
+  --responsive-heading-md: clamp(2.4rem, 4vw, 3.6rem);
+  --responsive-heading-sm: clamp(1.8rem, 3vw, 2.4rem);
+  --responsive-body: clamp(1.4rem, 1.6vw, 1.8rem);
+  --responsive-small: clamp(1.2rem, 1.4vw, 1.6rem);
+}
+
+/* ====== 2. Breakpoint Definitions ====== */
+/* 
+  - XS: 479px and below (small mobile phones)
+  - SM: 480px to 767px (large phones)
+  - MD: 768px to 991px (tablets and small laptops)
+  - LG: 992px to 1199px (laptops and small desktops)
+  - XL: 1200px to 1439px (desktops)
+  - XXL: 1440px and above (large screens)
+*/
+
+/* ====== 3. Global Responsive Utilities ====== */
+html {
+  font-size: 62.5%; /* 10px base font size at default browser settings */
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape on iOS */
+}
+
+/* Fluid container sizing */
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--responsive-space-md);
+}
+
+/* Basic responsive media */
+img, video, svg, canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive spacing utility classes */
+.section {
+  padding: var(--responsive-space-lg) 0;
+}
+
+/* Responsive text classes */
+.header-title, .hero__title, h1.large {
+  font-size: var(--responsive-heading-xl);
+}
+
+.section-title, h2.large {
+  font-size: var(--responsive-heading-lg);
+}
+
+.subsection-title, h3.large {
+  font-size: var(--responsive-heading-md);
+}
+
+.card-title, h4.large {
+  font-size: var(--responsive-heading-sm);
+}
+
+/* ====== 4. Header & Navigation ====== */
+/* Mobile Navigation Core Styling */
+.nav-toggle {
+  display: none;
+  position: relative;
+  width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 110;
+}
+
+.nav-toggle__icon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--starlight-pearl);
+  transition: background-color 0.3s ease;
+  transform: translateY(-50%);
+}
+
+.nav-toggle__icon::before,
+.nav-toggle__icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--starlight-pearl);
+  transition: transform 0.3s ease;
+}
+
+.nav-toggle__icon::before {
+  top: -8px;
+}
+
+.nav-toggle__icon::after {
+  bottom: -8px;
+}
+
+.nav-overlay {
+  display: none;
+}
+
+/* Skip to content link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--electric-blue);
+  color: var(--midnight-black);
+  padding: 1rem;
+  z-index: 9999;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ====== Large Device Styles (First to ensure mobile overrides later) ====== */
+@media screen and (min-width: 992px) {
+  /* Ensure desktop nav is properly displayed */
+  .main-nav {
+    display: flex;
+  }
+  
+  .main-nav ul {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Enhance hover effects on desktop */
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  /* Grid layouts for cards */
+  .product-grid, 
+  .blog-grid, 
+  .instagram__grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  
+  /* Two column layouts */
+  .two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--responsive-space-lg);
+    align-items: center;
+  }
+  
+  /* Enhanced animations for desktop */
+  .tilt-card {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  
+  /* Footer layout */
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: var(--responsive-space-md);
+  }
+}
+
+/* ====== Medium Devices (Tablets) ====== */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  /* Adjust grid layouts */
+  .product-grid, 
+  .blog-grid, 
+  .experience__showcase {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Adjust two columns to stack on some elements */
+  .featured-product__content {
+    grid-template-columns: 1fr;
+    gap: var(--responsive-space-md);
+  }
+  
+  /* Header adjustments */
+  .site-header {
+    padding: 1.5rem 0;
+  }
+  
+  /* Footer layout */
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--responsive-space-md);
+  }
+  
+  .footer__info {
+    grid-column: span 2;
+    margin-bottom: var(--responsive-space-md);
+  }
+  
+  /* Enhance some animations but disable complex ones */
+  .particles[data-particles="100"] {
+    --particle-count: 70;
+  }
+}
+
+/* ====== Small Devices (Mobile) ====== */
+@media screen and (max-width: 767px) {
+  /* Typography adjustments */
+  html {
+    font-size: 58%; /* Slightly reduce base font size */
+  }
+  
+  /* Header & Navigation */
+  .site-header {
+    padding: 1.2rem 0;
+  }
+  
+  .logo__image {
+    max-width: 120px;
+  }
+  
+  .nav-toggle {
+    display: block;
+  }
+  
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 85%;
+    max-width: 320px;
+    height: 100vh;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 100;
+    padding: 8rem 2.5rem 2.5rem;
+    transition: right 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    overflow-y: auto;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  .main-nav.active {
+    right: 0;
+  }
+  
+  .main-nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .main-nav ul li {
+    width: 100%;
+    margin: 0;
+  }
+  
+  .main-nav ul li a {
+    display: block;
+    padding: 1.5rem 0;
+    font-size: 1.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Hamburger Animation */
+  .nav-toggle.active .nav-toggle__icon {
+    background-color: transparent;
+  }
+  
+  .nav-toggle.active .nav-toggle__icon::before {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .nav-toggle.active .nav-toggle__icon::after {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+  /* Overlay when nav is open */
+  .nav-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 90;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+  }
+  
+  .nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Body lock when nav is open */
+  body.nav-open {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Hero section adjustments */
+  .hero {
+    height: 100vh;
+    max-height: 700px;
+  }
+  
+  .hero__content {
+    padding: 0 var(--responsive-space-sm);
+    text-align: center;
+  }
+  
+  .hero__buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  
+  .hero__button {
+    width: 100%;
+    margin-bottom: var(--responsive-space-sm);
+  }
+  
+  /* Grid layouts go to single column */
+  .product-grid,
+  .blog-grid,
+  .experience__showcase,
+  .instagram__grid,
+  .two-column {
+    grid-template-columns: 1fr;
+    gap: var(--responsive-space-md);
+  }
+  
+  /* Stack featured product */
+  .featured-product__content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .featured-product__imagery,
+  .featured-product__info {
+    width: 100%;
+  }
+  
+  /* Fix product card display */
+  .products__container {
+    padding: 0;
+  }
+  
+  .products__list {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding: var(--responsive-space-sm) 0;
+  }
+  
+  .product-card {
+    scroll-snap-align: start;
+    width: 80%;
+    min-width: 250px;
+    margin-right: var(--responsive-space-sm);
+  }
+  
+  /* Form elements go vertical */
+  .newsletter__form-group,
+  .contact-form__row {
+    flex-direction: column;
+  }
+  
+  .newsletter__input,
+  .newsletter__button,
+  .contact-form__input,
+  .contact-form__textarea {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+  
+  /* Footer adjustments */
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--responsive-space-md);
+  }
+  
+  .footer__info,
+  .footer__nav,
+  .footer__products,
+  .footer__contact {
+    width: 100%;
+    margin-bottom: var(--responsive-space-md);
+  }
+  
+  /* Social media links */
+  .social-links {
+    justify-content: flex-start;
+  }
+  
+  /* Reduce animation complexity */
+  .floating-elements,
+  .liquid-blob {
+    display: none;
+  }
+  
+  .particles[data-particles="100"] {
+    --particle-count: 40;
+  }
+  
+  .orb {
+    transform: scale(0.6);
+    opacity: 0.4;
+  }
+  
+  /* Disable 3D tilt effect on mobile */
+  .tilt-card__content {
+    transform: none !important;
+  }
+  
+  .tilt-card__shine {
+    display: none;
+  }
+}
+
+/* ====== Extra-Small Devices (Small Phones) ====== */
+@media screen and (max-width: 479px) {
+  html {
+    font-size: 55%; /* Further reduce base size on smallest screens */
+  }
+  
+  .container {
+    padding: 0 var(--responsive-space-sm);
+  }
+  
+  /* Further simplify navigation */
+  .main-nav {
+    width: 90%;
+  }
+  
+  /* Shrink logo further */
+  .logo__image {
+    max-width: 100px;
+  }
+  
+  /* Reduce hero height and text size */
+  .hero {
+    max-height: 600px;
+  }
+  
+  .hero__title-line {
+    font-size: 3.2rem;
+  }
+  
+  .hero__subtitle {
+    font-size: 1.6rem;
+    margin-bottom: var(--responsive-space-md);
+  }
+  
+  /* Simplify product cards */
+  .product-card {
+    width: 90%;
+  }
+  
+  /* Reduce section spacing */
+  .section {
+    padding: var(--responsive-space-md) 0;
+  }
+  
+  /* Simplify animations further */
+  .party-grid,
+  .glow-effect,
+  .tagline-rotator {
+    display: none;
+  }
+  
+  /* Hide decorations */
+  .decoration {
+    display: none;
+  }
+  
+  /* Adjust modal sizing */
+  .age-modal__content {
+    width: 90%;
+    padding: var(--responsive-space-md);
+  }
+}
+
+/* ====== Accessibility Enhancements ====== */
+/* Improved focus states for keyboard navigation */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus,
+[tabindex]:focus {
+  outline: 3px solid var(--electric-blue);
+  outline-offset: 3px;
+  /* Ensure focus is visible in dark theme */
+  box-shadow: 0 0 0 3px rgba(5, 217, 232, 0.5);
+}
+
+/* High contrast mode adjustments */
+@media (prefers-contrast: more) {
+  :root {
+    --neon-pink: #ff3366;
+    --electric-blue: #00ffff;
+    --golden-glow: #ffdd00;
+    --neon-purple: #9933ff;
+    --electric-coral: #ff6347;
+  }
+  
+  body {
+    background-color: #000;
+  }
+  
+  p, h1, h2, h3, h4, h5, h6 {
+    color: #fff;
+  }
+  
+  .button, 
+  .nav-link, 
+  a {
+    color: var(--electric-blue);
+  }
+}
+
+/* Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* Disable animations for users who prefer reduced motion */
+  .floating-elements,
+  .particles,
+  .liquid-blob,
+  .orb,
+  .party-grid,
+  .audio-visualizer,
+  .glow-pulse,
+  .preloader,
+  .tilt-card__shine,
+  .hero__video {
+    display: none !important;
+  }
+  
+  /* Show static backgrounds for important sections */
+  .hero {
+    background: linear-gradient(to bottom, rgba(26, 11, 46, 0.9), rgba(10, 10, 10, 0.95));
+  }
+  
+  /* Disable tilt and hover effects */
+  .tilt-card:hover .tilt-card__content,
+  .distort-hover img:hover {
+    transform: none !important;
+  }
+}
+
+/* ====== Print Styles ====== */
+@media print {
+  /* Optimize for printing */
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+  
+  /* Hide elements not needed in print */
+  .site-header,
+  .nav-toggle,
+  .main-nav,
+  .hero__video,
+  .floating-elements,
+  .particles,
+  .preloader,
+  .newsletter,
+  .social-float,
+  .scroll-indicator,
+  .age-modal,
+  .footer {
+    display: none !important;
+  }
+  
+  /* Ensure text is readable */
+  h1, h2, h3, h4, h5, h6 {
+    color: #000;
+    page-break-after: avoid;
+  }
+  
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  
+  /* Make links more useful in print */
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+  
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+  }
+  
+  /* Ensure images print properly */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+  
+  /* Avoid page breaks inside important elements */
+  .product-card,
+  .blog-card,
+  .cocktail-card {
+    page-break-inside: avoid;
+  }
+  
+  /* Set proper margins */
+  @page {
+    margin: 2cm;
+  }
+}

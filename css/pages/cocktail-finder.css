@@ -1,0 +1,753 @@
+/* Cocktail Finder Page Styles */
+
+/* Cocktail Finder Header */
+.cocktail-finder-header {
+    position: relative;
+    height: 60vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.cocktail-finder-header__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(26, 11, 46, 0.7), rgba(10, 10, 10, 0.95));
+    z-index: -1;
+}
+
+.cocktail-finder-header__content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    padding: var(--space-lg) var(--space-md);
+    z-index: 1;
+}
+
+.cocktail-finder-header__title {
+    font-size: var(--h1-size);
+    margin-bottom: var(--space-sm);
+    color: var(--neon-pink);
+    text-shadow: 0 0 20px rgba(255, 42, 109, 0.5);
+    text-transform: uppercase;
+}
+
+.cocktail-finder-header__subtitle {
+    font-size: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Cocktail Filter Section */
+.cocktail-filter {
+    background-color: rgba(15, 17, 35, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: var(--space-md);
+    margin-bottom: var(--space-lg);
+    border: 1px solid rgba(5, 217, 232, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(5, 217, 232, 0.2);
+}
+
+.cocktail-filter__title {
+    font-size: 2.4rem;
+    margin-bottom: var(--space-md);
+    color: var(--electric-blue);
+    text-align: center;
+}
+
+.cocktail-filter__form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-md);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-label {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--neon-pink);
+}
+
+.filter-select {
+    padding: 1rem;
+    font-size: 1.6rem;
+    background-color: rgba(10, 10, 10, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--starlight-pearl);
+    border-radius: 5px;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="6"><path d="M0 0l6 6 6-6z" fill="%23FFFFFF"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 3rem;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: var(--electric-blue);
+    box-shadow: 0 0 10px rgba(5, 217, 232, 0.5);
+}
+
+.filter-search {
+    padding: 1rem;
+    font-size: 1.6rem;
+    background-color: rgba(10, 10, 10, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--starlight-pearl);
+    border-radius: 5px;
+}
+
+.filter-search:focus {
+    outline: none;
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 10px rgba(255, 42, 109, 0.5);
+}
+
+.filter-button {
+    margin-top: auto;
+    align-self: flex-end;
+}
+
+.filter-button .button {
+    width: 100%;
+}
+
+/* Cocktail Grid */
+.cocktail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+}
+
+.cocktail-item {
+    background-color: rgba(10, 10, 10, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all var(--transition-medium);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cocktail-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(5, 217, 232, 0.3);
+    border: 1px solid rgba(5, 217, 232, 0.3);
+}
+
+.cocktail-item__image-container {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.cocktail-item__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-medium);
+}
+
+.cocktail-item:hover .cocktail-item__image {
+    transform: scale(1.1);
+}
+
+.cocktail-item__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 50%, rgba(10, 10, 10, 0.8) 100%);
+}
+
+.cocktail-item__content {
+    padding: var(--space-md);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.cocktail-item__difficulty {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--midnight-black);
+    color: var(--starlight-pearl);
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    border-radius: 3px;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.cocktail-item__difficulty--easy {
+    border-left: 3px solid #39FF14; /* neon-green */
+}
+
+.cocktail-item__difficulty--medium {
+    border-left: 3px solid var(--electric-blue);
+}
+
+.cocktail-item__difficulty--hard {
+    border-left: 3px solid var(--neon-pink);
+}
+
+.cocktail-item__title {
+    font-size: 2.2rem;
+    margin-bottom: var(--space-xs);
+    color: var(--electric-blue);
+}
+
+.cocktail-item__base {
+    font-size: 1.4rem;
+    color: var(--neon-pink);
+    margin-bottom: var(--space-sm);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cocktail-item__base i {
+    font-size: 1.4rem;
+}
+
+.cocktail-item__description {
+    font-size: 1.6rem;
+    opacity: 0.8;
+    margin-bottom: var(--space-md);
+    flex-grow: 1;
+}
+
+.cocktail-item__meta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xs);
+    margin-bottom: var(--space-md);
+}
+
+.cocktail-item__meta-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.4rem;
+}
+
+.cocktail-item__meta-item i {
+    color: var(--neon-pink);
+    font-size: 1.4rem;
+    width: 20px;
+    text-align: center;
+}
+
+.cocktail-item__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: var(--space-md);
+}
+
+.cocktail-item__tag {
+    background-color: rgba(5, 217, 232, 0.1);
+    color: var(--electric-blue);
+    padding: 0.3rem 0.8rem;
+    font-size: 1.2rem;
+    border-radius: 3px;
+    border: 1px solid rgba(5, 217, 232, 0.3);
+}
+
+.cocktail-item__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+/* Featured Cocktail Section */
+.featured-cocktail {
+    background-color: var(--deep-purple);
+    padding: var(--space-lg);
+    border-radius: 10px;
+    margin-bottom: var(--space-xl);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 42, 109, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 42, 109, 0.2);
+}
+
+.featured-cocktail__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.featured-cocktail__decoration {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+    z-index: 0;
+}
+
+.featured-cocktail__decoration--1 {
+    width: 300px;
+    height: 300px;
+    background-color: var(--neon-pink);
+    top: -100px;
+    right: -100px;
+    opacity: 0.2;
+}
+
+.featured-cocktail__decoration--2 {
+    width: 250px;
+    height: 250px;
+    background-color: var(--electric-blue);
+    bottom: -80px;
+    left: -80px;
+    opacity: 0.2;
+}
+
+.featured-cocktail__image-container {
+    position: relative;
+}
+
+.featured-cocktail__image {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.featured-cocktail__info {
+    padding-left: var(--space-md);
+}
+
+.featured-cocktail__badge {
+    display: inline-block;
+    background: linear-gradient(45deg, var(--golden-glow), var(--electric-coral));
+    color: var(--midnight-black);
+    padding: 0.5rem 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 3px;
+    margin-bottom: var(--space-sm);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.featured-cocktail__title {
+    font-size: 3.6rem;
+    margin-bottom: var(--space-sm);
+    color: var(--neon-pink);
+    text-shadow: 0 0 15px rgba(255, 42, 109, 0.3);
+}
+
+.featured-cocktail__description {
+    font-size: 1.8rem;
+    opacity: 0.9;
+    margin-bottom: var(--space-md);
+    line-height: 1.6;
+}
+
+.featured-cocktail__details {
+    margin-bottom: var(--space-md);
+}
+
+.featured-cocktail__detail {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xs);
+}
+
+.featured-cocktail__detail-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--starlight-pearl);
+}
+
+.featured-cocktail__detail-info {
+    font-size: 1.6rem;
+    opacity: 0.9;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-lg);
+}
+
+.pagination__button {
+    background-color: transparent;
+    border: 1px solid rgba(5, 217, 232, 0.3);
+    color: var(--electric-blue);
+    padding: 0.8rem 1.5rem;
+    font-size: 1.4rem;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.pagination__button:hover {
+    background-color: rgba(5, 217, 232, 0.1);
+    border-color: var(--electric-blue);
+}
+
+.pagination__button.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination__button.disabled:hover {
+    background-color: transparent;
+    border-color: rgba(5, 217, 232, 0.3);
+}
+
+.pagination__numbers {
+    display: flex;
+    margin: 0 var(--space-sm);
+}
+
+.pagination__number {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    border-radius: 5px;
+    background-color: transparent;
+    border: none;
+    color: var(--starlight-pearl);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    margin: 0 2px;
+}
+
+.pagination__number:hover {
+    background-color: rgba(5, 217, 232, 0.1);
+    color: var(--electric-blue);
+}
+
+.pagination__number.active {
+    background-color: var(--electric-blue);
+    color: var(--midnight-black);
+    font-weight: 700;
+}
+
+/* Modal */
+.cocktail-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 10, 10, 0.9);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: opacity var(--transition-medium);
+}
+
+.cocktail-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.cocktail-modal__content {
+    background-color: var(--deep-purple);
+    border-radius: 10px;
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(5, 217, 232, 0.3);
+    border: 1px solid rgba(5, 217, 232, 0.2);
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all var(--transition-medium);
+}
+
+.cocktail-modal.active .cocktail-modal__content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.cocktail-modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: var(--space-md);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cocktail-modal__title {
+    font-size: 2.8rem;
+    margin-bottom: 0;
+    color: var(--neon-pink);
+}
+
+.cocktail-modal__close {
+    background: transparent;
+    border: none;
+    color: var(--starlight-pearl);
+    font-size: 2.4rem;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    transition: all var(--transition-fast);
+}
+
+.cocktail-modal__close:hover {
+    color: var(--neon-pink);
+    transform: rotate(90deg);
+}
+
+.cocktail-modal__body {
+    padding: var(--space-md);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+}
+
+.cocktail-modal__image {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.cocktail-modal__ingredients {
+    margin-bottom: var(--space-md);
+}
+
+.cocktail-modal__section-title {
+    font-size: 2rem;
+    margin-bottom: var(--space-sm);
+    color: var(--electric-blue);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cocktail-modal__section-title i {
+    font-size: 1.8rem;
+}
+
+.cocktail-modal__ingredient-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cocktail-modal__ingredient {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 1.6rem;
+}
+
+.cocktail-modal__ingredient:last-child {
+    border-bottom: none;
+}
+
+.cocktail-modal__ingredient-amount {
+    font-weight: 700;
+    color: var(--neon-pink);
+}
+
+.cocktail-modal__step-list {
+    counter-reset: step-counter;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cocktail-modal__step {
+    position: relative;
+    padding: 0 0 var(--space-sm) 50px;
+    margin-bottom: var(--space-sm);
+    font-size: 1.6rem;
+    counter-increment: step-counter;
+}
+
+.cocktail-modal__step::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--starlight-pearl);
+    font-size: 1.8rem;
+}
+
+.cocktail-modal__footer {
+    padding: var(--space-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cocktail-modal__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.cocktail-modal__tag {
+    background-color: rgba(5, 217, 232, 0.1);
+    color: var(--electric-blue);
+    padding: 0.3rem 0.8rem;
+    font-size: 1.2rem;
+    border-radius: 3px;
+    border: 1px solid rgba(5, 217, 232, 0.3);
+}
+
+.cocktail-modal__actions {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+/* No results message */
+.no-results {
+    text-align: center;
+    padding: var(--space-xl) 0;
+}
+
+.no-results__icon {
+    font-size: 6rem;
+    color: var(--neon-pink);
+    margin-bottom: var(--space-md);
+    opacity: 0.7;
+}
+
+.no-results__title {
+    font-size: 3rem;
+    margin-bottom: var(--space-sm);
+    color: var(--electric-blue);
+}
+
+.no-results__text {
+    font-size: 1.8rem;
+    max-width: 600px;
+    margin: 0 auto var(--space-lg);
+    opacity: 0.8;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 991px) {
+    .cocktail-filter__form {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    
+    .featured-cocktail__content {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+    
+    .featured-cocktail__image {
+        max-width: 400px;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    .cocktail-modal__body {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cocktail-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .cocktail-item__meta {
+        grid-template-columns: 1fr;
+    }
+    
+    .cocktail-modal__footer {
+        flex-direction: column;
+        gap: var(--space-sm);
+        align-items: flex-start;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .cocktail-finder-header {
+        height: 50vh;
+    }
+    
+    .cocktail-finder-header__title {
+        font-size: 3.2rem;
+    }
+    
+    .cocktail-finder-header__subtitle {
+        font-size: 1.6rem;
+    }
+    
+    .featured-cocktail__title {
+        font-size: 2.8rem;
+    }
+    
+    .featured-cocktail {
+        padding: var(--space-md);
+    }
+    
+    .cocktail-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cocktail-item__buttons {
+        flex-direction: column;
+        gap: var(--space-xs);
+    }
+    
+    .cocktail-item__buttons .button {
+        width: 100%;
+    }
+}

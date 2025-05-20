@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[BLOG_TITLE] | The BigCane</title>
+    <meta name="description" content="[BLOG_DESCRIPTION]">
+    
+    <!-- Core CSS Files -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    
+    <!-- Blog Post Specific CSS -->
+    <link rel="stylesheet" href="../css/pages/shared-blog-post.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Lato:wght@300;400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    
+    <!-- SEO Meta Tags -->
+    <meta property="og:title" content="[BLOG_TITLE] | The BigCane">
+    <meta property="og:description" content="[BLOG_DESCRIPTION]">
+    <meta property="og:image" content="../assets/images/[BLOG_IMAGE]">
+    <meta property="og:url" content="https://thebigcane.com/blog-posts/[BLOG_URL].html">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader__content">
+            <div class="preloader__logo">
+                <img src="../assets/images/big-cane-logo.png" alt="The Big Cane" width="200">
+            </div>
+            <div class="preloader__progress">
+                <div class="preloader__bar"></div>
+            </div>
+            <div class="preloader__text">
+                <span>Getting the party started...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../assets/images/big-cane-logo.png" alt="The Big Cane Logo" class="logo__image">
+                </a>
+            </div>
+            <button class="nav-toggle">
+                <span class="nav-toggle__icon"></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html#products" class="nav-link">Products</a></li>
+                    <li><a href="../index.html#founder" class="nav-link">Our Story</a></li>
+                    <li><a href="../blog.html" class="nav-link active">Blog</a></li>
+                    <li><a href="../other-businesses.html" class="nav-link">Ventures</a></li>
+                    <li><a href="../contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Post Header -->
+    <section class="blog-post-header">
+        <div class="blog-post-header__overlay"></div>
+        <div class="blog-post-header__grid"></div>
+        <div class="container">
+            <div class="blog-post-header__breadcrumbs">
+                <a href="../index.html">Home</a> / 
+                <a href="../blog.html">Blog</a> / 
+                <span>[BLOG_TITLE_SHORT]</span>
+            </div>
+            <div class="blog-post-header__category">[BLOG_CATEGORY]</div>
+            <h1 class="blog-post-header__title reveal-from-bottom">[BLOG_TITLE]</h1>
+            <div class="blog-post-header__meta reveal-from-bottom" data-delay="0.1">
+                <div class="blog-post-header__author">
+                    <img src="../assets/images/[AUTHOR_IMAGE]" alt="[AUTHOR_NAME]" class="blog-post-header__author-image">
+                    <div class="blog-post-header__author-info">
+                        <span class="blog-post-header__author-name">[AUTHOR_NAME]</span>
+                        <span class="blog-post-header__date">[PUBLISH_DATE]</span>
+                    </div>
+                </div>
+                <div class="blog-post-header__stats">
+                    <span><i class="fas fa-clock"></i> [READ_TIME] min read</span>
+                    <span><i class="fas fa-eye"></i> [VIEW_COUNT] views</span>
+                    <span><i class="fas fa-comment"></i> [COMMENT_COUNT] comments</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Post Content -->
+    <section class="blog-post-content section">
+        <div class="liquid-blob"></div>
+        <div class="container">
+            <div class="blog-post-grid">
+                <div class="blog-post-main">
+                    <div class="blog-post-featured-image reveal-from-bottom">
+                        <img src="../assets/images/[BLOG_IMAGE]" alt="[BLOG_IMAGE_ALT]" class="blog-post-image">
+                    </div>
+                    
+                    <div class="blog-post-text reveal-from-bottom" data-delay="0.2">
+                        <!-- BLOG CONTENT GOES HERE -->
+                        <p class="blog-post-intro">[BLOG_INTRO_PARAGRAPH]</p>
+
+                        <!-- Remaining blog content structure -->
+                        <!-- MAIN CONTENT HERE -->
+                        
+                    </div>
+
+                    <!-- Author Bio -->
+                    <div class="blog-post-author-bio reveal-from-bottom" data-delay="0.5">
+                        <img src="../assets/images/[AUTHOR_IMAGE]" alt="[AUTHOR_NAME]" class="blog-post-author-bio__image">
+                        <div class="blog-post-author-bio__content">
+                            <h3 class="blog-post-author-bio__name">[AUTHOR_NAME]</h3>
+                            <p class="blog-post-author-bio__description">[AUTHOR_BIO]</p>
+                            <div class="blog-post-author-bio__social">
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comments Section -->
+                    <div class="blog-post-comments reveal-from-bottom" data-delay="0.6">
+                        <h3 class="blog-post-comments__title">Comments ([COMMENT_COUNT])</h3>
+                        
+                        <!-- Example Comment 1 -->
+                        <div class="blog-post-comment">
+                            <img src="../assets/images/[COMMENTER1_IMAGE]" alt="User Avatar" class="blog-post-comment__avatar">
+                            <div class="blog-post-comment__content">
+                                <div class="blog-post-comment__header">
+                                    <h4 class="blog-post-comment__name">[COMMENTER1_NAME]</h4>
+                                    <span class="blog-post-comment__date">[COMMENT1_DATE]</span>
+                                </div>
+                                <p class="blog-post-comment__text">[COMMENT1_TEXT]</p>
+                                <div class="blog-post-comment__actions">
+                                    <button class="blog-post-comment__action"><i class="fas fa-reply"></i> Reply</button>
+                                    <button class="blog-post-comment__action"><i class="fas fa-heart"></i> Like</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Example Comment 2 with nested reply -->
+                        <div class="blog-post-comment">
+                            <img src="../assets/images/[COMMENTER2_IMAGE]" alt="User Avatar" class="blog-post-comment__avatar">
+                            <div class="blog-post-comment__content">
+                                <div class="blog-post-comment__header">
+                                    <h4 class="blog-post-comment__name">[COMMENTER2_NAME]</h4>
+                                    <span class="blog-post-comment__date">[COMMENT2_DATE]</span>
+                                </div>
+                                <p class="blog-post-comment__text">[COMMENT2_TEXT]</p>
+                                <div class="blog-post-comment__actions">
+                                    <button class="blog-post-comment__action"><i class="fas fa-reply"></i> Reply</button>
+                                    <button class="blog-post-comment__action"><i class="fas fa-heart"></i> Like</button>
+                                </div>
+                                
+                                <!-- Nested comment (reply) -->
+                                <div class="blog-post-comment blog-post-comment--nested">
+                                    <img src="../assets/images/[AUTHOR_IMAGE]" alt="[AUTHOR_NAME]" class="blog-post-comment__avatar">
+                                    <div class="blog-post-comment__content">
+                                        <div class="blog-post-comment__header">
+                                            <h4 class="blog-post-comment__name">[AUTHOR_NAME]</h4>
+                                            <span class="blog-post-comment__badge">Author</span>
+                                            <span class="blog-post-comment__date">[REPLY_DATE]</span>
+                                        </div>
+                                        <p class="blog-post-comment__text">[REPLY_TEXT]</p>
+                                        <div class="blog-post-comment__actions">
+                                            <button class="blog-post-comment__action"><i class="fas fa-reply"></i> Reply</button>
+                                            <button class="blog-post-comment__action"><i class="fas fa-heart"></i> Like</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Comment Form -->
+                        <div class="blog-post-comment-form">
+                            <h4 class="blog-post-comment-form__title">Leave a Comment</h4>
+                            <form>
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="comment">Comment</label>
+                                    <textarea id="comment" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="button">Post Comment</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sidebar -->
+                <div class="blog-post-sidebar">
+                    <!-- Author Card -->
+                    <div class="sidebar-card sidebar-author reveal-from-right">
+                        <img src="../assets/images/[AUTHOR_IMAGE]" alt="[AUTHOR_NAME]" class="sidebar-author__image">
+                        <h3 class="sidebar-author__name">[AUTHOR_NAME]</h3>
+                        <p class="sidebar-author__bio">[AUTHOR_SHORT_BIO]</p>
+                        <div class="sidebar-author__stats">
+                            <div class="sidebar-author__stat">
+                                <span class="sidebar-author__stat-number">[AUTHOR_ARTICLE_COUNT]</span>
+                                <span class="sidebar-author__stat-label">Articles</span>
+                            </div>
+                            <div class="sidebar-author__stat">
+                                <span class="sidebar-author__stat-number">[AUTHOR_COUNTRIES_COUNT]</span>
+                                <span class="sidebar-author__stat-label">Countries</span>
+                            </div>
+                        </div>
+                        <a href="#" class="button button--small button--outlined">View Profile</a>
+                    </div>
+                    
+                    <!-- Popular Posts -->
+                    <div class="sidebar-card sidebar-popular reveal-from-right" data-delay="0.1">
+                        <h3 class="sidebar-title">Popular Posts</h3>
+                        <div class="sidebar-post-list">
+                            <!-- Popular Post 1 -->
+                            <a href="[POPULAR_POST1_URL].html" class="sidebar-post">
+                                <img src="../assets/images/[POPULAR_POST1_IMAGE]" alt="[POPULAR_POST1_TITLE]" class="sidebar-post__image">
+                                <div class="sidebar-post__content">
+                                    <h4 class="sidebar-post__title">[POPULAR_POST1_TITLE]</h4>
+                                    <span class="sidebar-post__meta">[POPULAR_POST1_DATE]</span>
+                                </div>
+                            </a>
+                            <!-- Popular Post 2 -->
+                            <a href="[POPULAR_POST2_URL].html" class="sidebar-post">
+                                <img src="../assets/images/[POPULAR_POST2_IMAGE]" alt="[POPULAR_POST2_TITLE]" class="sidebar-post__image">
+                                <div class="sidebar-post__content">
+                                    <h4 class="sidebar-post__title">[POPULAR_POST2_TITLE]</h4>
+                                    <span class="sidebar-post__meta">[POPULAR_POST2_DATE]</span>
+                                </div>
+                            </a>
+                            <!-- Popular Post 3 -->
+                            <a href="[POPULAR_POST3_URL].html" class="sidebar-post">
+                                <img src="../assets/images/[POPULAR_POST3_IMAGE]" alt="[POPULAR_POST3_TITLE]" class="sidebar-post__image">
+                                <div class="sidebar-post__content">
+                                    <h4 class="sidebar-post__title">[POPULAR_POST3_TITLE]</h4>
+                                    <span class="sidebar-post__meta">[POPULAR_POST3_DATE]</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Categories -->
+                    <div class="sidebar-card sidebar-categories reveal-from-right" data-delay="0.2">
+                        <h3 class="sidebar-title">Categories</h3>
+                        <ul class="sidebar-categories__list">
+                            <li><a href="#">Nightlife <span>(12)</span></a></li>
+                            <li><a href="#">Mixology <span>(18)</span></a></li>
+                            <li><a href="#">Travel <span>(9)</span></a></li>
+                            <li><a href="#">Culture <span>(15)</span></a></li>
+                            <li><a href="#">Events <span>(7)</span></a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Featured Product -->
+                    <div class="sidebar-card sidebar-product reveal-from-right" data-delay="0.3">
+                        <span class="sidebar-product__badge">Featured</span>
+                        <img src="../assets/images/[FEATURED_PRODUCT_IMAGE]" alt="[FEATURED_PRODUCT_TITLE]" class="sidebar-product__image">
+                        <h3 class="sidebar-product__title">[FEATURED_PRODUCT_TITLE]</h3>
+                        <p class="sidebar-product__description">[FEATURED_PRODUCT_DESCRIPTION]</p>
+                        <div class="sidebar-product__rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>[FEATURED_PRODUCT_RATING]/5</span>
+                        </div>
+                        <a href="../index.html#products" class="button button--small">Learn More</a>
+                    </div>
+                    
+                    <!-- Newsletter -->
+                    <div class="sidebar-card sidebar-newsletter reveal-from-right" data-delay="0.4">
+                        <h3 class="sidebar-title">Subscribe</h3>
+                        <p>Get the latest BigCane articles, events, and exclusive offers delivered to your inbox.</p>
+                        <form class="sidebar-newsletter__form">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit" class="button button--small">Subscribe</button>
+                        </form>
+                    </div>
+                    
+                    <!-- Tags -->
+                    <div class="sidebar-card sidebar-tags reveal-from-right" data-delay="0.5">
+                        <h3 class="sidebar-title">Tags</h3>
+                        <div class="sidebar-tags__cloud">
+                            <!-- ADD RELEVANT TAGS HERE -->
+                            <a href="#" class="sidebar-tag">Caribbean</a>
+                            <a href="#" class="sidebar-tag">[TAG2]</a>
+                            <a href="#" class="sidebar-tag">[TAG3]</a>
+                            <a href="#" class="sidebar-tag">[TAG4]</a>
+                            <a href="#" class="sidebar-tag">[TAG5]</a>
+                            <a href="#" class="sidebar-tag">[TAG6]</a>
+                            <a href="#" class="sidebar-tag">[TAG7]</a>
+                            <a href="#" class="sidebar-tag">[TAG8]</a>
+                            <a href="#" class="sidebar-tag">[TAG9]</a>
+                            <a href="#" class="sidebar-tag">[TAG10]</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Related Posts -->
+            <div class="related-posts">
+                <h2 class="related-posts__title reveal-from-bottom">Related Articles</h2>
+                <div class="related-posts__grid">
+                    <!-- Related Post 1 -->
+                    <a href="[RELATED_POST1_URL].html" class="related-post reveal-from-bottom" data-delay="0.1">
+                        <img src="../assets/images/[RELATED_POST1_IMAGE]" alt="[RELATED_POST1_TITLE]" class="related-post__image">
+                        <div class="related-post__content">
+                            <span class="related-post__category">[RELATED_POST1_CATEGORY]</span>
+                            <h3 class="related-post__title">[RELATED_POST1_TITLE]</h3>
+                            <p class="related-post__meta">[RELATED_POST1_DATE] | By [RELATED_POST1_AUTHOR]</p>
+                        </div>
+                    </a>
+                    <!-- Related Post 2 -->
+                    <a href="[RELATED_POST2_URL].html" class="related-post reveal-from-bottom" data-delay="0.2">
+                        <img src="../assets/images/[RELATED_POST2_IMAGE]" alt="[RELATED_POST2_TITLE]" class="related-post__image">
+                        <div class="related-post__content">
+                            <span class="related-post__category">[RELATED_POST2_CATEGORY]</span>
+                            <h3 class="related-post__title">[RELATED_POST2_TITLE]</h3>
+                            <p class="related-post__meta">[RELATED_POST2_DATE] | By [RELATED_POST2_AUTHOR]</p>
+                        </div>
+                    </a>
+                    <!-- Related Post 3 -->
+                    <a href="[RELATED_POST3_URL].html" class="related-post reveal-from-bottom" data-delay="0.3">
+                        <img src="../assets/images/[RELATED_POST3_IMAGE]" alt="[RELATED_POST3_TITLE]" class="related-post__image">
+                        <div class="related-post__content">
+                            <span class="related-post__category">[RELATED_POST3_CATEGORY]</span>
+                            <h3 class="related-post__title">[RELATED_POST3_TITLE]</h3>
+                            <p class="related-post__meta">[RELATED_POST3_DATE] | By [RELATED_POST3_AUTHOR]</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter section">
+        <div class="newsletter__background">
+            <div class="newsletter__particles"></div>
+            <div class="newsletter__overlay"></div>
+        </div>
+        <div class="container">
+            <div class="newsletter__content">
+                <div class="newsletter__icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h2 class="newsletter__title reveal-from-bottom">Get VIP Access</h2>
+                <p class="newsletter__text reveal-from-bottom">Subscribe to our newsletter for exclusive cocktail recipes, event invitations, and special offers.</p>
+                <form class="newsletter__form reveal-from-bottom">
+                    <div class="newsletter__form-group">
+                        <input type="email" class="newsletter__input" placeholder="Enter your email address" required>
+                        <button type="submit" class="button newsletter__button">Subscribe</button>
+                    </div>
+                    <p class="newsletter__disclaimer">By subscribing, you agree to our <a href="#">Privacy Policy</a>. We promise not to spam you - only good vibes delivered to your inbox.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer__glow"></div>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer__info">
+                    <div class="footer__logo">
+                        <img src="../assets/images/big-cane-logo.png" alt="The Big Cane Logo" class="footer__logo-image">
+                    </div>
+                    <p class="footer__about">Crafting premium Caribbean spirits that capture the essence of island luxury and celebration. Every bottle tells a story of passion, rhythm, and craftsmanship.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon social-icon--instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon social-icon--facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon social-icon--twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon social-icon--pinterest">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__nav">
+                    <h3 class="footer__title">Navigation</h3>
+                    <ul>
+                        <li><a href="../index.html#products">Products</a></li>
+                        <li><a href="../index.html#founder">Our Story</a></li>
+                        <li><a href="../index.html#cocktails">Cocktails</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../other-businesses.html">Ventures</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__products">
+                    <h3 class="footer__title">Our Products</h3>
+                    <ul>
+                        <li><a href="../index.html#products">Silver Rum</a></li>
+                        <li><a href="../index.html#products">London Dry Gin</a></li>
+                        <li><a href="../index.html#products">Guava Rum</a></li>
+                        <li><a href="../index.html#products">Spiced Rum</a></li>
+                        <li><a href="../index.html#products">Limited Editions</a></li>
+                        <li><a href="../index.html#products">Gift Sets</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contact">
+                    <h3 class="footer__title">Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Caribbean House, Port of Spain, Trinidad</li>
+                        <li><i class="fas fa-phone"></i> +1 (868) 555-1234</li>
+                        <li><i class="fas fa-envelope"></i> info@thebigcane.com</li>
+                    </ul>
+                    <div class="footer__hours">
+                        <h4 class="footer__subtitle">Distillery Tours</h4>
+                        <p>Monday - Friday: 10am - 6pm</p>
+                        <p>Saturday: 12pm - 5pm</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 The BigCane. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p class="footer__disclaimer">Please drink responsibly. Must be 21 or older to purchase.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Page Transition -->
+    <div class="page-transition"></div>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/animations.js"></script>
+    
+    <!-- Blog Post Specific Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Reveal animations
+            const revealElements = document.querySelectorAll('.reveal-from-bottom, .reveal-from-right');
+            
+            const revealOnScroll = function() {
+                revealElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementTop < windowHeight - 50) {
+                        const delay = element.getAttribute('data-delay') || 0;
+                        setTimeout(() => {
+                            element.classList.add('revealed');
+                        }, delay * 1000);
+                    }
+                });
+            };
+            
+            window.addEventListener('scroll', revealOnScroll);
+            window.addEventListener('load', revealOnScroll);
+            
+            // Social sharing functionality
+            const shareButtons = document.querySelectorAll('.social-icon');
+            
+            shareButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    // Get current page URL and title
+                    const url = encodeURIComponent(window.location.href);
+                    const title = encodeURIComponent(document.title);
+                    
+                    // Determine which platform to share on
+                    if (button.classList.contains('social-icon--facebook')) {
+                        window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, 'facebook-share');
+                    } else if (button.classList.contains('social-icon--twitter')) {
+                        window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`, 'twitter-share');
+                    } else if (button.classList.contains('social-icon--pinterest')) {
+                        const image = encodeURIComponent(document.querySelector('.blog-post-image').src);
+                        window.open(`https://pinterest.com/pin/create/button/?url=${url}&media=${image}&description=${title}`, 'pinterest-share');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

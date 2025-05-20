@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The BigCane Blog | Caribbean Nightlife & Rum Culture</title>
+    <meta name="description" content="Explore the vibrant world of Caribbean nightlife, craft cocktails, and island adventures with The BigCane Rum blog.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/pages/blog.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Lato:wght@300;400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader__content">
+            <div class="preloader__logo">
+                <img src="assets/images/big-cane-logo.png" alt="The Big Cane" width="200">
+            </div>
+            <div class="preloader__progress">
+                <div class="preloader__bar"></div>
+            </div>
+            <div class="preloader__text">
+                <span>Loading tropical vibes...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="assets/images/big-cane-logo.png" alt="The Big Cane Logo" class="logo__image">
+            </div>
+            <button class="nav-toggle">
+                <span class="nav-toggle__icon"></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html#products" class="nav-link">Products</a></li>
+                    <li><a href="index.html#founder" class="nav-link">Our Story</a></li>
+                    <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                    <li><a href="other-businesses.html" class="nav-link">Ventures</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Header Section -->
+    <section class="blog-header">
+        <div class="blog-header__overlay"></div>
+        <div class="blog-header__grid"></div>
+        <div class="particles" data-particles="60"></div>
+        <div class="glow-orb glow-orb--1"></div>
+        <div class="glow-orb glow-orb--2"></div>
+        <div class="container">
+            <div class="blog-header__content">
+                <h1 class="blog-header__title liquid-text">The BigCane Lifestyle</h1>
+                <p class="blog-header__subtitle">Island adventures, craft cocktails, and electric nightlife</p>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-indicator__text">Scroll Down</div>
+            <div class="scroll-indicator__icon">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Filter -->
+    <section class="blog-filter section">
+        <div class="container">
+            <div class="blog-filter__buttons">
+                <button class="blog-filter__button active" data-filter="all">All</button>
+                <button class="blog-filter__button" data-filter="mixology">Mixology</button>
+                <button class="blog-filter__button" data-filter="nightlife">Nightlife</button>
+                <button class="blog-filter__button" data-filter="travel">Travel</button>
+                <button class="blog-filter__button" data-filter="culture">Culture</button>
+            </div>
+            
+            <!-- Search box -->
+            <div class="blog-search">
+                <input type="text" class="blog-search__input" placeholder="Search articles...">
+                <button class="blog-search__button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="featured-post section">
+        <div class="container">
+            <div class="badge badge--outlined">Featured</div>
+            <div class="featured-post__container reveal-from-bottom">
+                <div class="featured-post__image-container">
+                    <img src="assets/images/blog1-placeholder.jpg" alt="Caribbean Nightlife Guide" class="featured-post__image">
+                    <div class="featured-post__category">Nightlife</div>
+                </div>
+                <div class="featured-post__content">
+                    <h2 class="featured-post__title">Caribbean Nightlife Guide: The Ultimate Party Islands</h2>
+                    <div class="featured-post__meta">
+                        <span class="featured-post__date"><i class="fas fa-calendar"></i> May 12, 2025</span>
+                        <span class="featured-post__author"><i class="fas fa-user"></i> David Thompson</span>
+                        <span class="featured-post__category-label"><i class="fas fa-tag"></i> Nightlife</span>
+                    </div>
+                    <p class="featured-post__excerpt">From Trinidad's vibrant carnival scene to Jamaica's pulsing dancehall venues, discover the most electrifying nightlife experiences across the Caribbean islands. Our comprehensive guide takes you through the hottest clubs, beachfront bars, and hidden gems where locals and tourists come together to celebrate island rhythms.</p>
+                    <a href="blog-posts/caribbean-nightlife-guide.html" class="button glow-pulse">Read Article</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="blog-posts section">
+        <div class="liquid-blob"></div>
+        <div class="container">
+            <div class="blog-masonry">
+                <!-- Blog Post 1 -->
+                <article class="blog-card color-overlay reveal-from-bottom" data-category="mixology">
+                    <img src="assets/images/blog2-placeholder.jpg" alt="Caribbean Cocktail Culture" class="blog-card__image">
+                    <div class="blog-card__content color-overlay-content">
+                        <div class="blog-card__category">Mixology</div>
+                        <h3 class="blog-card__title">Caribbean Cocktail Culture</h3>
+                        <p class="blog-card__meta">April 18, 2025 | By Maria Santos</p>
+                        <p class="blog-card__excerpt">Explore the vibrant history of Caribbean mixology and learn how to craft authentic island drinks for your next gathering.</p>
+                        <a href="blog-posts/caribbean-cocktail-culture.html" class="button button--text">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 2 -->
+                <article class="blog-card color-overlay reveal-from-bottom" data-category="travel" data-delay="0.1">
+                    <img src="assets/images/blog3-placeholder.jpg" alt="Island Hopping: Trinidad" class="blog-card__image">
+                    <div class="blog-card__content color-overlay-content">
+                        <div class="blog-card__category">Travel</div>
+                        <h3 class="blog-card__title">Island Hopping: Trinidad</h3>
+                        <p class="blog-card__meta">March 29, 2025 | By David Thompson</p>
+                        <p class="blog-card__excerpt">Join us as we explore the hidden gems of Trinidad, from secluded beaches to local distilleries carrying centuries of tradition.</p>
+                        <a href="blog-posts/island-hopping-trinidad.html" class="button button--text">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 3 -->
+                <article class="blog-card color-overlay reveal-from-bottom" data-category="mixology" data-delay="0.2">
+                    <img src="assets/images/blog4-placeholder.jpg" alt="The Art of Distillation" class="blog-card__image">
+                    <div class="blog-card__content color-overlay-content">
+                        <div class="blog-card__category">Mixology</div>
+                        <h3 class="blog-card__title">The Art of Distillation</h3>
+                        <p class="blog-card__meta">March 15, 2025 | By James Rodriguez</p>
+                        <p class="blog-card__excerpt">Discover the centuries-old techniques behind our award-winning spirits and how tradition meets innovation in every drop.</p>
+                        <a href="blog-posts/art-of-distillation.html" class="button button--text">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 4 -->
+                <article class="blog-card color-overlay reveal-from-bottom" data-category="nightlife" data-delay="0.3">
+                    <img src="assets/images/blog5-placeholder.jpg" alt="DJ Culture in the Caribbean" class="blog-card__image">
+                    <div class="blog-card__content color-overlay-content">
+                        <div class="blog-card__category">Nightlife</div>
+                        <h3 class="blog-card__title">DJ Culture in the Caribbean</h3>
+                        <p class="blog-card__meta">February 28, 2025 | By Carlos Mendez</p>
+                        <p class="blog-card__excerpt">How Caribbean DJs are influencing global music trends and creating unique soundscapes that blend traditional rhythms with modern electronic beats.</p>
+                        <a href="blog-posts/dj-culture-caribbean.html" class="button button--text">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 5 -->
+                <article class="blog-card color-overlay reveal-from-bottom" data-category="culture" data-delay="0.4">
+                    <img src="assets/images/blog6-placeholder.jpg" alt="Rum's Cultural Impact" class="blog-card__image">
+                    <div class="blog-card__content color-overlay-content">
+                        <div class="blog-card__category">Culture</div>
+                        <h3 class="blog-card__title">Rum's Cultural Impact</h3>
+                        <p class="blog-card__meta">February 12, 2025 | By Sophia Blake</p>
+                        <p class="blog-card__excerpt">Exploring how rum has shaped Caribbean culture, music, and artistic expression throughout centuries of island history.</p>
+                        <a href="blog-posts/rum-cultural-impact.html" class="button button--text">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 6 -->
+                <article class="blog-card color-overlay reveal-from-bottom" data-category="travel" data-delay="0.5">
+                    <img src="assets/images/blog7-placeholder.jpg" alt="Beach Parties of the Caribbean" class="blog-card__image">
+                    <div class="blog-card__content color-overlay-content">
+                        <div class="blog-card__category">Travel</div>
+                        <h3 class="blog-card__title">Beach Parties of the Caribbean</h3>
+                        <p class="blog-card__meta">January 25, 2025 | By Elena Gomez</p>
+                        <p class="blog-card__excerpt">A guide to the most exclusive and unforgettable beach parties across the Caribbean islands, from sunset gatherings to all-night dance events.</p>
+                        <a href="blog-posts/beach-parties-caribbean.html" class="button button--text">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 7 -->
+                <article class="blog-card color-overlay reveal-from-bottom" data-category="mixology" data-delay="0.6">
+                    <img src="assets/images/blog8-placeholder.jpg" alt="Molecular Mixology with Rum" class="blog-card__image">
+                    <div class="blog-card__content color-overlay-content">
+                        <div class="blog-card__category">Mixology</div>
+                        <h3 class="blog-card__title">Molecular Mixology with Rum</h3>
+                        <p class="blog-card__meta">January 10, 2025 | By Alex Carter</p>
+                        <p class="blog-card__excerpt">How modern mixologists are using scientific techniques to transform rum cocktails into extraordinary sensory experiences.</p>
+                        <a href="blog-posts/molecular-mixology-rum.html" class="button button--text">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 8 -->
+                <article class="blog-card color-overlay reveal-from-bottom" data-category="culture" data-delay="0.7">
+                    <img src="assets/images/blog9-placeholder.jpg" alt="Music & Rum: A Perfect Pairing" class="blog-card__image">
+                    <div class="blog-card__content color-overlay-content">
+                        <div class="blog-card__category">Culture</div>
+                        <h3 class="blog-card__title">Music & Rum: A Perfect Pairing</h3>
+                        <p class="blog-card__meta">December 22, 2024 | By Marcus Johnson</p>
+                        <p class="blog-card__excerpt">The intricate relationship between Caribbean music genres and rum culture, and how they've evolved together through generations.</p>
+                        <a href="blog-posts/music-rum-pairing.html" class="button button--text">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="pagination__button pagination__button--prev disabled">
+                    <i class="fas fa-chevron-left"></i> Previous
+                </button>
+                <div class="pagination__numbers">
+                    <button class="pagination__number active">1</button>
+                    <button class="pagination__number">2</button>
+                    <button class="pagination__number">3</button>
+                </div>
+                <button class="pagination__button pagination__button--next">
+                    Next <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter section">
+        <div class="newsletter__background">
+            <div class="newsletter__particles"></div>
+            <div class="newsletter__overlay"></div>
+        </div>
+        <div class="container">
+            <div class="newsletter__content">
+                <div class="newsletter__icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h2 class="newsletter__title reveal-from-bottom">Get VIP Access</h2>
+                <p class="newsletter__text reveal-from-bottom">Subscribe to our newsletter for exclusive cocktail recipes, event invitations, and special offers.</p>
+                <form class="newsletter__form reveal-from-bottom">
+                    <div class="newsletter__form-group">
+                        <input type="email" class="newsletter__input" placeholder="Enter your email address" required>
+                        <button type="submit" class="button newsletter__button">Subscribe</button>
+                    </div>
+                    <p class="newsletter__disclaimer">By subscribing, you agree to our <a href="#">Privacy Policy</a>. We promise not to spam you - only good vibes delivered to your inbox.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer__glow"></div>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer__info">
+                    <div class="footer__logo">
+                        <img src="assets/images/big-cane-logo.png" alt="The Big Cane Logo" class="footer__logo-image">
+                    </div>
+                    <p class="footer__about">Crafting premium Caribbean spirits that capture the essence of island luxury and celebration. Every bottle tells a story of passion, rhythm, and craftsmanship.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon social-icon--instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon social-icon--facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon social-icon--twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon social-icon--pinterest">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__nav">
+                    <h3 class="footer__title">Navigation</h3>
+                    <ul>
+                        <li><a href="index.html#products">Products</a></li>
+                        <li><a href="index.html#founder">Our Story</a></li>
+                        <li><a href="index.html#cocktails">Cocktails</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="other-businesses.html">Ventures</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__products">
+                    <h3 class="footer__title">Our Products</h3>
+                    <ul>
+                        <li><a href="#">Silver Rum</a></li>
+                        <li><a href="#">London Dry Gin</a></li>
+                        <li><a href="#">Guava Rum</a></li>
+                        <li><a href="#">Spiced Rum</a></li>
+                        <li><a href="#">Limited Editions</a></li>
+                        <li><a href="#">Gift Sets</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contact">
+                    <h3 class="footer__title">Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Caribbean House, Port of Spain, Trinidad</li>
+                        <li><i class="fas fa-phone"></i> +1 (868) 555-1234</li>
+                        <li><i class="fas fa-envelope"></i> info@thebigcane.com</li>
+                    </ul>
+                    <div class="footer__hours">
+                        <h4 class="footer__subtitle">Distillery Tours</h4>
+                        <p>Monday - Friday: 10am - 6pm</p>
+                        <p>Saturday: 12pm - 5pm</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 The BigCane. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p class="footer__disclaimer">Please drink responsibly. Must be 21 or older to purchase.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Page Transition -->
+    <div class="page-transition"></div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    
+    <!-- Blog specific script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Blog filter functionality
+            const filterButtons = document.querySelectorAll('.blog-filter__button');
+            const blogCards = document.querySelectorAll('.blog-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    // Get filter value
+                    const filter = button.getAttribute('data-filter');
+                    
+                    // Filter blog cards
+                    blogCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Blog search functionality
+            const searchInput = document.querySelector('.blog-search__input');
+            const searchButton = document.querySelector('.blog-search__button');
+            
+            const searchPosts = () => {
+                const searchTerm = searchInput.value.toLowerCase();
+                
+                blogCards.forEach(card => {
+                    const title = card.querySelector('.blog-card__title').textContent.toLowerCase();
+                    const excerpt = card.querySelector('.blog-card__excerpt').textContent.toLowerCase();
+                    const category = card.querySelector('.blog-card__category').textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || excerpt.includes(searchTerm) || category.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            };
+            
+            searchButton.addEventListener('click', searchPosts);
+            searchInput.addEventListener('keyup', e => {
+                if (e.key === 'Enter') {
+                    searchPosts();
+                }
+            });
+            
+            // Pagination (simple demo - not functional)
+            const paginationNumbers = document.querySelectorAll('.pagination__number');
+            const prevButton = document.querySelector('.pagination__button--prev');
+            const nextButton = document.querySelector('.pagination__button--next');
+            
+            paginationNumbers.forEach(button => {
+                button.addEventListener('click', () => {
+                    paginationNumbers.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    // Enable/disable prev/next buttons based on active page
+                    const activePage = parseInt(button.textContent);
+                    prevButton.classList.toggle('disabled', activePage === 1);
+                    nextButton.classList.toggle('disabled', activePage === paginationNumbers.length);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

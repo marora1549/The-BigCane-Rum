@@ -1,0 +1,55 @@
+# The Big Cane Rum Website Robots.txt
+# Last updated: May 20, 2025
+
+User-agent: *
+Allow: /
+Allow: /blog-posts/
+Allow: /products/
+Allow: /recipes/
+Allow: /sitemap.xml
+
+# Disallow admin-related pages
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /login
+Disallow: /cart
+Disallow: */edit$
+
+# Disallow temporary and development pages
+Disallow: /temp/
+Disallow: /dev/
+Disallow: /test/
+Disallow: /draft/
+
+# Disallow duplicate content
+Disallow: */print$
+Disallow: */embed$
+
+# Block bots from crawling some specific file types
+Disallow: /*.php$
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /*.pdf$
+
+# Allow important files
+Allow: /sitemap.xml
+Allow: /favicon.ico
+Allow: /robots.txt
+
+# Sitemap location
+Sitemap: https://thebigcane.com/sitemap.xml
+
+# Crawl delay for specific bots to reduce server load
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+User-agent: Baiduspider
+Crawl-delay: 10

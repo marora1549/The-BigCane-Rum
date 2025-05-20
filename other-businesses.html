@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The BigCane Ventures | Our Business Portfolio</title>
+    <meta name="description" content="Explore The BigCane's diverse business portfolio beyond rum - from Global Link International to Buddha Bar and Square Duty Free.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components/audio-player.css">
+    <link rel="stylesheet" href="css/components/notifications.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Lato:wght@300;400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <!-- Other Business page specific CSS -->
+    <link rel="stylesheet" href="css/pages/ventures.css">
+    <link rel="stylesheet" href="css/pages/blog.css">
+    <!-- Custom CSS for other-businesses page -->
+    <style>
+        /* Apply blog header style to ventures header but keep the rest of the ventures page styling */
+        .ventures-header {
+            position: relative;
+            height: 60vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .ventures-header .blog-header__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(26, 11, 46, 0.7), rgba(10, 10, 10, 0.95));
+            z-index: -1;
+        }
+
+        .ventures-header .blog-header__grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(to right, rgba(5, 217, 232, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(5, 217, 232, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        .ventures-header .blog-header__content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            padding: var(--space-lg) var(--space-md);
+            z-index: 1;
+        }
+
+        .ventures-header .blog-header__title {
+            font-size: var(--h1-size);
+            margin-bottom: var(--space-sm);
+            color: var(--neon-pink);
+            text-shadow: 0 0 20px rgba(255, 42, 109, 0.5);
+            text-transform: uppercase;
+        }
+
+        .ventures-header .blog-header__subtitle {
+            font-size: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        /* Business cards fixes */
+        .venture-card__image-container {
+            height: 220px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .venture-card__image {
+            max-height: 180px;
+            width: auto;
+            object-fit: contain;
+            margin: 0 auto;
+            display: block;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader__content">
+            <div class="preloader__logo">
+                <img src="assets/images/big-cane-logo.png" alt="The Big Cane" width="200">
+            </div>
+            <div class="preloader__progress">
+                <div class="preloader__bar"></div>
+            </div>
+            <div class="preloader__text">
+                <span>Loading ventures...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="assets/images/big-cane-logo.png" alt="The Big Cane Logo" class="logo__image">
+            </div>
+            <button class="nav-toggle">
+                <span class="nav-toggle__icon"></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html#products" class="nav-link">Products</a></li>
+                    <li><a href="index.html#founder" class="nav-link">Our Story</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="other-businesses.html" class="nav-link active">Ventures</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Ventures Header with Business Portfolio Heading and Cards -->
+    <section class="ventures-header">
+        <div class="blog-header__overlay"></div>
+        <div class="blog-header__grid"></div>
+        <div class="particles" data-particles="60"></div>
+        <div class="glow-orb glow-orb--1"></div>
+        <div class="glow-orb glow-orb--2"></div>
+        <div class="container">
+            <div class="blog-header__content">
+                <h1 class="blog-header__title liquid-text">OUR BUSINESS PORTFOLIO</h1>
+                <p class="blog-header__subtitle">From international trading to luxury hospitality and retail, our ventures span diverse industries</p>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-indicator__text">Scroll Down</div>
+            <div class="scroll-indicator__icon">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Cards Section -->
+    <section>
+        <div class="container">
+            <div class="ventures-grid">
+                <!-- Global Link International -->
+                <div class="venture-card reveal-from-bottom" data-delay="0.1">
+                    <div class="venture-card__image-container">
+                        <img src="assets/images/global-link-logo-placeholder.png" alt="Global Link International" class="venture-card__image">
+                        <div class="venture-card__overlay"></div>
+                    </div>
+                    <div class="venture-card__content">
+                        <span class="venture-card__type">Citizenship Consulting</span>
+                        <h3 class="venture-card__title">Global Link International</h3>
+                        <p class="venture-card__description">A government certified consulting firm specialized in helping clients obtain international citizenship to St Kitts & Nevis. Our team of expert consultants provides comprehensive guidance through the entire citizenship application process, ensuring a smooth and efficient path to securing your second passport.</p>
+                        <div class="venture-card__features">
+                            <div class="venture-card__feature">
+                                <i class="fas fa-passport"></i>
+                                <span>Government Certified</span>
+                            </div>
+                            <div class="venture-card__feature">
+                                <i class="fas fa-globe-americas"></i>
+                                <span>St Kitts & Nevis Specialists</span>
+                            </div>
+                            <div class="venture-card__feature">
+                                <i class="fas fa-handshake"></i>
+                                <span>Personalized Consulting</span>
+                            </div>
+                            <div class="venture-card__feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>High Success Rate</span>
+                            </div>
+                        </div>
+                        <div class="venture-card__cta" style="display: flex; justify-content: space-between; align-items: center;">
+                            <div class="venture-card__social" style="display: flex; gap: 10px;">
+                                <a href="https://www.instagram.com/globallinkintl/reels/" target="_blank" class="social-link social-link--instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                            <a href="https://globallink.international/" class="venture-card__website" target="_blank">Visit Website <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Buddha Bar -->
+                <div class="venture-card reveal-from-bottom" data-delay="0.2">
+                    <div class="venture-card__image-container">
+                        <img src="assets/images/buddha-bar-logo-placeholder.png" alt="Buddha Bar" class="venture-card__image">
+                        <div class="venture-card__overlay"></div>
+                    </div>
+                    <div class="venture-card__content">
+                        <span class="venture-card__type">Restaurants & Bars</span>
+                        <h3 class="venture-card__title">Buddha Bar & Restaurants</h3>
+                        <p class="venture-card__description">A chain of lavish restaurants and bars established in St. Kitts & Nevis, offering an extraordinary dining experience in breathtaking settings. Each Buddha Bar location combines exquisite cuisine, captivating ambiance, and exceptional service to create unforgettable moments for our guests.</p>
+                        <div class="venture-card__features">
+                            <div class="venture-card__feature">
+                                <i class="fas fa-utensils"></i>
+                                <span>Exquisite Dining Experience</span>
+                            </div>
+                            <div class="venture-card__feature">
+                                <i class="fas fa-cocktail"></i>
+                                <span>Premium Cocktail Selection</span>
+                            </div>
+                            <div class="venture-card__feature">
+                                <i class="fas fa-music"></i>
+                                <span>Live Entertainment</span>
+                            </div>
+                            <div class="venture-card__feature">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Multiple St. Kitts & Nevis Locations</span>
+                            </div>
+                        </div>
+                        <div class="venture-card__cta" style="display: flex; justify-content: space-between; align-items: center;">
+                            <div class="venture-card__social" style="display: flex; gap: 10px;">
+                                <a href="https://www.facebook.com/buddhabarstkitts/" target="_blank" class="social-link social-link--facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://www.instagram.com/buddhabarstkitts/?hl=en" target="_blank" class="social-link social-link--instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                            <a href="https://buddhabarskn.com/" class="venture-card__website" target="_blank">Visit Website <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Square Duty Free -->
+                <div class="venture-card reveal-from-bottom" data-delay="0.3">
+                    <div class="venture-card__image-container">
+                        <img src="assets/images/square-duty-free-logo-placeholder.png" alt="Square Duty Free" class="venture-card__image">
+                        <div class="venture-card__overlay"></div>
+                    </div>
+                    <div class="venture-card__content">
+                        <span class="venture-card__type">Duty Free Retail</span>
+                        <h3 class="venture-card__title">Square Duty Free</h3>
+                        <p class="venture-card__description">Airport-based chain retailer specializing in duty-free goods with a primary focus on premium tobacco and liquor products, including our BigCane rum collection. With multiple strategic locations across St. Kitts & Nevis, Square Duty Free offers travelers access to top-quality products at exceptional duty-free prices.</p>
+                        <div class="venture-card__features">
+                            <div class="venture-card__feature">
+                                <i class="fas fa-store"></i>
+                                <span>Premium Retail Experience</span>
+                            </div>
+                            <div class="venture-card__feature">
+                                <i class="fas fa-wine-bottle"></i>
+                                <span>Fine Liquor Selection</span>
+                            </div>
+                            <div class="venture-card__feature">
+                                <i class="fas fa-smoking"></i>
+                                <span>Premium Tobacco Products</span>
+                            </div>
+                            <div class="venture-card__feature">
+                                <i class="fas fa-plane"></i>
+                                <span>Airport & Port Locations</span>
+                            </div>
+                        </div>
+                        <div class="venture-card__cta" style="display: flex; justify-content: space-between; align-items: center;">
+                            <div class="venture-card__social" style="display: flex; gap: 10px;">
+                                <a href="https://www.facebook.com/Squaredutyfree/" target="_blank" class="social-link social-link--facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </div>
+                            <a href="https://squaredutyfree.com/" class="venture-card__website" target="_blank">Visit Website <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Square Duty Free Featured Section -->
+    <section class="square-duty-free-section" style="background: linear-gradient(135deg, var(--night-blue), var(--deep-purple), var(--night-blue)); padding: 60px 0; position: relative; overflow: hidden; margin-top: 30px;">
+        <div class="glow-orb" style="position: absolute; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,42,109,0.3) 0%, rgba(5,217,232,0) 70%); top: -100px; right: 10%; border-radius: 50%; filter: blur(40px);"></div>
+        <div class="glow-orb" style="position: absolute; width: 250px; height: 250px; background: radial-gradient(circle, rgba(5,217,232,0.3) 0%, rgba(5,217,232,0) 70%); bottom: -100px; left: 15%; border-radius: 50%; filter: blur(40px);"></div>
+        
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+                <img src="assets/images/square-duty-free-logo-placeholder.png" alt="Square Duty Free Logo" style="width: 180px; margin: 0 auto 20px; display: block;">
+                <h2 class="section-title reveal-from-bottom" style="text-transform: uppercase; font-size: 2.6rem; margin-top: 10px; background: linear-gradient(45deg, #4ca1af, #c4e0e5); -webkit-background-clip: text; background-clip: text; color: transparent;">DUTY FREE EXCELLENCE</h2>
+                <p class="section-subtitle reveal-from-bottom" style="max-width: 800px; margin: 0 auto; color: #f0f0f0;">Premium retail destinations across St. Kitts & Nevis offering the finest selection of duty-free goods</p>
+            </div>
+            
+            <div class="sdf-showcase reveal-from-bottom" style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin-bottom: 50px; position: relative;">
+                <div class="sdf-red-badge" style="position: absolute; top: -30px; right: -30px; width: 120px; height: 120px; background-color: #ff2a6d; border-radius: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; font-weight: bold; transform: rotate(12deg); box-shadow: 0 5px 15px rgba(255,42,109,0.4); z-index: 10;">
+                    <span style="font-size: 0.8rem; text-transform: uppercase;">Big Cane Rum</span>
+                    <span style="font-size: 0.8rem; text-transform: uppercase;">In Exciting</span>
+                    <span style="font-size: 1.2rem; text-transform: uppercase;">NEW</span>
+                    <span style="font-size: 0.8rem; text-transform: uppercase;">Flavors</span>
+                </div>
+                
+                <div class="sdf-showcase-image" style="flex: 1; min-width: 300px; max-width: 500px; background-image: url('assets/images/landing-page.png'); background-size: contain; background-position: center; background-repeat: no-repeat; min-height: 400px;">
+                </div>
+                
+                <div class="sdf-content" style="flex: 1; min-width: 300px;">
+                    <div class="sdf-products" style="margin-bottom: 30px;">
+                        <h3 style="color: var(--electric-blue); font-size: 1.6rem; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">Premium Product Selection</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px;">
+                            <div class="sdf-product-item" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; text-align: center; transition: all 0.3s ease; cursor: pointer; border: 1px solid rgba(255,255,255,0.05);" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.1)'; this.style.border='1px solid rgba(255,255,255,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.05)'; this.style.border='1px solid rgba(255,255,255,0.05)';">
+                                <i class="fas fa-wine-bottle" style="font-size: 2rem; color: var(--neon-pink); margin-bottom: 10px;"></i>
+                                <h4 style="font-size: 1rem; text-transform: uppercase; margin: 0;">Liquor</h4>
+                            </div>
+                            <div class="sdf-product-item" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; text-align: center; transition: all 0.3s ease; cursor: pointer; border: 1px solid rgba(255,255,255,0.05);" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.1)'; this.style.border='1px solid rgba(255,255,255,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.05)'; this.style.border='1px solid rgba(255,255,255,0.05)';">
+                                <i class="fas fa-smoking" style="font-size: 2rem; color: var(--neon-pink); margin-bottom: 10px;"></i>
+                                <h4 style="font-size: 1rem; text-transform: uppercase; margin: 0;">Cigarettes</h4>
+                            </div>
+                            <div class="sdf-product-item" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; text-align: center; transition: all 0.3s ease; cursor: pointer; border: 1px solid rgba(255,255,255,0.05);" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.1)'; this.style.border='1px solid rgba(255,255,255,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.05)'; this.style.border='1px solid rgba(255,255,255,0.05)';">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 10px;">
+                                    <path d="M20 12H4M8 12V14C8 15.1046 8.89543 16 10 16H14C15.1046 16 16 15.1046 16 14V12M8 12V10C8 8.89543 8.89543 8 10 8H14C15.1046 8 16 8.89543 16 10V12" stroke="#FF2A6D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <h4 style="font-size: 1rem; text-transform: uppercase; margin: 0;">Cuban Cigars</h4>
+                            </div>
+                            <div class="sdf-product-item" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; text-align: center; transition: all 0.3s ease; cursor: pointer; border: 1px solid rgba(255,255,255,0.05);" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.1)'; this.style.border='1px solid rgba(255,255,255,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.05)'; this.style.border='1px solid rgba(255,255,255,0.05)';">
+                                <i class="fas fa-glass-whiskey" style="font-size: 2rem; color: var(--neon-pink); margin-bottom: 10px;"></i>
+                                <h4 style="font-size: 1rem; text-transform: uppercase; margin: 0;">Hookah</h4>
+                            </div>
+                            <div class="sdf-product-item" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; text-align: center; transition: all 0.3s ease; cursor: pointer; border: 1px solid rgba(255,255,255,0.05);" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.1)'; this.style.border='1px solid rgba(255,255,255,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.05)'; this.style.border='1px solid rgba(255,255,255,0.05)';">
+                                <i class="fas fa-shopping-bag" style="font-size: 2rem; color: var(--neon-pink); margin-bottom: 10px;"></i>
+                                <h4 style="font-size: 1rem; text-transform: uppercase; margin: 0;">Accessories</h4>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sdf-locations">
+                        <h3 style="color: var(--electric-blue); font-size: 1.6rem; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">Store Locations</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px;">
+                            <div class="sdf-location" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; display: flex; align-items: center; transition: all 0.3s ease; cursor: pointer; border: 1px solid rgba(255,255,255,0.05);" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.1)'; this.style.border='1px solid rgba(255,255,255,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.05)'; this.style.border='1px solid rgba(255,255,255,0.05)';">
+                                <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--neon-pink); display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                                    <i class="fas fa-map-marker-alt" style="color: white;"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1rem; margin: 0 0 5px 0;">PORT ZANTE</h4>
+                                    <p style="margin: 0; opacity: 0.7; font-size: 0.9rem;">CENTRE - NEXT TO CHEERS BAR</p>
+                                </div>
+                            </div>
+                            <div class="sdf-location" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; display: flex; align-items: center; transition: all 0.3s ease; cursor: pointer; border: 1px solid rgba(255,255,255,0.05);" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.1)'; this.style.border='1px solid rgba(255,255,255,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.05)'; this.style.border='1px solid rgba(255,255,255,0.05)';">
+                                <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--neon-pink); display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                                    <i class="fas fa-map-marker-alt" style="color: white;"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1rem; margin: 0 0 5px 0;">PORT ZANTE</h4>
+                                    <p style="margin: 0; opacity: 0.7; font-size: 0.9rem;">NEXT TO SWEET CANE</p>
+                                </div>
+                            </div>
+                            <div class="sdf-location" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; display: flex; align-items: center; transition: all 0.3s ease; cursor: pointer; border: 1px solid rgba(255,255,255,0.05);" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.1)'; this.style.border='1px solid rgba(255,255,255,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.05)'; this.style.border='1px solid rgba(255,255,255,0.05)';">
+                                <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--neon-pink); display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                                    <i class="fas fa-map-marker-alt" style="color: white;"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1rem; margin: 0 0 5px 0;">FRIGATE BAY</h4>
+                                    <p style="margin: 0; opacity: 0.7; font-size: 0.9rem;">ISLAND PARADISE</p>
+                                </div>
+                            </div>
+                            <div class="sdf-location" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; display: flex; align-items: center; transition: all 0.3s ease; cursor: pointer; border: 1px solid rgba(255,255,255,0.05);" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.1)'; this.style.border='1px solid rgba(255,255,255,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.05)'; this.style.border='1px solid rgba(255,255,255,0.05)';">
+                                <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--electric-blue); display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                                    <i class="fas fa-map-marker-alt" style="color: white;"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1rem; margin: 0 0 5px 0;">MARRIOTT LOBBY</h4>
+                                    <p style="margin: 0; opacity: 0.7; font-size: 0.9rem;">FRIGATE BAY</p>
+                                </div>
+                            </div>
+                            <div class="sdf-location" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; display: flex; align-items: center; transition: all 0.3s ease; cursor: pointer; border: 1px solid rgba(255,255,255,0.05);" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.1)'; this.style.border='1px solid rgba(255,255,255,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.05)'; this.style.border='1px solid rgba(255,255,255,0.05)';">
+                                <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--electric-blue); display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                                    <i class="fas fa-plane" style="color: white;"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1rem; margin: 0 0 5px 0;">RLB INTL AIRPORT</h4>
+                                    <p style="margin: 0; opacity: 0.7; font-size: 0.9rem;">DUTY FREE ZONE</p>
+                                </div>
+                            </div>
+                            <div class="sdf-location" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; display: flex; align-items: center; transition: all 0.3s ease; cursor: pointer; border: 1px solid rgba(255,255,255,0.05);" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255,255,255,0.1)'; this.style.border='1px solid rgba(255,255,255,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.05)'; this.style.border='1px solid rgba(255,255,255,0.05)';">
+                                <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--electric-blue); display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                                    <i class="fas fa-map-marker-alt" style="color: white;"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1rem; margin: 0 0 5px 0;">NEVIS</h4>
+                                    <p style="margin: 0; opacity: 0.7; font-size: 0.9rem;">NEXT TO INDIAN SUMMER</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 30px; text-align: center;">
+                        <p style="font-weight: bold; font-size: 1.4rem; color: var(--neon-pink); text-transform: uppercase; margin-bottom: 15px;">GET IT ALL AT YOUR FAVORITE DUTY FREE STORE</p>
+                        <div style="display: flex; justify-content: center; gap: 20px; margin-top: 20px; flex-wrap: wrap;">
+                            <div style="display: flex; align-items: center;">
+                                <i class="fas fa-phone" style="margin-right: 8px; color: var(--electric-blue);"></i>
+                                <span>+18697677777</span>
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <i class="fas fa-envelope" style="margin-right: 8px; color: var(--electric-blue);"></i>
+                                <span>SUNNY@SQUAREDUTYFREE.COM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission and Vision Section -->
+    <section class="mission-section" style="position: relative; z-index: 2; margin-top: 30px;">
+        <div class="container">
+            <div class="mission-content">
+                <div class="mission-image reveal-from-left">
+                    <img src="assets/images/founder-sunil.jpg" alt="Sunil Gehani">
+                    <div class="mission-image__decoration mission-image__decoration--1"></div>
+                    <div class="mission-image__decoration mission-image__decoration--2"></div>
+                </div>
+                <div class="mission-text reveal-from-right">
+                    <h2>Our Business Philosophy</h2>
+                    <p>The BigCane's diversification strategy is guided by our founder's vision to create an ecosystem of businesses that celebrate Caribbean culture, nurture local talent, and contribute to sustainable development across the region.</p>
+                    <p>Each venture in our portfolio operates independently while sharing core values and synergistic opportunities. This approach allows us to leverage cross-promotional advantages while ensuring each business maintains its unique identity and focus.</p>
+                    
+                    <div class="mission-values">
+                        <div class="mission-value stagger-fade-in">
+                            <div class="mission-value__icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3 class="mission-value__title">Innovation</h3>
+                            <p class="mission-value__text">We embrace creative approaches and pioneering solutions across all our ventures.</p>
+                        </div>
+                        
+                        <div class="mission-value stagger-fade-in">
+                            <div class="mission-value__icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h3 class="mission-value__title">Sustainability</h3>
+                            <p class="mission-value__text">Environmental and social responsibility guide our business decisions.</p>
+                        </div>
+                        
+                        <div class="mission-value stagger-fade-in">
+                            <div class="mission-value__icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3 class="mission-value__title">Community</h3>
+                            <p class="mission-value__text">We invest in local communities, creating opportunities and preserving heritage.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership CTA Section -->
+    <section class="partnership-cta" style="background-color: #000;">
+        <div class="partnership-cta__particles" data-particle-count="50"></div>
+        <div class="container" style="max-width: 900px; text-align: center;">
+            <div class="partnership-cta__content">
+                <h2 class="partnership-cta__title reveal-from-bottom" style="color: #FFD700; font-size: 3rem; margin-bottom: 20px;">Partner With Us</h2>
+                <p class="partnership-cta__text reveal-from-bottom" data-delay="0.1" style="font-size: 1.2rem; max-width: 800px; margin-left: auto; margin-right: auto;">Whether you're interested in business collaboration, investment opportunities, or bringing our brands to new markets, we're always open to transformative partnerships that align with our vision.</p>
+                
+                <form class="newsletter__form reveal-from-bottom" style="max-width: 600px; margin: 40px auto 0;">
+                    <div class="newsletter__form-group" style="display: flex; margin-bottom: 10px;">
+                        <input type="email" class="newsletter__input" placeholder="Enter your email address" required style="flex: 1; padding: 15px; border-radius: 5px 0 0 5px; border: none; background: rgba(255, 255, 255, 0.1); color: white; font-size: 16px;">
+                        <button type="submit" class="button newsletter__button" style="border-radius: 0 5px 5px 0; padding: 0 25px; background: #FF3A6D; border: none; color: white; font-weight: bold; text-transform: uppercase;">Contact Our Team</button>
+                    </div>
+                    <p class="newsletter__disclaimer" style="font-size: 0.8rem; opacity: 0.7; text-align: center; margin-top: 15px;">We respect your privacy and will only use your email to contact you regarding your inquiry.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer__glow"></div>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer__info">
+                    <div class="footer__logo">
+                        <img src="assets/images/big-cane-logo.png" alt="The Big Cane Logo" class="footer__logo-image">
+                    </div>
+                    <p class="footer__about">Crafting premium Caribbean spirits that capture the essence of island luxury and celebration. Every bottle tells a story of passion, rhythm, and craftsmanship.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link social-link--instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link social-link--facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link social-link--twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link social-link--pinterest">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__nav">
+                    <h3 class="footer__title">Navigation</h3>
+                    <ul>
+                        <li><a href="index.html#products">Products</a></li>
+                        <li><a href="index.html#founder">Our Story</a></li>
+                        <li><a href="index.html#cocktails">Cocktails</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="other-businesses.html">Ventures</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__products">
+                    <h3 class="footer__title">Our Products</h3>
+                    <ul>
+                        <li><a href="products/silver-rum.html">Silver Rum</a></li>
+                        <li><a href="products/london-gin.html">London Dry Gin</a></li>
+                        <li><a href="products/guava-rum.html">Guava Rum</a></li>
+                        <li><a href="products/spiced-rum.html">Spiced Rum</a></li>
+                        <li><a href="#">Limited Editions</a></li>
+                        <li><a href="#">Gift Sets</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contact">
+                    <h3 class="footer__title">Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Caribbean House, Port of Spain, Trinidad</li>
+                        <li><i class="fas fa-phone"></i> +1 (868) 555-1234</li>
+                        <li><i class="fas fa-envelope"></i> info@thebigcane.com</li>
+                    </ul>
+                    <div class="footer__hours">
+                        <h4 class="footer__subtitle">Distillery Tours</h4>
+                        <p>Monday - Friday: 10am - 6pm</p>
+                        <p>Saturday: 12pm - 5pm</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 The BigCane. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p class="footer__disclaimer">Please drink responsibly. Must be 21 or older to purchase.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Page Transition -->
+    <div class="page-transition"></div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

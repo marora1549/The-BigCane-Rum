@@ -1,0 +1,116 @@
+/* Cocktail Recipes Component Styles */
+.cocktail-recipes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-md);
+}
+
+.cocktail-recipe {
+    background-color: rgba(26, 11, 46, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all var(--transition-medium);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cocktail-recipe:hover {
+    transform: translateY(-10px);
+    border-color: var(--electric-blue);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(5, 217, 232, 0.3);
+}
+
+.cocktail-recipe__image {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-medium);
+}
+
+.cocktail-recipe:hover .cocktail-recipe__image {
+    transform: scale(1.05);
+}
+
+.cocktail-recipe__content {
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.cocktail-recipe__title {
+    font-size: 2.2rem;
+    margin-bottom: var(--space-xs);
+    color: var(--neon-pink);
+}
+
+.cocktail-recipe__description {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-sm);
+    opacity: 0.9;
+    flex-grow: 1;
+}
+
+.cocktail-recipe__meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--space-sm);
+    font-size: 1.4rem;
+}
+
+.cocktail-recipe__meta-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cocktail-recipe__meta-item i {
+    color: var(--electric-blue);
+}
+
+.cocktail-recipe__link {
+    display: block;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 991px) {
+    .cocktail-recipes {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .cocktail-recipe__title {
+        font-size: 2rem;
+    }
+    
+    .cocktail-recipe__description {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .cocktail-recipes {
+        grid-template-columns: 1fr;
+    }
+    
+    .cocktail-recipe__image {
+        height: 180px;
+    }
+    
+    .cocktail-recipe__content {
+        padding: var(--space-sm);
+    }
+    
+    .cocktail-recipe__title {
+        font-size: 1.8rem;
+    }
+    
+    .cocktail-recipe__description {
+        font-size: 1.3rem;
+    }
+}

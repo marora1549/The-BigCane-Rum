@@ -1,0 +1,88 @@
+/* Product Tabs Styling */
+.product-tabs {
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-xl);
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 1px;
+    margin-bottom: var(--space-md);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.tab-button {
+    padding: 1.5rem 3rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    background-color: transparent;
+    color: var(--starlight-pearl);
+    border: none;
+    cursor: pointer;
+    flex-grow: 1;
+    transition: all var(--transition-fast);
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tab-button.active {
+    background: linear-gradient(45deg, var(--electric-coral), var(--golden-glow));
+    color: var(--midnight-black);
+    box-shadow: 0 5px 15px rgba(255, 87, 51, 0.3);
+}
+
+.tab-content {
+    background-color: rgba(10, 10, 10, 0.5);
+    border-radius: 10px;
+    padding: var(--space-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: 300px;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Animation for tab content */
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 767px) {
+    .tab-buttons {
+        flex-direction: column;
+        gap: 1px;
+    }
+    
+    .tab-button {
+        text-align: left;
+        padding: 1rem 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .tab-content {
+        padding: var(--space-md);
+    }
+    
+    .tab-button {
+        font-size: 1.4rem;
+        padding: 1rem 1.5rem;
+    }
+}

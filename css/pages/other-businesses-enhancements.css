@@ -1,0 +1,148 @@
+/* Enhanced styling for the Other Businesses page */
+
+/* Fix for section spacing */
+.ventures-header {
+  min-height: auto !important;
+  padding: 180px 0 60px !important;
+}
+
+.ventures-header__title {
+  font-size: 4.5rem !important;
+  background: linear-gradient(90deg, #05D9E8, #D264B6, #FF2A6D) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  text-transform: uppercase !important;
+  margin-bottom: 25px !important;
+  text-shadow: 0 0 15px rgba(5, 217, 232, 0.5) !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+.ventures-header__subtitle {
+  font-size: 1.8rem !important;
+  max-width: 800px !important;
+  margin: 0 auto !important;
+  margin-top: 20px !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+.ventures-header__content {
+  margin-top: 30px !important;
+  margin-bottom: 80px !important;
+  padding: 0 20px !important;
+}
+
+/* Card enhancements */
+.ventures-grid {
+  margin-top: 40px !important;
+  gap: 50px !important;
+  z-index: 10 !important;
+  position: relative !important;
+}
+
+.venture-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+  margin-bottom: 30px !important;
+}
+
+.venture-card:hover {
+  transform: translateY(-10px) !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(5, 217, 232, 0.4) !important;
+}
+
+.venture-card__image-container {
+  height: 220px !important;
+  margin-bottom: 20px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  padding: 20px !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.venture-card__image {
+  height: 180px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  margin: 0 auto !important;
+  display: block !important;
+  max-width: 100% !important;
+}
+
+/* Fix for Square Duty Free section */
+.square-duty-free-section {
+  margin-top: 50px !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Product grid item animations */
+.sdf-product-item, .sdf-location {
+  transform: translateY(0);
+  transition: all 0.3s ease !important;
+}
+
+.sdf-product-item:hover, .sdf-location:hover {
+  transform: translateY(-5px) !important;
+  background: rgba(255,255,255,0.1) !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+}
+
+/* Better spacing for mission section */
+.mission-section {
+  margin-top: 50px !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ventures-header {
+    padding: 160px 0 40px !important;
+  }
+  
+  .ventures-header__title {
+    font-size: 3rem !important;
+  }
+  
+  .ventures-header__subtitle {
+    font-size: 1.3rem !important;
+  }
+  
+  .sdf-showcase {
+    flex-direction: column !important;
+  }
+  
+  .mission-content {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Site header enhancements */
+.site-header {
+  background-color: rgba(10, 10, 10, 0.9) !important;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5) !important;
+  z-index: 1000 !important;
+}
+
+/* Fix for z-index issues */
+.main-nav ul {
+  z-index: 1001 !important;
+}
+
+.logo__image {
+  max-height: 60px !important;
+}
+
+/* Fix inline styles */
+.section-title.reveal-from-bottom {
+  text-transform: uppercase !important;
+  font-size: 2.6rem !important;
+  margin-top: 10px !important;
+  background: linear-gradient(45deg, #4ca1af, #c4e0e5) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+}

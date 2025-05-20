@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silver Luxury Rum | The BigCane Premium Spirits</title>
+    <meta name="description" content="Discover Silver Luxury Rum from The BigCane - A crystal clear premium rum with notes of vanilla, tropical fruit, and a hint of spice.">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Lato:wght@300;400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <style>
+        /* Product Detail Page Specific Styles */
+        .product-detail {
+            position: relative;
+            overflow: hidden;
+            padding-top: 120px;
+        }
+        
+        .product-detail__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(26, 11, 46, 0.7), rgba(10, 10, 10, 0.95));
+            z-index: -1;
+        }
+        
+        .product-detail__grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(to right, rgba(5, 217, 232, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(5, 217, 232, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.2;
+            z-index: -1;
+        }
+        
+        .product-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+            align-items: center;
+            padding: var(--space-xl) 0;
+        }
+        
+        .product-imagery {
+            position: relative;
+            text-align: center;
+        }
+        
+        .product-bottle {
+            position: relative;
+            z-index: 2;
+            max-height: 80vh;
+            margin: 0 auto;
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
+            transition: transform var(--transition-medium);
+        }
+        
+        .product-bottle:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-glow {
+            position: absolute;
+            width: 60%;
+            height: 50px;
+            background: radial-gradient(ellipse at center, var(--neon-pink) 0%, transparent 70%);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            filter: blur(15px);
+            opacity: 0.5;
+            z-index: 1;
+        }
+        
+        .product-decorations {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .product-decoration {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(50px);
+        }
+        
+        .product-decoration--1 {
+            width: 300px;
+            height: 300px;
+            background-color: var(--neon-pink);
+            top: 20%;
+            left: -10%;
+            opacity: 0.2;
+        }
+        
+        .product-decoration--2 {
+            width: 200px;
+            height: 200px;
+            background-color: var(--electric-blue);
+            bottom: 10%;
+            right: 0;
+            opacity: 0.2;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: linear-gradient(45deg, var(--golden-glow), var(--electric-coral));
+            color: var(--midnight-black);
+            padding: 1rem 2rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+            border-radius: 0 0 0 5px;
+            z-index: 3;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .product-info {
+            padding-left: var(--space-md);
+        }
+        
+        .product-category {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--neon-pink), var(--neon-purple));
+            color: var(--starlight-pearl);
+            padding: 0.5rem 1.5rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 3px;
+            margin-bottom: var(--space-sm);
+            font-weight: 600;
+            box-shadow: var(--pink-glow);
+        }
+        
+        .product-name {
+            font-size: 5rem;
+            margin-bottom: var(--space-sm);
+            background: linear-gradient(45deg, var(--golden-glow), var(--starlight-pearl));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .product-tagline {
+            font-size: 2rem;
+            font-style: italic;
+            color: var(--electric-blue);
+            margin-bottom: var(--space-md);
+        }
+        
+        .product-description {
+            font-size: 1.8rem;
+            margin-bottom: var(--space-lg);
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .product-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+            background-color: rgba(10, 10, 10, 0.3);
+            padding: var(--space-md);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .product-detail-item {
+            text-align: center;
+        }
+        
+        .product-detail-icon {
+            font-size: 2.4rem;
+            color: var(--neon-pink);
+            margin-bottom: var(--space-xs);
+        }
+        
+        .product-detail-label {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            opacity: 0.7;
+        }
+        
+        .product-detail-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--electric-blue);
+        }
+        
+        .product-purchase {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .product-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--golden-glow);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+        
+        .product-price-disclaimer {
+            font-size: 1.2rem;
+            opacity: 0.7;
+            margin-top: 0.5rem;
+        }
+        
+        .product-quantity {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .product-quantity-input {
+            width: 60px;
+            height: 45px;
+            border: 2px solid var(--electric-blue);
+            background-color: rgba(10, 10, 10, 0.5);
+            color: var(--starlight-pearl);
+            font-size: 1.8rem;
+            text-align: center;
+            border-radius: 5px;
+        }
+        
+        .product-quantity-btn {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--electric-blue);
+            color: var(--midnight-black);
+            font-size: 1.6rem;
+            cursor: pointer;
+            border: none;
+            transition: all var(--transition-fast);
+        }
+        
+        .product-quantity-btn:hover {
+            background-color: var(--neon-pink);
+            transform: scale(1.1);
+        }
+        
+        /* Tabs Styling */
+        .product-tabs {
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .tab-buttons {
+            display: flex;
+            gap: 1px;
+            margin-bottom: var(--space-md);
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 5px;
+            padding: 5px;
+        }
+        
+        .tab-button {
+            padding: 1.5rem 3rem;
+            font-size: 1.6rem;
+            font-weight: 600;
+            background-color: transparent;
+            color: var(--starlight-pearl);
+            border: none;
+            cursor: pointer;
+            flex-grow: 1;
+            transition: all var(--transition-fast);
+            border-radius: 3px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .tab-button.active {
+            background: linear-gradient(45deg, var(--electric-coral), var(--golden-glow));
+            color: var(--midnight-black);
+            box-shadow: 0 5px 15px rgba(255, 87, 51, 0.3);
+        }
+        
+        .tab-content {
+            background-color: rgba(10, 10, 10, 0.5);
+            border-radius: 10px;
+            padding: var(--space-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            min-height: 300px;
+        }
+        
+        .tab-pane {
+            display: none;
+        }
+        
+        .tab-pane.active {
+            display: block;
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        /* Taste Notes */
+        .taste-notes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-md);
+        }
+        
+        .taste-note {
+            background-color: rgba(26, 11, 46, 0.5);
+            border-radius: 10px;
+            padding: var(--space-md);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all var(--transition-medium);
+        }
+        
+        .taste-note:hover {
+            transform: translateY(-5px);
+            border-color: var(--electric-blue);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 15px rgba(5, 217, 232, 0.3);
+        }
+        
+        .taste-note__icon {
+            font-size: 3rem;
+            color: var(--electric-blue);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .taste-note__label {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: var(--space-xs);
+            color: var(--neon-pink);
+        }
+        
+        .taste-note__description {
+            font-size: 1.4rem;
+            opacity: 0.8;
+        }
+        
+        /* Making Process */
+        .making-process {
+            counter-reset: process-step;
+        }
+        
+        .process-step {
+            display: flex;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+            counter-increment: process-step;
+        }
+        
+        .process-step__number {
+            position: relative;
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--starlight-pearl);
+            font-weight: 700;
+            box-shadow: var(--pink-glow);
+        }
+        
+        .process-step__number::before {
+            content: counter(process-step);
+        }
+        
+        .process-step__content {
+            flex-grow: 1;
+        }
+        
+        .process-step__title {
+            font-size: 2rem;
+            margin-bottom: var(--space-xs);
+            color: var(--electric-blue);
+        }
+        
+        .process-step__description {
+            font-size: 1.6rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        /* Ratings Tab */
+        .product-ratings {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+        
+        .rating-overall {
+            display: flex;
+            align-items: center;
+            gap: var(--space-lg);
+            padding-bottom: var(--space-md);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .rating-score {
+            font-size: 8rem;
+            font-weight: 800;
+            line-height: 1;
+            background: linear-gradient(45deg, var(--golden-glow), var(--electric-coral));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+        }
+        
+        .rating-details {
+            flex-grow: 1;
+        }
+        
+        .rating-stars {
+            font-size: 2.4rem;
+            color: var(--golden-glow);
+            margin-bottom: var(--space-xs);
+        }
+        
+        .rating-counts {
+            display: flex;
+            gap: var(--space-md);
+            font-size: 1.4rem;
+        }
+        
+        .rating-count {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .rating-count i {
+            color: var(--neon-pink);
+        }
+        
+        .rating-bars {
+            margin-top: var(--space-sm);
+        }
+        
+        .rating-bar {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: 8px;
+        }
+        
+        .rating-bar__label {
+            font-size: 1.4rem;
+            width: 100px;
+        }
+        
+        .rating-bar__track {
+            flex-grow: 1;
+            height: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .rating-bar__fill {
+            height: 100%;
+            background: linear-gradient(to right, var(--electric-blue), var(--neon-pink));
+            border-radius: 4px;
+        }
+        
+        .rating-bar__value {
+            font-size: 1.4rem;
+            width: 40px;
+            text-align: right;
+        }
+        
+        /* Reviews */
+        .reviews-list {
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: var(--space-sm);
+            margin-bottom: var(--space-md);
+        }
+        
+        .review-item {
+            background-color: rgba(26, 11, 46, 0.3);
+            border-radius: 10px;
+            padding: var(--space-md);
+            margin-bottom: var(--space-md);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .review-info {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+        
+        .review-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .review-author {
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+        
+        .review-date {
+            font-size: 1.2rem;
+            opacity: 0.7;
+        }
+        
+        .review-rating {
+            color: var(--golden-glow);
+            font-size: 1.6rem;
+        }
+        
+        .review-content {
+            font-size: 1.6rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        
+        .review-form {
+            margin-top: var(--space-md);
+            background-color: rgba(26, 11, 46, 0.3);
+            border-radius: 10px;
+            padding: var(--space-md);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .review-form__title {
+            font-size: 2rem;
+            margin-bottom: var(--space-md);
+            color: var(--electric-blue);
+        }
+        
+        .review-form__group {
+            margin-bottom: var(--space-md);
+        }
+        
+        .review-form__label {
+            display: block;
+            font-size: 1.4rem;
+            margin-bottom: var(--space-xs);
+            font-weight: 600;
+        }
+        
+        .review-form__input,
+        .review-form__textarea {
+            width: 100%;
+            padding: 1.2rem;
+            background-color: rgba(10, 10, 10, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            color: var(--starlight-pearl);
+            font-size: 1.6rem;
+        }
+        
+        .review-form__input:focus,
+        .review-form__textarea:focus {
+            outline: none;
+            border-color: var(--electric-blue);
+            box-shadow: 0 0 10px rgba(5, 217, 232, 0.3);
+        }
+        
+        .review-form__stars {
+            display: flex;
+            gap: 5px;
+            font-size: 3rem;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .star-rating {
+            color: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: color var(--transition-fast);
+        }
+        
+        .star-rating:hover,
+        .star-rating.active {
+            color: var(--golden-glow);
+        }
+        
+        /* Recipes Tab */
+        .cocktail-recipes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-md);
+        }
+        
+        .cocktail-recipe {
+            background-color: rgba(26, 11, 46, 0.5);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all var(--transition-medium);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .cocktail-recipe:hover {
+            transform: translateY(-10px);
+            border-color: var(--electric-blue);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(5, 217, 232, 0.3);
+        }
+        
+        .cocktail-recipe__image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .cocktail-recipe__content {
+            padding: var(--space-md);
+        }
+        
+        .cocktail-recipe__title {
+            font-size: 2.2rem;
+            margin-bottom: var(--space-xs);
+            color: var(--neon-pink);
+        }
+        
+        .cocktail-recipe__description {
+            font-size: 1.5rem;
+            margin-bottom: var(--space-sm);
+            opacity: 0.9;
+        }
+        
+        .cocktail-recipe__meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--space-sm);
+            font-size: 1.4rem;
+        }
+        
+        .cocktail-recipe__meta-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .cocktail-recipe__meta-item i {
+            color: var(--electric-blue);
+        }
+        
+        .cocktail-recipe__link {
+            display: block;
+            text-align: center;
+        }
+        
+        /* Similar Products */
+        .similar-products {
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .similar-products__title {
+            font-size: 3rem;
+            margin-bottom: var(--space-lg);
+            text-align: center;
+            color: var(--electric-blue);
+        }
+        
+        .product-slider {
+            display: flex;
+            gap: var(--space-md);
+            overflow-x: auto;
+            padding: var(--space-md) 0;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        .product-slider::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Edge */
+        }
+        
+        .product-card {
+            background-color: rgba(26, 11, 46, 0.5);
+            border-radius: 10px;
+            overflow: hidden;
+            width: 250px;
+            flex-shrink: 0;
+            scroll-snap-align: start;
+            transition: transform var(--transition-medium);
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), 0 0 25px rgba(5, 217, 232, 0.3);
+            border: 1px solid rgba(5, 217, 232, 0.3);
+        }
+        
+        .product-card__image {
+            height: 300px;
+            width: 100%;
+            object-fit: contain;
+            padding: var(--space-sm);
+            transition: transform var(--transition-medium);
+            background-color: rgba(10, 10, 10, 0.3);
+        }
+        
+        .product-card:hover .product-card__image {
+            transform: scale(1.05);
+        }
+        
+        .product-card__content {
+            padding: var(--space-md);
+        }
+        
+        .product-card__title {
+            font-size: 1.8rem;
+            margin-bottom: var(--space-xs);
+            color: var(--neon-pink);
+        }
+        
+        .product-card__price {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--golden-glow);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .product-card__button {
+            width: 100%;
+        }
+        
+        /* Responsive Styles */
+        @media screen and (max-width: 991px) {
+            .product-container {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+            
+            .product-imagery {
+                order: 1;
+            }
+            
+            .product-info {
+                order: 2;
+                padding-left: 0;
+            }
+            
+            .taste-notes {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+        
+        @media screen and (max-width: 767px) {
+            .product-name {
+                font-size: 3.5rem;
+            }
+            
+            .product-tagline {
+                font-size: 1.6rem;
+            }
+            
+            .product-purchase {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--space-sm);
+            }
+            
+            .tab-buttons {
+                flex-direction: column;
+                gap: 1px;
+            }
+            
+            .tab-button {
+                text-align: left;
+                padding: 1rem 2rem;
+            }
+            
+            .rating-overall {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--space-md);
+            }
+            
+            .review-header {
+                flex-direction: column;
+                gap: var(--space-xs);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader__content">
+            <div class="preloader__logo">
+                <img src="../assets/images/big-cane-logo.png" alt="The Big Cane" width="200">
+            </div>
+            <div class="preloader__progress">
+                <div class="preloader__bar"></div>
+            </div>
+            <div class="preloader__text">
+                <span>Pouring perfection...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../assets/images/big-cane-logo.png" alt="The Big Cane Logo" class="logo__image">
+                </a>
+            </div>
+            <button class="nav-toggle">
+                <span class="nav-toggle__icon"></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html#products" class="nav-link active">Products</a></li>
+                    <li><a href="../index.html#founder" class="nav-link">Our Story</a></li>
+                    <li><a href="../blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="../other-businesses.html" class="nav-link">Ventures</a></li>
+                    <li><a href="../contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail">
+        <div class="product-detail__overlay"></div>
+        <div class="product-detail__grid"></div>
+        <div class="particles" data-particles="60"></div>
+        
+        <div class="container">
+            <div class="product-container">
+                <div class="product-imagery reveal-from-left">
+                    <span class="product-badge">Bestseller</span>
+                    <img src="../assets/images/silver-rum-placeholder.png" alt="Silver Luxury Rum" class="product-bottle">
+                    <div class="product-glow"></div>
+                    <div class="product-decorations">
+                        <div class="product-decoration product-decoration--1"></div>
+                        <div class="product-decoration product-decoration--2"></div>
+                    </div>
+                </div>
+                
+                <div class="product-info reveal-from-right">
+                    <span class="product-category">Signature Blend</span>
+                    <h1 class="product-name">Silver Luxury Rum</h1>
+                    <p class="product-tagline">The Electric Spirit of Caribbean Nightlife</p>
+                    <p class="product-description">Our signature silver rum brings the electric spirit of Caribbean nightlife to your glass. Crystal clear with notes of vanilla, tropical fruit, and a hint of spice — perfect for crafting premium cocktails or savoring on the rocks. Experience the untamed elegance of our most versatile expression, meticulously crafted for unforgettable celebrations.</p>
+                    
+                    <div class="product-details">
+                        <div class="product-detail-item">
+                            <div class="product-detail-icon">
+                                <i class="fas fa-wine-bottle"></i>
+                            </div>
+                            <div class="product-detail-label">ABV</div>
+                            <div class="product-detail-value">40%</div>
+                        </div>
+                        
+                        <div class="product-detail-item">
+                            <div class="product-detail-icon">
+                                <i class="fas fa-ruler-vertical"></i>
+                            </div>
+                            <div class="product-detail-label">Size</div>
+                            <div class="product-detail-value">750ml</div>
+                        </div>
+                        
+                        <div class="product-detail-item">
+                            <div class="product-detail-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="product-detail-label">Origin</div>
+                            <div class="product-detail-value">Trinidad</div>
+                        </div>
+                        
+                        <div class="product-detail-item">
+                            <div class="product-detail-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="product-detail-label">Rating</div>
+                            <div class="product-detail-value">4.5/5</div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-purchase">
+                        <div class="product-price-container">
+                            <div class="product-price">$39.99</div>
+                            <div class="product-price-disclaimer">*Prices may vary by location</div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-actions">
+                        <a href="../cocktail-finder.html" class="button button--outlined">Cocktail Recipes</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product Tabs -->
+            <div class="product-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-button active" data-tab="taste">Taste Notes</button>
+                    <button class="tab-button" data-tab="making">Making Process</button>
+                    <button class="tab-button" data-tab="ratings">Ratings & Reviews</button>
+                    <button class="tab-button" data-tab="recipes">Cocktail Recipes</button>
+                </div>
+                
+                <div class="tab-content">
+                    <!-- Taste Notes Tab -->
+                    <div id="taste" class="tab-pane active">
+                        <div class="taste-notes">
+                            <div class="taste-note">
+                                <div class="taste-note__icon">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <div class="taste-note__label">Appearance</div>
+                                <div class="taste-note__description">Crystal clear with brilliant diamond-like reflections. Perfect clarity that shimmers under light.</div>
+                            </div>
+                            
+                            <div class="taste-note">
+                                <div class="taste-note__icon">
+                                    <i class="fas fa-wine-glass-alt"></i>
+                                </div>
+                                <div class="taste-note__label">Nose</div>
+                                <div class="taste-note__description">Delicate vanilla and tropical fruit aromas with hints of coconut and subtle fresh sugarcane. Light floral notes in the background.</div>
+                            </div>
+                            
+                            <div class="taste-note">
+                                <div class="taste-note__icon">
+                                    <i class="fas fa-utensils"></i>
+                                </div>
+                                <div class="taste-note__label">Palate</div>
+                                <div class="taste-note__description">Smooth with balanced sweetness. Notes of vanilla, pineapple, and mango blend with a subtle hint of spice. Clean and refreshing mouthfeel.</div>
+                            </div>
+                            
+                            <div class="taste-note">
+                                <div class="taste-note__icon">
+                                    <i class="fas fa-hourglass-end"></i>
+                                </div>
+                                <div class="taste-note__label">Finish</div>
+                                <div class="taste-note__description">Medium-length, clean finish with lingering notes of tropical fruit and a whisper of white pepper and cinnamon. Leaves a warm, pleasant sensation.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Making Process Tab -->
+                    <div id="making" class="tab-pane">
+                        <div class="making-process">
+                            <div class="process-step">
+                                <div class="process-step__number"></div>
+                                <div class="process-step__content">
+                                    <h3 class="process-step__title">Selecting Premium Molasses</h3>
+                                    <p class="process-step__description">We source only the highest quality blackstrap molasses from sustainably grown sugarcane farms across the Caribbean. Our expert distillers carefully select each batch for its rich flavor profile and superior fermentation potential.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="process-step">
+                                <div class="process-step__number"></div>
+                                <div class="process-step__content">
+                                    <h3 class="process-step__title">Proprietary Fermentation</h3>
+                                    <p class="process-step__description">Using our exclusive strain of yeast that has been cultivated for generations, we ferment the molasses for 36 hours in temperature-controlled conditions. This proprietary process develops the signature tropical fruit notes that define our Silver Luxury Rum.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="process-step">
+                                <div class="process-step__number"></div>
+                                <div class="process-step__content">
+                                    <h3 class="process-step__title">Five-Column Distillation</h3>
+                                    <p class="process-step__description">Our custom-designed five-column still allows for precise control during distillation, ensuring exceptional purity while preserving delicate flavor compounds. This advanced distillation approach creates a remarkably smooth spirit with vibrant character.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="process-step">
+                                <div class="process-step__number"></div>
+                                <div class="process-step__content">
+                                    <h3 class="process-step__title">Triple Filtration System</h3>
+                                    <p class="process-step__description">The distilled spirit passes through our innovative triple filtration system, utilizing activated charcoal, coconut shell carbon, and a proprietary silver mineral filter. This process polishes the rum to crystalline brilliance while maintaining its essential flavor profile.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="process-step">
+                                <div class="process-step__number"></div>
+                                <div class="process-step__content">
+                                    <h3 class="process-step__title">Master Blending</h3>
+                                    <p class="process-step__description">Our Master Blender carefully combines different batches to achieve the perfect balance of character and smoothness. A touch of aged rum is sometimes incorporated to add depth and complexity to the final product before it's bottled and ready to elevate your celebration.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ratings & Reviews Tab -->
+                    <div id="ratings" class="tab-pane">
+                        <div class="product-ratings">
+                            <div class="rating-overall">
+                                <div class="rating-score">4.5</div>
+                                <div class="rating-details">
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <div class="rating-counts">
+                                        <div class="rating-count">
+                                            <i class="fas fa-user"></i> <span>742 reviews</span>
+                                        </div>
+                                        <div class="rating-count">
+                                            <i class="fas fa-check-circle"></i> <span>589 verified purchases</span>
+                                        </div>
+                                    </div>
+                                    <div class="rating-bars">
+                                        <div class="rating-bar">
+                                            <div class="rating-bar__label">5 Stars</div>
+                                            <div class="rating-bar__track">
+                                                <div class="rating-bar__fill" style="width: 68%"></div>
+                                            </div>
+                                            <div class="rating-bar__value">68%</div>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <div class="rating-bar__label">4 Stars</div>
+                                            <div class="rating-bar__track">
+                                                <div class="rating-bar__fill" style="width: 24%"></div>
+                                            </div>
+                                            <div class="rating-bar__value">24%</div>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <div class="rating-bar__label">3 Stars</div>
+                                            <div class="rating-bar__track">
+                                                <div class="rating-bar__fill" style="width: 5%"></div>
+                                            </div>
+                                            <div class="rating-bar__value">5%</div>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <div class="rating-bar__label">2 Stars</div>
+                                            <div class="rating-bar__track">
+                                                <div class="rating-bar__fill" style="width: 2%"></div>
+                                            </div>
+                                            <div class="rating-bar__value">2%</div>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <div class="rating-bar__label">1 Star</div>
+                                            <div class="rating-bar__track">
+                                                <div class="rating-bar__fill" style="width: 1%"></div>
+                                            </div>
+                                            <div class="rating-bar__value">1%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="reviews-list">
+                                <!-- Review 1 -->
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="review-info">
+                                            <img src="../assets/images/blog2-placeholder.jpg" alt="Reviewer" class="review-avatar">
+                                            <div>
+                                                <div class="review-author">James Rodriguez</div>
+                                                <div class="review-date">May 4, 2025</div>
+                                            </div>
+                                        </div>
+                                        <div class="review-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="review-content">
+                                        Perfect rum for crafting elevated mojitos and daiquiris! I've been a bartender for 12 years, and this has become my go-to silver rum for premium cocktails. The subtle vanilla and tropical fruit notes complement citrus beautifully without overpowering. Incredibly smooth with virtually no burn. Worth every penny for serious mixologists or anyone who appreciates quality spirits.
+                                    </div>
+                                </div>
+                                
+                                <!-- Review 2 -->
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="review-info">
+                                            <img src="../assets/images/blog3-placeholder.jpg" alt="Reviewer" class="review-avatar">
+                                            <div>
+                                                <div class="review-author">Sophia Martinez</div>
+                                                <div class="review-date">April 22, 2025</div>
+                                            </div>
+                                        </div>
+                                        <div class="review-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="review-content">
+                                        I hosted a Caribbean-themed party last weekend and this rum was the star of the show! Everyone kept asking about the rum in my cocktails. The bottle itself is gorgeous and made a great centerpiece. Smooth enough to sip neat which surprised me for a silver rum. Only reason for 4 instead of 5 stars is the price point is a bit high, but the quality matches it.
+                                    </div>
+                                </div>
+                                
+                                <!-- Review 3 -->
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="review-info">
+                                            <img src="../assets/images/blog5-placeholder.jpg" alt="Reviewer" class="review-avatar">
+                                            <div>
+                                                <div class="review-author">Michael Thompson</div>
+                                                <div class="review-date">April 15, 2025</div>
+                                            </div>
+                                        </div>
+                                        <div class="review-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                    <div class="review-content">
+                                        As a rum collector, I was excited to try The Big Cane Silver Luxury. The aroma is fantastic - clear vanilla and fruit notes without that artificial smell some silver rums have. It mixes beautifully but is also quite enjoyable neat or on the rocks with just a squeeze of lime. The filtration process clearly makes a difference in smoothness. This has earned a permanent spot in my bar collection.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="review-form">
+                                <h3 class="review-form__title">Write a Review</h3>
+                                <form>
+                                    <div class="review-form__group">
+                                        <label class="review-form__label">Your Rating</label>
+                                        <div class="review-form__stars">
+                                            <span class="star-rating" data-rating="1"><i class="far fa-star"></i></span>
+                                            <span class="star-rating" data-rating="2"><i class="far fa-star"></i></span>
+                                            <span class="star-rating" data-rating="3"><i class="far fa-star"></i></span>
+                                            <span class="star-rating" data-rating="4"><i class="far fa-star"></i></span>
+                                            <span class="star-rating" data-rating="5"><i class="far fa-star"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="review-form__group">
+                                        <label class="review-form__label" for="review-name">Your Name</label>
+                                        <input type="text" id="review-name" class="review-form__input" required>
+                                    </div>
+                                    <div class="review-form__group">
+                                        <label class="review-form__label" for="review-email">Email</label>
+                                        <input type="email" id="review-email" class="review-form__input" required>
+                                    </div>
+                                    <div class="review-form__group">
+                                        <label class="review-form__label" for="review-content">Your Review</label>
+                                        <textarea id="review-content" class="review-form__textarea" rows="5" required></textarea>
+                                    </div>
+                                    <button type="submit" class="button">Submit Review</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Cocktail Recipes Tab -->
+                    <div id="recipes" class="tab-pane">
+                        <div class="cocktail-recipes">
+                            <!-- Recipe 1 -->
+                            <div class="cocktail-recipe">
+                                <img src="../assets/images/cocktail-placeholder-1.jpg" alt="Caribbean Sunset" class="cocktail-recipe__image">
+                                <div class="cocktail-recipe__content">
+                                    <h3 class="cocktail-recipe__title">Caribbean Sunset</h3>
+                                    <p class="cocktail-recipe__description">Our Silver Rum with fresh mango, lime, and a splash of grenadine for a layered tropical experience.</p>
+                                    <div class="cocktail-recipe__meta">
+                                        <div class="cocktail-recipe__meta-item">
+                                            <i class="fas fa-clock"></i> <span>5 min</span>
+                                        </div>
+                                        <div class="cocktail-recipe__meta-item">
+                                            <i class="fas fa-fire-alt"></i> <span>Easy</span>
+                                        </div>
+                                    </div>
+                                    <a href="../cocktail-finder.html" class="button button--small cocktail-recipe__link">View Recipe</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Recipe 2 -->
+                            <div class="cocktail-recipe">
+                                <img src="../assets/images/cocktail-placeholder-2.jpg" alt="Electric Mojito" class="cocktail-recipe__image">
+                                <div class="cocktail-recipe__content">
+                                    <h3 class="cocktail-recipe__title">Electric Mojito</h3>
+                                    <p class="cocktail-recipe__description">Our elevated take on the classic with Silver Rum, fresh mint, lime, sugar, and a splash of blue curaçao.</p>
+                                    <div class="cocktail-recipe__meta">
+                                        <div class="cocktail-recipe__meta-item">
+                                            <i class="fas fa-clock"></i> <span>7 min</span>
+                                        </div>
+                                        <div class="cocktail-recipe__meta-item">
+                                            <i class="fas fa-fire-alt"></i> <span>Medium</span>
+                                        </div>
+                                    </div>
+                                    <a href="../cocktail-finder.html" class="button button--small cocktail-recipe__link">View Recipe</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Recipe 3 -->
+                            <div class="cocktail-recipe">
+                                <img src="../assets/images/cocktail-placeholder-3.jpg" alt="Neon Daiquiri" class="cocktail-recipe__image">
+                                <div class="cocktail-recipe__content">
+                                    <h3 class="cocktail-recipe__title">Neon Daiquiri</h3>
+                                    <p class="cocktail-recipe__description">A vibrant twist on a timeless classic with Silver Rum, fresh lime juice, passionfruit, and dragon fruit syrup.</p>
+                                    <div class="cocktail-recipe__meta">
+                                        <div class="cocktail-recipe__meta-item">
+                                            <i class="fas fa-clock"></i> <span>5 min</span>
+                                        </div>
+                                        <div class="cocktail-recipe__meta-item">
+                                            <i class="fas fa-fire-alt"></i> <span>Easy</span>
+                                        </div>
+                                    </div>
+                                    <a href="../cocktail-finder.html" class="button button--small cocktail-recipe__link">View Recipe</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Similar Products -->
+            <div class="similar-products">
+                <h2 class="similar-products__title">You May Also Like</h2>
+                <div class="product-slider">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <img src="../assets/images/spiced-rum-placeholder.png" alt="Spiced Rum" class="product-card__image">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Spiced Rum</h3>
+                            <div class="product-card__price">$46.99</div>
+                            <a href="spiced-rum.html" class="button button--small product-card__button">View Details</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <img src="../assets/images/guava-rum-placeholder.png" alt="Guava Rum" class="product-card__image">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Guava Rum</h3>
+                            <div class="product-card__price">$44.99</div>
+                            <a href="guava-rum.html" class="button button--small product-card__button">View Details</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <img src="../assets/images/london-gin-placeholder.png" alt="London Dry Gin" class="product-card__image">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">London Dry Gin</h3>
+                            <div class="product-card__price">$42.99</div>
+                            <a href="london-gin.html" class="button button--small product-card__button">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter section">
+        <div class="newsletter__background">
+            <div class="newsletter__particles"></div>
+            <div class="newsletter__overlay"></div>
+        </div>
+        <div class="container">
+            <div class="newsletter__content">
+                <div class="newsletter__icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h2 class="newsletter__title reveal-from-bottom">Get VIP Access</h2>
+                <p class="newsletter__text reveal-from-bottom">Subscribe to our newsletter for exclusive cocktail recipes, event invitations, and special offers.</p>
+                <form class="newsletter__form reveal-from-bottom">
+                    <div class="newsletter__form-group">
+                        <input type="email" class="newsletter__input" placeholder="Enter your email address" required>
+                        <button type="submit" class="button newsletter__button">Subscribe</button>
+                    </div>
+                    <p class="newsletter__disclaimer">By subscribing, you agree to our <a href="#">Privacy Policy</a>. We promise not to spam you - only good vibes delivered to your inbox.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer__glow"></div>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer__info">
+                    <div class="footer__logo">
+                        <img src="../assets/images/big-cane-logo.png" alt="The Big Cane Logo" class="footer__logo-image">
+                    </div>
+                    <p class="footer__about">Crafting premium Caribbean spirits that capture the essence of island luxury and celebration. Every bottle tells a story of passion, rhythm, and craftsmanship.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__nav">
+                    <h3 class="footer__title">Navigation</h3>
+                    <ul>
+                        <li><a href="../index.html#products">Products</a></li>
+                        <li><a href="../index.html#founder">Our Story</a></li>
+                        <li><a href="../index.html#cocktails">Cocktails</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../other-businesses.html">Ventures</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__products">
+                    <h3 class="footer__title">Our Products</h3>
+                    <ul>
+                        <li><a href="silver-rum.html">Silver Rum</a></li>
+                        <li><a href="london-gin.html">London Dry Gin</a></li>
+                        <li><a href="guava-rum.html">Guava Rum</a></li>
+                        <li><a href="spiced-rum.html">Spiced Rum</a></li>
+                        <li><a href="#">Limited Editions</a></li>
+                        <li><a href="#">Gift Sets</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contact">
+                    <h3 class="footer__title">Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Caribbean House, Port of Spain, Trinidad</li>
+                        <li><i class="fas fa-phone"></i> +1 (868) 555-1234</li>
+                        <li><i class="fas fa-envelope"></i> info@thebigcane.com</li>
+                    </ul>
+                    <div class="footer__hours">
+                        <h4 class="footer__subtitle">Distillery Tours</h4>
+                        <p>Monday - Friday: 10am - 6pm</p>
+                        <p>Saturday: 12pm - 5pm</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 The BigCane. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p class="footer__disclaimer">Please drink responsibly. Must be 21 or older to purchase.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Age Verification Modal -->
+    <div class="age-modal">
+        <div class="age-modal__content">
+            <div class="age-modal__logo">
+                <img src="../assets/images/big-cane-logo.png" alt="The Big Cane Logo" width="180">
+            </div>
+            <h2 class="age-modal__title">Welcome to The Big Cane</h2>
+            <p class="age-modal__text">Please verify that you are of legal drinking age in your country to enter this site.</p>
+            <div class="age-modal__buttons">
+                <button class="button age-modal__button--yes">Yes, I am of legal age</button>
+                <button class="button button--secondary age-modal__button--no">No, I am not</button>
+            </div>
+            <p class="age-modal__disclaimer">By entering, you accept our <a href="#">Terms</a> and confirm that you are of legal drinking age.</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/animations.js"></script>
+    <script src="../js/pages/product-detail.js"></script>
+</body>
+</html>

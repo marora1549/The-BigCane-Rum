@@ -1,0 +1,99 @@
+/* Making Process Component Styles */
+.making-process {
+    counter-reset: process-step;
+}
+
+.process-step {
+    display: flex;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+    counter-increment: process-step;
+}
+
+.process-step__number {
+    position: relative;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--starlight-pearl);
+    font-weight: 700;
+    box-shadow: var(--pink-glow);
+}
+
+.process-step__number::before {
+    content: counter(process-step);
+}
+
+.process-step__content {
+    flex-grow: 1;
+}
+
+.process-step__title {
+    font-size: 2rem;
+    margin-bottom: var(--space-xs);
+    color: var(--electric-blue);
+}
+
+.process-step__description {
+    font-size: 1.6rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* Animation for Making Process */
+.process-step {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.process-step.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 767px) {
+    .process-step {
+        gap: var(--space-sm);
+    }
+    
+    .process-step__title {
+        font-size: 1.8rem;
+    }
+    
+    .process-step__description {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .process-step {
+        flex-direction: column;
+        gap: var(--space-xs);
+        padding-left: 25px;
+        position: relative;
+    }
+    
+    .process-step__number {
+        position: absolute;
+        left: -15px;
+        top: 0;
+        width: 30px;
+        height: 30px;
+        font-size: 1.4rem;
+    }
+    
+    .process-step__title {
+        font-size: 1.6rem;
+    }
+    
+    .process-step__description {
+        font-size: 1.3rem;
+    }
+}

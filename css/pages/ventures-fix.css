@@ -1,0 +1,181 @@
+/* Fix for the Ventures page layout */
+
+/* Reset core elements */
+body, html {
+  overflow-x: hidden;
+}
+
+/* Header adjustments */
+.site-header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  background: rgba(10, 10, 10, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+  z-index: 2000 !important;
+  padding: 10px 0 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Page title section */
+.page-title-section {
+  padding-top: 150px !important;
+  padding-bottom: 50px !important;
+  text-align: center !important;
+  background: linear-gradient(135deg, var(--deep-purple), var(--night-blue)) !important;
+  position: relative !important;
+  z-index: 1 !important;
+  margin-bottom: 20px !important;
+}
+
+.page-title {
+  font-size: 3.5rem !important;
+  margin-bottom: 20px !important;
+  color: var(--electric-blue) !important;
+  text-transform: uppercase !important;
+  text-shadow: 0 0 15px rgba(5, 217, 232, 0.5) !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+.page-subtitle {
+  font-size: 1.6rem !important;
+  max-width: 800px !important;
+  margin: 0 auto 30px !important;
+  color: var(--starlight-pearl) !important;
+  line-height: 1.5 !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+/* Business cards grid */
+.business-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)) !important;
+  gap: 30px !important;
+  padding: 20px !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+.business-card {
+  background: rgba(10, 10, 10, 0.5) !important;
+  border-radius: 10px !important;
+  overflow: hidden !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  transition: all 0.3s ease !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.business-card:hover {
+  transform: translateY(-10px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(5, 217, 232, 0.3) !important;
+  border: 1px solid rgba(5, 217, 232, 0.3) !important;
+}
+
+.business-image {
+  height: 200px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 20px !important;
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.business-image img {
+  max-height: 160px !important;
+  max-width: 80% !important;
+  object-fit: contain !important;
+}
+
+.business-content {
+  padding: 20px !important;
+  flex-grow: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.business-tag {
+  display: inline-block !important;
+  padding: 8px 16px !important;
+  background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple)) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  text-transform: uppercase !important;
+  border-radius: 5px !important;
+  margin-bottom: 15px !important;
+}
+
+.business-title {
+  font-size: 1.8rem !important;
+  margin-bottom: 15px !important;
+  color: var(--electric-blue) !important;
+}
+
+.business-desc {
+  margin-bottom: 20px !important;
+  line-height: 1.6 !important;
+  flex-grow: 1 !important;
+}
+
+.business-features {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 15px !important;
+  margin-bottom: 20px !important;
+}
+
+.business-feature {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.business-feature i {
+  color: var(--neon-pink) !important;
+}
+
+.business-cta {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-top: auto !important;
+}
+
+.business-social {
+  display: flex !important;
+  gap: 10px !important;
+}
+
+.business-website {
+  color: var(--neon-pink) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+}
+
+.business-website:hover {
+  transform: translateX(5px) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .business-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .page-title {
+    font-size: 2.5rem !important;
+  }
+  
+  .page-subtitle {
+    font-size: 1.3rem !important;
+  }
+}

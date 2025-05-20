@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midnight Mojito - The BigCane Signature Cocktail</title>
+    <meta name="description" content="Discover the perfect Midnight Mojito cocktail recipe featuring The BigCane Spiced Rum, blackberries, mint, and lime.">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Lato:wght@300;400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <style>
+        /* Recipe Page Specific Styles */
+        .recipe-hero {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(rgba(10, 10, 10, 0.5), rgba(26, 11, 46, 0.9)), 
+                        url('../assets/images/cocktail-placeholder-2.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .recipe-hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(5, 217, 232, 0.3) 0%, transparent 70%);
+            animation: pulse 8s infinite alternate;
+        }
+
+        .recipe-title {
+            font-size: 6rem;
+            margin-bottom: 1rem;
+            color: var(--starlight-pearl);
+            text-shadow: 0 0 20px rgba(5, 217, 232, 0.8);
+            animation: glow 3s infinite alternate;
+        }
+
+        .recipe-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--electric-blue), var(--neon-purple));
+            color: var(--starlight-pearl);
+            padding: 0.8rem 2rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 3px;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 15px rgba(5, 217, 232, 0.5);
+        }
+
+        .recipe-quick-info {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .recipe-info-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .recipe-info-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(5, 217, 232, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            box-shadow: 0 0 15px rgba(5, 217, 232, 0.5);
+            color: var(--electric-blue);
+            font-size: 2.4rem;
+            transition: all 0.3s ease;
+        }
+
+        .recipe-info-item:hover .recipe-info-icon {
+            transform: translateY(-5px);
+            background: rgba(5, 217, 232, 0.5);
+        }
+
+        .recipe-info-label {
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--starlight-pearl);
+            opacity: 0.8;
+        }
+
+        .recipe-info-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--electric-blue);
+        }
+
+        .recipe-scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            animation: fadeInUp 2s infinite;
+        }
+
+        .recipe-scroll-indicator i {
+            font-size: 3rem;
+            color: var(--starlight-pearl);
+        }
+
+        /* Content Section */
+        .recipe-content {
+            background: linear-gradient(135deg, var(--deep-purple), var(--midnight-black));
+            padding: 8rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .recipe-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            height: 600px;
+        }
+
+        .recipe-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .recipe-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .recipe-image::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(10, 10, 10, 0.8), transparent);
+            z-index: 1;
+        }
+
+        .recipe-image-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--electric-blue);
+            color: var(--starlight-pearl);
+            padding: 0.8rem 1.5rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+            border-radius: 3px;
+            z-index: 2;
+            box-shadow: 0 0 10px rgba(5, 217, 232, 0.5);
+        }
+
+        .recipe-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .recipe-section {
+            margin-bottom: 4rem;
+        }
+
+        .recipe-section-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--electric-blue);
+        }
+
+        .recipe-section-title i {
+            color: var(--neon-purple);
+            font-size: 2.4rem;
+        }
+
+        .recipe-ingredients-list {
+            list-style: none;
+            margin-bottom: 3rem;
+        }
+
+        .recipe-ingredient {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: fadeInRight 0.5s forwards;
+        }
+
+        .recipe-ingredient:nth-child(1) { animation-delay: 0.1s; }
+        .recipe-ingredient:nth-child(2) { animation-delay: 0.2s; }
+        .recipe-ingredient:nth-child(3) { animation-delay: 0.3s; }
+        .recipe-ingredient:nth-child(4) { animation-delay: 0.4s; }
+        .recipe-ingredient:nth-child(5) { animation-delay: 0.5s; }
+        .recipe-ingredient:nth-child(6) { animation-delay: 0.6s; }
+        .recipe-ingredient:nth-child(7) { animation-delay: 0.7s; }
+        .recipe-ingredient:nth-child(8) { animation-delay: 0.8s; }
+
+        .recipe-ingredient::before {
+            content: "•";
+            color: var(--electric-blue);
+            font-size: 2.4rem;
+            margin-right: 1rem;
+        }
+
+        .recipe-instructions-list {
+            counter-reset: step;
+            list-style: none;
+        }
+
+        .recipe-instruction {
+            position: relative;
+            padding-left: 5rem;
+            margin-bottom: 2.5rem;
+            font-size: 1.8rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s forwards;
+        }
+
+        .recipe-instruction:nth-child(1) { animation-delay: 0.8s; }
+        .recipe-instruction:nth-child(2) { animation-delay: 0.9s; }
+        .recipe-instruction:nth-child(3) { animation-delay: 1.0s; }
+        .recipe-instruction:nth-child(4) { animation-delay: 1.1s; }
+        .recipe-instruction:nth-child(5) { animation-delay: 1.2s; }
+        .recipe-instruction:nth-child(6) { animation-delay: 1.3s; }
+        .recipe-instruction:nth-child(7) { animation-delay: 1.4s; }
+
+        .recipe-instruction::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(45deg, var(--electric-blue), var(--neon-purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--starlight-pearl);
+            font-weight: 700;
+            box-shadow: 0 0 10px rgba(5, 217, 232, 0.3);
+        }
+
+        .recipe-notes {
+            background: rgba(210, 100, 182, 0.1);
+            border-left: 4px solid var(--neon-purple);
+            padding: 2rem;
+            border-radius: 5px;
+            font-style: italic;
+            font-size: 1.8rem;
+            margin-bottom: 3rem;
+            animation: fadeIn 1s forwards 1.5s;
+            opacity: 0;
+        }
+
+        .recipe-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .recipe-tag {
+            background: rgba(210, 100, 182, 0.2);
+            color: var(--neon-purple);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 1.4rem;
+            transition: all 0.3s ease;
+        }
+
+        .recipe-tag:hover {
+            background: var(--neon-purple);
+            color: var(--midnight-black);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(210, 100, 182, 0.3);
+        }
+
+        /* Decoration Elements */
+        .recipe-decoration {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(50px);
+            z-index: 1;
+            opacity: 0.4;
+        }
+
+        .recipe-decoration--1 {
+            width: 300px;
+            height: 300px;
+            background-color: var(--electric-blue);
+            top: 10%;
+            right: 10%;
+            animation: float 15s ease infinite alternate;
+        }
+
+        .recipe-decoration--2 {
+            width: 400px;
+            height: 400px;
+            background-color: var(--neon-purple);
+            bottom: 5%;
+            left: 5%;
+            animation: float 18s ease infinite alternate-reverse;
+        }
+
+        .recipe-floating-icon {
+            position: absolute;
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.2);
+            z-index: 1;
+            animation: float 10s ease-in-out infinite alternate;
+        }
+
+        .recipe-floating-icon:nth-child(1) {
+            top: 15%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .recipe-floating-icon:nth-child(2) {
+            top: 30%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .recipe-floating-icon:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 1s;
+        }
+
+        .recipe-floating-icon:nth-child(4) {
+            bottom: 30%;
+            right: 10%;
+            animation-delay: 3s;
+        }
+
+        /* Action Buttons */
+        .recipe-actions {
+            display: flex;
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px rgba(5, 217, 232, 0.5);
+            }
+            100% {
+                text-shadow: 0 0 30px rgba(5, 217, 232, 0.8), 0 0 60px rgba(5, 217, 232, 0.4);
+            }
+        }
+
+        /* Visual Recipe Meter */
+        .flavor-meter {
+            display: flex;
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+
+        .flavor-meter__item {
+            flex: 1;
+        }
+
+        .flavor-meter__label {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+
+        .flavor-meter__icon {
+            color: var(--electric-blue);
+        }
+
+        .flavor-meter__bar {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .flavor-meter__fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--electric-blue), var(--neon-purple));
+            border-radius: 3px;
+            width: 0;
+            animation: fillBar 1.5s forwards ease-out;
+        }
+
+        .flavor-meter__item:nth-child(1) .flavor-meter__fill { animation-delay: 1.6s; }
+        .flavor-meter__item:nth-child(2) .flavor-meter__fill { animation-delay: 1.7s; }
+        .flavor-meter__item:nth-child(3) .flavor-meter__fill { animation-delay: 1.8s; }
+        .flavor-meter__item:nth-child(4) .flavor-meter__fill { animation-delay: 1.9s; }
+
+        @keyframes fillBar {
+            from { width: 0; }
+            to { width: var(--fill-percent); }
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .recipe-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .recipe-image {
+                height: 400px;
+            }
+            
+            .recipe-title {
+                font-size: 4.5rem;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .recipe-quick-info {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .recipe-title {
+                font-size: 3.5rem;
+            }
+            
+            .flavor-meter {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../assets/images/big-cane-logo.png" alt="The Big Cane Logo" class="logo__image">
+                </a>
+            </div>
+            <button class="nav-toggle">
+                <span class="nav-toggle__icon"></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html#products" class="nav-link">Products</a></li>
+                    <li><a href="../index.html#founder" class="nav-link">Our Story</a></li>
+                    <li><a href="../index.html#blog" class="nav-link">Blog</a></li>
+                    <li><a href="../other-businesses.html" class="nav-link">Ventures</a></li>
+                    <li><a href="../contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Recipe Hero -->
+    <section class="recipe-hero">
+        <div class="particles" data-particles="50"></div>
+        <div class="recipe-floating-icon"><i class="fas fa-cocktail"></i></div>
+        <div class="recipe-floating-icon"><i class="fas fa-leaf"></i></div>
+        <div class="recipe-floating-icon"><i class="fas fa-glass-martini-alt"></i></div>
+        <div class="recipe-floating-icon"><i class="fas fa-moon"></i></div>
+        
+        <div class="container text-center">
+            <div class="recipe-badge">Premium Mix</div>
+            <h1 class="recipe-title">Midnight Mojito</h1>
+            
+            <div class="recipe-quick-info">
+                <div class="recipe-info-item">
+                    <div class="recipe-info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="recipe-info-label">Prep Time</div>
+                    <div class="recipe-info-value">8 mins</div>
+                </div>
+                
+                <div class="recipe-info-item">
+                    <div class="recipe-info-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="recipe-info-label">Difficulty</div>
+                    <div class="recipe-info-value">Medium</div>
+                </div>
+                
+                <div class="recipe-info-item">
+                    <div class="recipe-info-icon">
+                        <i class="fas fa-glass-martini-alt"></i>
+                    </div>
+                    <div class="recipe-info-label">Serves</div>
+                    <div class="recipe-info-value">1</div>
+                </div>
+                
+                <div class="recipe-info-item">
+                    <div class="recipe-info-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="recipe-info-label">Rating</div>
+                    <div class="recipe-info-value">4.7/5</div>
+                </div>
+            </div>
+            
+            <a href="#recipe-details" class="button glow-pulse">View Recipe</a>
+        </div>
+        
+        <div class="recipe-scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Recipe Content -->
+    <section id="recipe-details" class="recipe-content">
+        <div class="recipe-decoration recipe-decoration--1"></div>
+        <div class="recipe-decoration recipe-decoration--2"></div>
+        
+        <div class="container">
+            <div class="recipe-grid">
+                <div class="recipe-image">
+                    <div class="recipe-image-badge">Signature Cocktail</div>
+                    <img src="../assets/images/cocktail-placeholder-2.jpg" alt="Midnight Mojito Cocktail">
+                </div>
+                
+                <div class="recipe-details">
+                    <div class="recipe-section">
+                        <h2 class="recipe-section-title"><i class="fas fa-info-circle"></i> About This Cocktail</h2>
+                        <p>Our take on the classic mojito gets a nocturnal twist with the addition of juicy blackberries and our robust Spiced Rum. This elegant cocktail is perfect for evening gatherings, offering a sophisticated blend of flavors that's both refreshing and complex.</p>
+                        
+                        <div class="flavor-meter">
+                            <div class="flavor-meter__item">
+                                <div class="flavor-meter__label">
+                                    <i class="fas fa-fire-alt flavor-meter__icon"></i>
+                                    <span>Strength</span>
+                                </div>
+                                <div class="flavor-meter__bar">
+                                    <div class="flavor-meter__fill" style="--fill-percent: 75%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="flavor-meter__item">
+                                <div class="flavor-meter__label">
+                                    <i class="fas fa-lemon flavor-meter__icon"></i>
+                                    <span>Sweetness</span>
+                                </div>
+                                <div class="flavor-meter__bar">
+                                    <div class="flavor-meter__fill" style="--fill-percent: 60%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="flavor-meter__item">
+                                <div class="flavor-meter__label">
+                                    <i class="fas fa-leaf flavor-meter__icon"></i>
+                                    <span>Herbaceous</span>
+                                </div>
+                                <div class="flavor-meter__bar">
+                                    <div class="flavor-meter__fill" style="--fill-percent: 85%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="flavor-meter__item">
+                                <div class="flavor-meter__label">
+                                    <i class="fas fa-thumbs-up flavor-meter__icon"></i>
+                                    <span>Crowd Pleaser</span>
+                                </div>
+                                <div class="flavor-meter__bar">
+                                    <div class="flavor-meter__fill" style="--fill-percent: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-section">
+                        <h2 class="recipe-section-title"><i class="fas fa-cocktail"></i> Ingredients</h2>
+                        <ul class="recipe-ingredients-list">
+                            <li class="recipe-ingredient">2 oz The Big Cane Spiced Rum</li>
+                            <li class="recipe-ingredient">8-10 fresh blackberries</li>
+                            <li class="recipe-ingredient">8-10 mint leaves</li>
+                            <li class="recipe-ingredient">1 oz fresh lime juice</li>
+                            <li class="recipe-ingredient">1/2 oz simple syrup</li>
+                            <li class="recipe-ingredient">Soda water</li>
+                            <li class="recipe-ingredient">Crushed ice</li>
+                            <li class="recipe-ingredient">Blackberries and mint sprig for garnish</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="recipe-section">
+                        <h2 class="recipe-section-title"><i class="fas fa-mortar-pestle"></i> Instructions</h2>
+                        <ol class="recipe-instructions-list">
+                            <li class="recipe-instruction">In a cocktail shaker, muddle the blackberries, mint leaves, and simple syrup.</li>
+                            <li class="recipe-instruction">Add The Big Cane Spiced Rum, lime juice, and a handful of ice.</li>
+                            <li class="recipe-instruction">Shake well until chilled and properly combined.</li>
+                            <li class="recipe-instruction">Fill a highball glass with crushed ice.</li>
+                            <li class="recipe-instruction">Strain the mixture into the glass, leaving some room at the top.</li>
+                            <li class="recipe-instruction">Top with soda water and gently stir.</li>
+                            <li class="recipe-instruction">Garnish with fresh blackberries and a mint sprig.</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="recipe-section">
+                        <h2 class="recipe-section-title"><i class="fas fa-lightbulb"></i> Bartender Notes</h2>
+                        <p class="recipe-notes">The key to this cocktail is fresh blackberries – frozen won't give you the same vibrant color and flavor. For a more intense blackberry flavor, let the muddled berries sit with the rum for about 5 minutes before shaking. When muddling the mint, be gentle to release the oils without shredding the leaves, which can result in bitter flavors.</p>
+                    </div>
+                    
+                    <div class="recipe-tags">
+                        <span class="recipe-tag">Refreshing</span>
+                        <span class="recipe-tag">Berry</span>
+                        <span class="recipe-tag">Spiced Rum</span>
+                        <span class="recipe-tag">Herbal</span>
+                        <span class="recipe-tag">Signature</span>
+                    </div>
+                    
+                    <div class="recipe-actions">
+                        <a href="../products/spiced-rum.html" class="button">Explore Spiced Rum</a>
+                        <a href="../index.html#cocktails" class="button button--secondary">More Cocktails</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer__glow"></div>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer__info">
+                    <div class="footer__logo">
+                        <img src="../assets/images/big-cane-logo.png" alt="The Big Cane Logo" class="footer__logo-image">
+                    </div>
+                    <p class="footer__about">Crafting premium Caribbean spirits that capture the essence of island luxury and celebration. Every bottle tells a story of passion, rhythm, and craftsmanship.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__nav">
+                    <h3 class="footer__title">Navigation</h3>
+                    <ul>
+                        <li><a href="../index.html#products">Products</a></li>
+                        <li><a href="../index.html#founder">Our Story</a></li>
+                        <li><a href="../index.html#cocktails">Cocktails</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../other-businesses.html">Ventures</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__products">
+                    <h3 class="footer__title">Our Products</h3>
+                    <ul>
+                        <li><a href="../products/silver-rum.html">Silver Rum</a></li>
+                        <li><a href="../products/london-gin.html">London Dry Gin</a></li>
+                        <li><a href="../products/guava-rum.html">Guava Rum</a></li>
+                        <li><a href="../products/spiced-rum.html">Spiced Rum</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contact">
+                    <h3 class="footer__title">Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Caribbean House, Port of Spain, Trinidad</li>
+                        <li><i class="fas fa-phone"></i> +1 (868) 555-1234</li>
+                        <li><i class="fas fa-envelope"></i> info@thebigcane.com</li>
+                    </ul>
+                    <div class="footer__hours">
+                        <h4 class="footer__subtitle">Distillery Tours</h4>
+                        <p>Monday - Friday: 10am - 6pm</p>
+                        <p>Saturday: 12pm - 5pm</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 The BigCane. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p class="footer__disclaimer">Please drink responsibly. Must be 21 or older to purchase.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/animations.js"></script>
+    <script>
+        // Particle animation for recipe page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create particles
+            const particlesContainer = document.querySelector('.particles');
+            if (particlesContainer) {
+                const count = parseInt(particlesContainer.getAttribute('data-particles')) || 50;
+                
+                for (let i = 0; i < count; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    
+                    // Randomize particle appearance and animation
+                    const size = Math.random() * 5 + 2;
+                    const posX = Math.random() * 100;
+                    const posY = Math.random() * 100;
+                    const opacity = Math.random() * 0.4 + 0.1;
+                    const duration = Math.random() * 20 + 10;
+                    const delay = Math.random() * 5;
+                    
+                    // Add color classes for some particles
+                    if (Math.random() > 0.6) {
+                        const colorClasses = ['particle--pink', 'particle--blue', 'particle--purple', 'particle--gold'];
+                        const randomColorClass = colorClasses[Math.floor(Math.random() * colorClasses.length)];
+                        particle.classList.add(randomColorClass);
+                    }
+                    
+                    // Apply styles
+                    particle.style.width = size + 'px';
+                    particle.style.height = size + 'px';
+                    particle.style.left = posX + '%';
+                    particle.style.top = posY + '%';
+                    particle.style.opacity = opacity;
+                    particle.style.setProperty('--duration', duration + 's');
+                    particle.style.animationDelay = delay + 's';
+                    
+                    particlesContainer.appendChild(particle);
+                }
+            }
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

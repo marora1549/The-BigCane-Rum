@@ -1,0 +1,6 @@
+<!-- Simple placeholder for a video file -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <rect width="1920" height="1080" fill="#02485A"/>
+  <text x="960" y="540" font-family="Arial" font-size="36" fill="#F0F0F0" text-anchor="middle">Hero Video Placeholder</text>
+  <polygon points="860,480 1060,540 860,600" fill="#FF5733"/>
+</svg>
