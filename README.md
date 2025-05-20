@@ -7,16 +7,17 @@ This website is hosted on GitHub Pages: [View Demo](https://marora1549.github.io
 ## Product Showcase
 
 ### Product 1
-![Product 1](/assets/images/product-photo1.png)
+<img src="/assets/images/product-photo1.png" alt="Product 1" width="300"/>
 
 ### Product 2
-![Product 2](/assets/images/product-photo2.png)
+<img src="/assets/images/product-photo2.png" alt="Product 2" width="300"/>
 
 ### Product 3
-![Product 3](/assets/images/product-photo3.png)
+<img src="/assets/images/product-photo3.png" alt="Product 3" width="300"/>
 
 ### Product 4
-![Product 4](/assets/images/product-photo4.png)
+<img src="/assets/images/product-photo4.png" alt="Product 4" width="300"/>
+
 
 ## Features
 
